@@ -366,3 +366,1717 @@ INFO main de.nrw.hbz.digitool.downloader.DigitoolDownloader - Download 4430230 !
 INFO main de.nrw.hbz.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/4430230 and start to Download files
 INFO main de.nrw.hbz.digitool.downloader.DigitoolDownloader - Download 4430899 !
 INFO main de.nrw.hbz.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/4430899 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Start harvesting http://klio.hbz-nrw.de:1801/zbmedOAI/ !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest all Records! No from= Parameter set!
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Set spec is zbmed-oai_dc-all !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest Date 2013-03-19T14:34:26Z !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Found 2017 pids !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997605 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997605 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997625 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997625 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997645 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997645 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997646 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997646 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997665 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997665 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997667 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997667 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997671 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997671 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997673 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997673 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997675 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997675 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997677 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997677 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997679 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997679 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997683 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997683 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997685 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/1997685 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2041479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2041479 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081473 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2081473 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081475 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2081475 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081477 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2081477 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2081479 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081481 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2081481 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2238450 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238451 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2238451 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2238452 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2238474 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296911 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296911 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296913 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296913 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296915 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296917 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296917 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296919 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296919 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296948 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296948 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296949 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2296949 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344016 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344016 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344018 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344020 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344022 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344022 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344024 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344024 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344066 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344066 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344068 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344068 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344120 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344122 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2344122 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346862 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2346862 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346864 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2346864 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413160 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413160 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413164 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413164 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413168 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413168 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413172 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413172 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413176 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413176 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413180 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413180 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413184 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413188 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413196 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413196 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413197 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413197 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413204 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413204 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413208 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413208 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413212 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413212 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413216 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413216 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413219 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413219 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413224 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413224 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413228 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413228 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413232 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413232 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413234 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413234 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413240 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413240 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413243 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413243 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413245 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413245 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413251 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413251 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413256 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413260 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413260 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413264 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413264 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413265 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413265 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413266 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413276 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413276 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413280 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413280 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413281 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413281 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413287 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413287 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413292 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413292 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413296 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413296 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413300 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413300 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413301 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413301 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413302 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413302 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413312 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413312 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413316 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413316 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413320 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413320 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413322 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413322 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413329 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413329 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413336 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413336 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413338 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413338 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413344 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413344 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413347 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413347 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413349 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413349 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413352 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413352 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413360 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413360 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413366 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413366 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413370 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413370 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413374 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413374 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413375 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413375 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413382 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413382 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413386 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413386 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413390 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413394 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413394 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413398 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413398 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413402 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413402 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413406 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413406 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413410 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413410 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413416 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413416 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413420 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413420 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413424 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413424 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413427 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413427 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413432 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413432 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413436 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413436 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413440 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413440 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413444 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413448 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413448 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413452 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413454 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413454 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413460 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413460 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413464 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413464 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413467 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413467 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413472 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2413472 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2416428 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2416428 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450364 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2450364 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450365 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2450365 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450380 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2450380 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450381 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2450381 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2450390 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470087 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470087 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470093 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470093 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470096 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470096 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470099 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470099 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470102 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470102 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470103 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470103 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470108 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470108 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470109 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470109 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470114 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470114 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470116 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470116 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470119 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470119 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470120 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470124 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470124 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470127 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470127 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470128 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470128 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470133 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470133 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470137 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470137 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470140 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470140 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470143 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470143 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470146 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470146 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470149 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470149 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470153 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470153 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470156 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470156 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470184 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470188 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470912 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470912 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470914 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470914 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470915 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470924 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470924 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470925 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470925 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470926 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470926 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470936 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470936 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470940 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470940 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470944 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470944 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470947 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470947 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470961 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470961 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470965 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470965 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470968 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470968 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470972 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470972 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470973 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470973 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470980 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470980 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470984 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470984 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470988 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470988 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470993 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2470993 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471001 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471001 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471005 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471005 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471006 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471006 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471018 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471019 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471019 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471020 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471029 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471029 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471247 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471247 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471252 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471252 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471256 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471259 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471259 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471263 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471263 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471266 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471270 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471270 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471274 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471274 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471278 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471278 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471282 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471282 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471286 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471286 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471290 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471290 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471293 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2471293 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504304 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504304 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504307 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504307 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504310 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504310 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504313 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504313 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504315 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504315 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504318 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504318 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504513 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504513 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504516 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504519 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504519 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504522 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504522 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504526 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504526 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504529 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2504529 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505463 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505463 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505465 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505465 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505468 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505468 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505469 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505469 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505474 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505564 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505564 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505567 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505567 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505767 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505767 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505770 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505770 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505774 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505774 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505778 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505778 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505786 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505786 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505790 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505790 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505794 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505794 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505796 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505796 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505797 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505797 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505804 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505804 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505805 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505805 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505806 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505806 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505816 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505816 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505820 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505820 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505836 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505836 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505848 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505848 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505852 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2505852 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543874 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543874 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543878 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543878 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543882 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543882 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543884 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543884 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543888 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543888 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543891 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2543891 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2577182 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2577182 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2617516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2617516 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2632444 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632447 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2632447 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2632450 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632453 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2632453 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2645284 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2645284 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666904 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2666904 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666906 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2666906 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669610 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669610 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669614 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669614 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669618 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669618 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669626 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669626 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669628 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669628 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669630 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669630 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669632 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669632 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669635 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669635 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669637 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669637 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669641 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669641 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669644 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669644 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669648 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2669648 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2682860 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2682860 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2682862 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2682862 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685808 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685808 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685809 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685809 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685814 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685814 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685815 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685815 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685818 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685818 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685822 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685822 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685827 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685827 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685830 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685830 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685834 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2685834 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686071 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686071 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686074 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686074 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686077 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686077 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686081 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686081 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686083 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686083 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686085 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686085 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686140 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686140 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686348 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686348 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686349 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686349 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686352 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686352 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686355 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2686355 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689712 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2689712 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689715 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2689715 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689718 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2689718 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689719 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2689719 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689724 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2689724 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708113 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708113 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708116 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708116 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708119 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708119 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708120 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708123 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708123 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708128 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708128 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708131 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708131 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708134 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708134 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708138 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708138 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708141 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708141 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708144 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2708144 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740826 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2740826 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740829 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2740829 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740833 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2740833 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740836 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2740836 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2741456 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2741456 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2743531 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2743531 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2755205 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Create Directory /home/jan/zbmed/2755205 and start to Download files
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Start harvesting http://klio.hbz-nrw.de:1801/zbmedOAI/ !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest all Records! No from= Parameter set!
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Set spec is zbmed-oai_dc-all !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest Date 2013-03-19T14:42:33Z !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Found 2017 pids !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997605 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997605 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997625 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997625 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997645 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997645 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997646 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997646 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997665 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997665 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997667 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997667 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997671 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997671 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997673 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997673 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997675 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997675 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997677 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997677 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997679 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997679 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997683 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997683 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997685 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997685 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2041479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2041479 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081473 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081473 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Start harvesting http://klio.hbz-nrw.de:1801/zbmedOAI/ !
+WARN main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Timestamp file .oaitimestamp is not available! First harvest!?
+WARN main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - I continue with harvest from scratch!
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest all Records from null !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Set spec is zbmed-oai_dc-all !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest Date 2013-03-19T14:43:25Z !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Found 2017 pids !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997605 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997605 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997625 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997625 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997645 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997645 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997646 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997646 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997665 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997665 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997667 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997667 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997671 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997671 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997673 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997673 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997675 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997675 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997677 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997677 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997679 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997679 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997683 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997683 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997685 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997685 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2041479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2041479 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081473 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081473 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081475 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081475 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081477 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081477 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081479 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081481 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081481 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238450 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238451 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238451 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238452 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238474 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296911 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296911 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296913 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296913 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296915 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296917 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296917 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296919 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296919 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296948 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296948 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296949 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296949 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344016 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344016 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344018 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344020 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344022 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344022 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344024 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344024 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344066 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344066 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344068 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344068 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344120 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344122 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344122 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346862 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2346862 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346864 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2346864 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413160 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413160 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413164 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413164 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413168 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413168 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413172 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413172 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413176 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413176 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413180 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413180 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413184 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413188 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413196 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413196 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413197 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413197 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413204 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413204 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413208 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413208 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413212 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413212 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413216 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413216 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413219 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413219 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413224 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413224 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413228 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413228 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413232 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413232 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413234 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413234 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413240 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413240 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413243 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413243 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413245 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413245 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413251 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413251 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413256 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413260 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413260 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413264 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413264 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413265 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413265 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413266 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413276 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413276 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413280 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413280 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413281 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413281 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413287 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413287 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413292 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413292 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413296 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413296 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413300 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413300 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413301 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413301 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413302 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413302 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413312 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413312 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413316 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413316 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413320 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413320 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413322 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413322 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413329 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413329 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413336 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413336 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413338 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413338 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413344 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413344 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413347 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413347 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413349 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413349 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413352 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413352 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413360 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413360 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413366 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413366 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413370 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413370 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413374 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413374 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413375 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413375 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413382 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413382 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413386 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413386 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413390 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413394 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413394 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413398 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413398 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413402 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413402 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413406 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413406 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413410 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413410 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413416 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413416 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413420 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413420 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413424 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413424 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413427 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413427 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413432 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413432 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413436 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413436 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413440 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413440 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413444 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413448 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413448 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413452 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413454 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413454 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413460 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413460 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413464 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413464 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413467 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413467 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413472 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413472 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2416428 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2416428 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450364 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450364 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450365 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450365 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450380 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450380 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450381 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450381 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450390 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470087 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470087 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470093 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470093 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470096 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470096 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470099 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470099 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470102 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470102 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470103 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470103 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470108 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470108 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470109 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470109 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470114 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470114 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470116 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470116 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470119 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470119 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470120 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470124 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470124 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470127 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470127 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470128 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470128 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470133 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470133 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470137 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470137 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470140 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470140 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470143 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470143 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470146 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470146 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470149 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470149 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470153 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470153 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470156 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470156 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470184 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470188 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470912 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470912 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470914 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470914 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470915 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470924 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470924 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470925 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470925 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470926 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470926 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470936 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470936 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470940 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470940 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470944 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470944 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470947 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470947 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470961 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470961 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470965 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470965 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470968 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470968 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470972 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470972 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470973 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470973 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470980 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470980 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470984 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470984 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470988 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470988 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470993 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470993 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471001 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471001 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471005 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471005 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471006 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471006 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471018 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471019 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471019 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471020 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471029 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471029 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471247 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471247 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471252 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471252 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471256 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471259 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471259 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471263 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471263 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471266 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471270 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471270 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471274 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471274 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471278 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471278 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471282 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471282 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471286 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471286 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471290 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471290 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471293 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471293 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504304 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504304 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504307 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504307 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504310 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504310 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504313 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504313 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504315 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504315 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504318 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504318 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504513 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504513 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504516 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504519 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504519 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504522 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504522 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504526 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504526 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504529 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504529 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505463 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505463 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505465 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505465 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505468 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505468 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505469 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505469 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505474 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505564 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505564 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505567 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505567 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505767 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505767 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505770 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505770 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505774 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505774 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505778 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505778 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505786 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505786 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505790 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505790 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505794 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505794 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505796 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505796 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505797 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505797 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505804 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505804 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505805 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505805 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505806 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505806 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505816 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505816 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505820 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505820 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505836 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505836 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505848 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505848 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505852 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505852 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543874 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543874 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543878 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543878 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543882 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543882 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543884 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543884 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543888 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543888 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543891 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543891 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2577182 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2577182 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2617516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2617516 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632444 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632447 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632447 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632450 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632453 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632453 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2645284 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2645284 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666904 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2666904 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666906 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2666906 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669610 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669610 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669614 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669614 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669618 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669618 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669626 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669626 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669628 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669628 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669630 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669630 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669632 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669632 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669635 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669635 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669637 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669637 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669641 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669641 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669644 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669644 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669648 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669648 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2682860 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2682860 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2682862 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2682862 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685808 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685808 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685809 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685809 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685814 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685814 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685815 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685815 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685818 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685818 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685822 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685822 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685827 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685827 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685830 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685830 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2685834 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2685834 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686071 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686071 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686074 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686074 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686077 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686077 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686081 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686081 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686083 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686083 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686085 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686085 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686140 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686140 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686348 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686348 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686349 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686349 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686352 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686352 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2686355 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2686355 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689712 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2689712 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689715 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2689715 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689718 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2689718 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689719 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2689719 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2689724 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2689724 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708113 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708113 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708116 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708116 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708119 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708119 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708120 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708123 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708123 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708128 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708128 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708131 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708131 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708134 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708134 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708138 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708138 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708141 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708141 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2708144 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2708144 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740826 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2740826 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740829 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2740829 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740833 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2740833 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2740836 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2740836 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2741456 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2741456 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2743531 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2743531 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2755205 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2755205 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Start harvesting http://klio.hbz-nrw.de:1801/zbmedOAI/ !
+WARN main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Timestamp file .oaitimestamp is not available! First harvest!?
+WARN main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - I continue with harvest from scratch!
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest all Records from null !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Set spec is zbmed-oai_dc-all !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Harvest Date 2013-03-19T14:56:09Z !
+INFO main de.nrw.hbz.edoweb2.digitool.pidreporter.OaiPidGrabber - Found 2017 pids !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997605 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997605 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997625 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997625 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997645 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997645 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997646 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997646 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997665 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997665 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997667 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997667 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997671 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997671 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997673 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997673 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997675 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997675 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997677 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997677 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997679 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997679 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997683 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997683 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 1997685 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/1997685 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2041479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2041479 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081473 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081473 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081475 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081475 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081477 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081477 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081479 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081479 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2081481 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2081481 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238450 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238451 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238451 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238452 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2238474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2238474 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296911 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296911 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296913 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296913 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296915 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296917 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296917 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296919 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296919 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296948 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296948 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2296949 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2296949 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344016 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344016 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344018 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344020 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344022 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344022 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344024 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344024 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344066 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344066 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344068 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344068 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344120 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2344122 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2344122 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346862 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2346862 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2346864 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2346864 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413160 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413160 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413164 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413164 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413168 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413168 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413172 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413172 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413176 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413176 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413180 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413180 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413184 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413188 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413196 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413196 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413197 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413197 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413204 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413204 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413208 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413208 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413212 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413212 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413216 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413216 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413219 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413219 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413224 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413224 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413228 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413228 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413232 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413232 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413234 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413234 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413240 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413240 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413243 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413243 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413245 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413245 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413251 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413251 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413256 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413260 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413260 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413264 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413264 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413265 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413265 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413266 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413276 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413276 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413280 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413280 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413281 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413281 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413287 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413287 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413292 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413292 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413296 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413296 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413300 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413300 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413301 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413301 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413302 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413302 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413312 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413312 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413316 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413316 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413320 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413320 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413322 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413322 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413329 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413329 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413336 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413336 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413338 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413338 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413344 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413344 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413347 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413347 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413349 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413349 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413352 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413352 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413360 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413360 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413366 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413366 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413370 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413370 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413374 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413374 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413375 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413375 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413382 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413382 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413386 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413386 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413390 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413394 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413394 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413398 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413398 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413402 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413402 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413406 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413406 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413410 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413410 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413416 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413416 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413420 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413420 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413424 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413424 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413427 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413427 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413432 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413432 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413436 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413436 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413440 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413440 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413444 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413448 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413448 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413452 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413452 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413454 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413454 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413460 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413460 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413464 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413464 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413467 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413467 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2413472 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2413472 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2416428 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2416428 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450364 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450364 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450365 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450365 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450380 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450380 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450381 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450381 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2450390 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2450390 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470087 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470087 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470093 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470093 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470096 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470096 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470099 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470099 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470102 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470102 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470103 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470103 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470108 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470108 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470109 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470109 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470114 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470114 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470116 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470116 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470119 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470119 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470120 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470120 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470124 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470124 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470127 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470127 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470128 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470128 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470133 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470133 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470137 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470137 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470140 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470140 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470143 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470143 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470146 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470146 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470149 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470149 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470153 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470153 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470156 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470156 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470184 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470184 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470188 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470188 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470912 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470912 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470914 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470914 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470915 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470915 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470924 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470924 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470925 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470925 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470926 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470926 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470936 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470936 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470940 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470940 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470944 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470944 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470947 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470947 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470961 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470961 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470965 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470965 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470968 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470968 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470972 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470972 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470973 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470973 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470980 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470980 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470984 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470984 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470988 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470988 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2470993 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2470993 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471001 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471001 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471005 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471005 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471006 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471006 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471018 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471018 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471019 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471019 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471020 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471020 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471029 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471029 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471247 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471247 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471252 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471252 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471256 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471256 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471259 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471259 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471263 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471263 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471266 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471266 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471270 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471270 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471274 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471274 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471278 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471278 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471282 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471282 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471286 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471286 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471290 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471290 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2471293 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2471293 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504304 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504304 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504307 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504307 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504310 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504310 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504313 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504313 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504315 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504315 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504318 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504318 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504513 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504513 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504516 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504519 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504519 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504522 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504522 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504526 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504526 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2504529 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2504529 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505463 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505463 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505465 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505465 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505468 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505468 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505469 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505469 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505474 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505474 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505564 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505564 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505567 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505567 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505767 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505767 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505770 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505770 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505774 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505774 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505778 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505778 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505786 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505786 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505790 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505790 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505794 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505794 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505796 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505796 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505797 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505797 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505804 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505804 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505805 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505805 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505806 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505806 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505816 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505816 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505820 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505820 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505836 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505836 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505848 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505848 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2505852 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2505852 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543874 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543874 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543878 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543878 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543882 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543882 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543884 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543884 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543888 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543888 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2543891 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2543891 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2577182 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2577182 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2617516 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2617516 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632444 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632444 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632447 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632447 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632450 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632450 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2632453 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2632453 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2645284 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2645284 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666904 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2666904 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2666906 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2666906 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669610 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669610 exists. Force override.
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Download 2669614 !
+INFO main de.nrw.hbz.edoweb2.digitool.downloader.DigitoolDownloader - Directory /home/jan/zbmed/2669614 exists. Force override.
