@@ -63,7 +63,7 @@ public class Monograph
 	{
 		CreateObjectBean input = new CreateObjectBean();
 		input.type = ObjectType.monograph.toString();
-		return resources.createResource(pid, namespace, input);
+		return resources.create(pid, namespace, input);
 
 	}
 
@@ -76,7 +76,7 @@ public class Monograph
 			DCBeanAnnotated content)
 	{
 
-		return resources.updateResourceDC(pid, content);
+		return resources.updateDC(pid, content);
 
 	}
 
@@ -109,7 +109,7 @@ public class Monograph
 	@Produces({ "application/json", "application/xml", MediaType.TEXT_HTML })
 	public Response getView(@PathParam("pid") String pid)
 	{
-		return resources.getView(pid);
+		return resources.about(pid);
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class Monograph
 	public String updateMonographMetadata(@PathParam("pid") String pid,
 			String content)
 	{
-		return resources.updateResourceMetadata(pid, content);
+		return resources.updateMetadata(pid, content);
 	}
 
 	@POST
@@ -155,7 +155,7 @@ public class Monograph
 	public String updateMonographData(@PathParam("pid") String pid,
 			MultiPart multiPart)
 	{
-		return resources.updateResourceData(pid, multiPart);
+		return resources.updateData(pid, multiPart);
 	}
 
 	@POST
@@ -165,7 +165,7 @@ public class Monograph
 	public String updateMonographMetadataPost(@PathParam("pid") String pid,
 			String content)
 	{
-		return resources.updateResourceMetadata(pid, content);
+		return resources.updateMetadata(pid, content);
 	}
 
 	@DELETE
@@ -174,14 +174,14 @@ public class Monograph
 	public String deleteMonograph(@PathParam("pid") String pid,
 			@PathParam("namespace") String namespace)
 	{
-		return resources.deleteResource(pid, namespace);
+		return resources.delete(pid, namespace);
 	}
 
 	@DELETE
 	@Produces({ "application/json", "application/xml" })
 	public String deleteAll()
 	{
-		return resources.deleteResourceOfType(ObjectType.monograph.toString());
+		return resources.deleteAllOfType(ObjectType.monograph.toString());
 
 	}
 
