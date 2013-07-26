@@ -149,6 +149,13 @@ public class TestActions {
     }
 
     // @Test
+    public void lobidify() throws IOException {
+	Actions actions = new Actions();
+	String result = actions.lobidify("test:4245081");
+	System.out.println(result);
+    }
+
+    // @Test
     public void html() throws IOException {
 	Actions actions = new Actions();
 	String str = actions.getReM("edoweb:2470307", "text/html");
