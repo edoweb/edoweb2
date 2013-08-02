@@ -97,7 +97,7 @@ public class Webclient {
      * @param dtlBean
      *            A DigitalEntity to operate on
      */
-    public void metadata(DigitalEntity dtlBean) {
+    public void autoGenerateMetdata(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	try {
@@ -133,8 +133,8 @@ public class Webclient {
      * @param metadata
      *            n-triple metadata to integrate
      */
-    public void metadata(DigitalEntity dtlBean, String metadata) {
-	metadata(dtlBean);
+    public void autoGenerateMetadataMerge(DigitalEntity dtlBean, String metadata) {
+	autoGenerateMetdata(dtlBean);
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	String m = "";
@@ -146,7 +146,7 @@ public class Webclient {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
 	try {
-	    String merge = mergeMetadata(m, metadata);
+	    String merge = appendMetadata(m, metadata);
 	    logger.info("MERGE: " + metadata);
 	    updateMetadata(resource + "/metadata", merge);
 	} catch (Exception e) {
@@ -155,7 +155,26 @@ public class Webclient {
 
     }
 
-    private String mergeMetadata(String m, String metadata) {
+    /**
+     * Sets the metadata to a resource represented by the passed DigitalEntity.
+     * 
+     * @param dtlBean
+     *            The bean for the object
+     * @param metadata
+     *            The metadata
+     */
+    public void setMetadata(DigitalEntity dtlBean, String metadata) {
+	String pid = namespace + ":" + dtlBean.getPid();
+	String resource = endpoint + "/resource/" + pid;
+	try {
+	    updateMetadata(resource + "/metadata", metadata);
+	} catch (Exception e) {
+	    logger.error(dtlBean.getPid() + " " + e.getMessage());
+	}
+
+    }
+
+    private String appendMetadata(String m, String metadata) {
 	return m + "\n" + metadata;
     }
 
@@ -249,7 +268,7 @@ public class Webclient {
 
 	try {
 
-	    if (dtlBean.getMarcFile() != null)
+	    if (dtlBean.getStream(StreamType.MARC).getFile() != null)
 		dc.add(marc2dc(dtlBean));
 	    else if (dtlBean.getDc() != null) {
 		dc.add(new DCBeanAnnotated(dtlBean.getDc()));
@@ -308,13 +327,13 @@ public class Webclient {
 	    logger.info(pid + " Update data: " + dataStream.getMimeType());
 	    MultiPart multiPart = new MultiPart();
 	    multiPart.bodyPart(new StreamDataBodyPart("InputStream",
-		    new FileInputStream(dataStream.getStream()), dataStream
-			    .getStream().getName()));
+		    new FileInputStream(dataStream.getFile()), dataStream
+			    .getFile().getName()));
 	    multiPart.bodyPart(new BodyPart(dataStream.getMimeType(),
 		    MediaType.TEXT_PLAIN_TYPE));
 
-	    logger.info("Upload: " + dataStream.getStream().getName());
-	    multiPart.bodyPart(new BodyPart(dataStream.getStream().getName(),
+	    logger.info("Upload: " + dataStream.getFile().getName());
+	    multiPart.bodyPart(new BodyPart(dataStream.getFile().getName(),
 		    MediaType.TEXT_PLAIN_TYPE));
 	    data.type("multipart/mixed").post(multiPart);
 
@@ -322,7 +341,7 @@ public class Webclient {
 	    logger.error(pid + " " + e.getMessage());
 	} catch (FileNotFoundException e) {
 	    logger.error(pid + " " + "FileNotFound "
-		    + dataStream.getStream().getAbsolutePath());
+		    + dataStream.getFile().getAbsolutePath());
 	} catch (Exception e) {
 	    logger.error(pid + " " + e.getMessage());
 	}
@@ -377,8 +396,9 @@ public class Webclient {
 	    Transformer transformer = tFactory
 		    .newTransformer(new StreamSource(ClassLoader
 			    .getSystemResourceAsStream("MARC21slim2OAIDC.xsl")));
-	    transformer.transform(new StreamSource(dtlBean.getMarcFile()),
-		    new StreamResult(str));
+	    transformer.transform(
+		    new StreamSource(dtlBean.getStream(StreamType.MARC)
+			    .getFile()), new StreamResult(str));
 	    String xmlStr = str.getBuffer().toString();
 	    DCBeanAnnotated dc = new DCBeanAnnotated(xmlStr);
 	    return dc;
@@ -404,4 +424,5 @@ public class Webclient {
 	    logger.info(pid + " Can't delete!" + e.getMessage());
 	}
     }
+
 }
