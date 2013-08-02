@@ -62,6 +62,7 @@ import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.TreeModel;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.TupleQuery;
@@ -927,7 +928,13 @@ public class Actions {
 		    + "<"
 		    + pid
 		    + "> <http://www.umbel.org/specifications/vocabulary#isLike> <"
-		    + lobidUri + "> .";
+		    + lobidUri
+		    + "> .\n"
+		    + "<"
+		    + pid
+		    + "> <http://purl.org/lobid/lv#hbzID> \""
+		    + alephid
+		    + "\" .";
 
 	    if (str.contains("http://www.w3.org/2002/07/owl#sameAs")) {
 		str = includeSameAs(str, pid);
@@ -980,7 +987,7 @@ public class Actions {
     private Graph readRdfInputstreamToGraph(InputStream inputStream,
 	    RDFFormat inf, String baseUrl) throws IOException {
 	RDFParser rdfParser = Rio.createParser(inf);
-	org.openrdf.model.Graph myGraph = new org.openrdf.model.impl.GraphImpl();
+	org.openrdf.model.Graph myGraph = new TreeModel();
 	StatementCollector collector = new StatementCollector(myGraph);
 	rdfParser.setRDFHandler(collector);
 	try {
