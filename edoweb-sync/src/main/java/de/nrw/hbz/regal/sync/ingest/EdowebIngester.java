@@ -24,6 +24,8 @@ import org.slf4j.LoggerFactory;
 import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.datatypes.ContentModel;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
+import de.nrw.hbz.regal.sync.extern.DigitalEntityRelation;
+import de.nrw.hbz.regal.sync.extern.RelatedDigitalEntity;
 import de.nrw.hbz.regal.sync.extern.Stream;
 import de.nrw.hbz.regal.sync.extern.StreamType;
 
@@ -74,9 +76,9 @@ public class EdowebIngester implements IngestInterface {
 		    ingestEJournalComplete(dtlBean);
 		    logger.info(pid + ": end ingesting eJournal");
 		} else {
-		    logger.info(pid + ": start ingesting eJournal volume");
-		    updateEJournalPart(dtlBean);
-		    logger.info(pid + ": end ingesting eJournal volume");
+		    logger.info(pid + ": start ingesting eJournal issue");
+		    updatePart(dtlBean);
+		    logger.info(pid + ": end ingesting eJournal issue");
 		}
 	    } else if (partitionC.compareTo("WPD01") == 0) {
 
@@ -134,9 +136,9 @@ public class EdowebIngester implements IngestInterface {
 		    updateEJournalParent(dtlBean);
 		    logger.info(pid + ": end updating eJournal");
 		} else {
-		    logger.info(pid + ": start updating eJournal volume");
-		    updateEJournalPart(dtlBean);
-		    logger.info(pid + ": end updating eJournal volume");
+		    logger.info(pid + ": start updating eJournal issue");
+		    updateVolume(dtlBean);
+		    logger.info(pid + ": end updating eJournal issue");
 		}
 	    } else if (partitionC.compareTo("WPD01") == 0) {
 		logger.info(pid + ": start updating monograph (wpd01)");
@@ -176,30 +178,87 @@ public class EdowebIngester implements IngestInterface {
 
     }
 
-    private void updateEJournalPart(DigitalEntity dtlBean) {
+    private void updatePart(DigitalEntity dtlBean) {
+
+	String usageType = dtlBean.getUsageType();
+	if (usageType.compareTo(ObjectType.volume.toString()) == 0) {
+	    updateVolume(dtlBean);
+	} else // if (usageType.compareTo(ObjectType.issue.toString()) == 0)
+	{
+	    updateIssue(dtlBean);
+	}
+    }
+
+    private void updateVolume(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	logger.info(pid + " " + "Found eJournal volume.");
+	ObjectType t = ObjectType.volume;
+	webclient.createResource(t, dtlBean);
+	String metadata = "<" + pid
+		+ "> <http://purl.org/ontology/bibo/volume> \""
+		+ dtlBean.getLabel() + "\" .\n" + "<" + pid
+		+ "> <http://iflastandards.info/ns/isbd/elements/P1004> \""
+		+ dtlBean.getLabel() + "\" .\n";
+	webclient.setMetadata(dtlBean, metadata);
 
-	webclient.createObject(dtlBean, "application/pdf", ObjectType.volume);
+	Vector<DigitalEntity> issues = dtlBean.getParts();
+	int num = issues.size();
+	int count = 1;
+	logger.info(pid + " Found " + num + " issues.");
+	for (DigitalEntity issue : issues) {
+	    logger.info("Part: " + (count++) + "/" + num);
+	    updateIssue(issue);
+	}
+
 	logger.info(pid + " " + "updated.\n");
+    }
+
+    private void updateIssue(DigitalEntity dtlBean) {
+	String pid = namespace + ":" + dtlBean.getPid();
+	try {
+	    ObjectType t = ObjectType.issue;
+	    webclient.createObject(dtlBean, "application/pdf", t);
+	    logger.info(pid + " " + "Found eJournal issue.");
+
+	    String metadata = "<" + pid
+		    + "> <http://purl.org/ontology/bibo/issue> \""
+		    + dtlBean.getLabel() + "\" .\n" + "<" + pid
+		    + "> <http://iflastandards.info/ns/isbd/elements/P1004> \""
+		    + dtlBean.getLabel() + "\" .\n";
+	    webclient.setMetadata(dtlBean, metadata);
+	    logger.info(pid + " " + "updated.\n");
+	} catch (IllegalArgumentException e) {
+	    logger.debug(e.getMessage());
+	}
+
     }
 
     private void updateWebpagePart(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
-	logger.info(pid + " Found webpage version.");
+	try {
+	    logger.info(pid + " Found webpage version.");
 
-	webclient.createObject(dtlBean, "application/zip", ObjectType.version);
-	logger.info(pid + " " + "updated.\n");
+	    webclient.createObject(dtlBean, "application/zip",
+		    ObjectType.version);
+	    logger.info(pid + " " + "updated.\n");
+	} catch (IllegalArgumentException e) {
+	    logger.debug(e.getMessage());
+	}
     }
 
     private void updateMonographs(DigitalEntity dtlBean) {
 
 	String pid = namespace + ":" + dtlBean.getPid();
-	logger.info(pid + " Found monograph.");
-	webclient
-		.createObject(dtlBean, "application/pdf", ObjectType.monograph);
-	webclient.metadata(dtlBean);
-	logger.info(pid + " " + "updated.\n");
+	try {
+	    logger.info(pid + " Found monograph.");
+	    webclient.createObject(dtlBean, "application/pdf",
+		    ObjectType.monograph);
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    logger.info(pid + " " + "updated.\n");
+	} catch (IllegalArgumentException e) {
+	    logger.debug(e.getMessage());
+	}
     }
 
     private void updateEJournalParent(DigitalEntity dtlBean) {
@@ -207,10 +266,11 @@ public class EdowebIngester implements IngestInterface {
 	try {
 	    logger.info(pid + " Found ejournal.");
 	    webclient.createResource(ObjectType.journal, dtlBean);
-	    webclient.metadata(dtlBean);
-	    Vector<DigitalEntity> viewMainLinks = dtlBean.getViewMainLinks();
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    Vector<DigitalEntity> viewMainLinks = getViewMainLinks(dtlBean);
 	    int numOfVols = viewMainLinks.size();
-	    logger.info(pid + " " + "Found " + numOfVols + " volumes.");
+	    logger.info(pid + " " + "Found " + numOfVols + " parts.");
 	    logger.info(pid + " " + "Will not update volumes.");
 	    logger.info(pid + " " + "updated.\n");
 	} catch (Exception e) {
@@ -219,13 +279,23 @@ public class EdowebIngester implements IngestInterface {
 
     }
 
+    private Vector<DigitalEntity> getViewMainLinks(final DigitalEntity dtlBean) {
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation == DigitalEntityRelation.VIEW_MAIN.toString())
+		links.add(rel.entity);
+	}
+	return links;
+    }
+
     private void updateWebpageParent(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	try {
 	    logger.info(pid + " Found webpage.");
 	    webclient.createResource(ObjectType.webpage, dtlBean);
-	    webclient.metadata(dtlBean);
-	    Vector<DigitalEntity> viewLinks = dtlBean.getViewLinks();
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    Vector<DigitalEntity> viewLinks = getViewLinks(dtlBean);
 	    int numOfVersions = viewLinks.size();
 	    logger.info(pid + " " + "Found " + numOfVersions + " versions.");
 	    logger.info(pid + " " + "Will not update versions.");
@@ -241,8 +311,9 @@ public class EdowebIngester implements IngestInterface {
 	try {
 	    logger.info(pid + " Found webpage.");
 	    webclient.createResource(ObjectType.webpage, dtlBean);
-	    webclient.metadata(dtlBean);
-	    for (DigitalEntity b : dtlBean.getArchiveLinks()) {
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    for (DigitalEntity b : getArchiveLinks(dtlBean)) {
 		b.setParentPid(dtlBean.getPid());
 		Stream dataStream = b.getStream(StreamType.DATA);
 		if (dataStream.getMimeType().compareTo("application/zip") == 0) {
@@ -258,25 +329,47 @@ public class EdowebIngester implements IngestInterface {
 
     }
 
+    private Vector<DigitalEntity> getArchiveLinks(DigitalEntity dtlBean) {
+
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation == DigitalEntityRelation.ARCHIVE.toString())
+		links.add(rel.entity);
+	}
+	return links;
+
+    }
+
     private void ingestEJournalComplete(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	try {
 	    logger.info(pid + " Found ejournal.");
-
+	    logger.info(dtlBean.toString());
 	    webclient.createResource(ObjectType.journal, dtlBean);
-	    webclient.metadata(dtlBean);
-	    Vector<DigitalEntity> viewMainLinks = dtlBean.getViewMainLinks();
-	    int numOfVols = viewMainLinks.size();
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    Vector<DigitalEntity> list = getParts(dtlBean);
+	    int numOfVols = list.size();
 	    int count = 1;
-	    logger.info(pid + " Found " + numOfVols + " volumes.");
-	    for (DigitalEntity b : viewMainLinks) {
+	    logger.info(pid + " Found " + numOfVols + " parts.");
+	    for (DigitalEntity b : list) {
 		logger.info("Part: " + (count++) + "/" + numOfVols);
-		updateEJournalPart(b);
+		updatePart(b);
 	    }
 	    logger.info(pid + " " + "and all volumes updated.\n");
 	} catch (Exception e) {
 	    logger.error(pid + " " + e.getMessage());
 	}
+    }
+
+    private Vector<DigitalEntity> getParts(DigitalEntity dtlBean) {
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation
+		    .compareTo(DigitalEntityRelation.part_of.toString()) == 0)
+		links.add(rel.entity);
+	}
+	return links;
     }
 
     private void ingestWebpageComplete(DigitalEntity dtlBean) {
@@ -285,8 +378,9 @@ public class EdowebIngester implements IngestInterface {
 	    logger.info(pid + " Found webpage.");
 
 	    webclient.createResource(ObjectType.webpage, dtlBean);
-	    webclient.metadata(dtlBean);
-	    Vector<DigitalEntity> viewLinks = dtlBean.getViewLinks();
+	    webclient.autoGenerateMetdata(dtlBean);
+	    webclient.publish(dtlBean);
+	    Vector<DigitalEntity> viewLinks = getViewLinks(dtlBean);
 	    int numOfVersions = viewLinks.size();
 	    logger.info(pid + " Found " + numOfVersions + " versions.");
 	    int count = 1;
@@ -298,6 +392,17 @@ public class EdowebIngester implements IngestInterface {
 	} catch (Exception e) {
 	    logger.info(pid + " " + e.getMessage());
 	}
+
+    }
+
+    private Vector<DigitalEntity> getViewLinks(DigitalEntity dtlBean) {
+
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation == DigitalEntityRelation.VIEW.toString())
+		links.add(rel.entity);
+	}
+	return links;
 
     }
 

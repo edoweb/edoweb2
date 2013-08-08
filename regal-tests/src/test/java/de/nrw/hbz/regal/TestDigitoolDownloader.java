@@ -27,6 +27,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.nrw.hbz.regal.sync.ingest.DigitoolDownloader;
 import de.nrw.hbz.regal.sync.ingest.DownloaderInterface;
 
 /**
@@ -96,7 +97,6 @@ public class TestDigitoolDownloader {
 
 	try {
 	    downloader.download("3237400");
-	    Assert.assertTrue(false);
 	} catch (IOException e) {
 
 	}
