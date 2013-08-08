@@ -24,6 +24,7 @@ import static de.nrw.hbz.regal.fedora.FedoraVocabulary.IS_MEMBER_OF;
 import static de.nrw.hbz.regal.fedora.FedoraVocabulary.IS_PART_OF;
 import static de.nrw.hbz.regal.fedora.FedoraVocabulary.ITEM_ID;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -48,6 +49,7 @@ import java.util.regex.Pattern;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import org.antlr.runtime.RecognitionException;
 import org.apache.commons.httpclient.URIException;
@@ -56,11 +58,13 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.culturegraph.mf.Flux;
 import org.openrdf.OpenRDFException;
+import org.openrdf.model.Graph;
 import org.openrdf.model.Literal;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.TreeModel;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.QueryLanguage;
 import org.openrdf.query.TupleQuery;
@@ -73,11 +77,13 @@ import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
+import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.RDFWriter;
 import org.openrdf.rio.Rio;
 import org.openrdf.rio.helpers.BasicWriterSettings;
 import org.openrdf.rio.helpers.JSONLDMode;
 import org.openrdf.rio.helpers.JSONLDSettings;
+import org.openrdf.rio.helpers.StatementCollector;
 import org.openrdf.sail.memory.MemoryStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,14 +94,15 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
-import de.nrw.hbz.regal.ArchiveFactory;
-import de.nrw.hbz.regal.ArchiveInterface;
+import de.nrw.hbz.regal.api.CreateObjectBean;
 import de.nrw.hbz.regal.api.DCBeanAnnotated;
-import de.nrw.hbz.regal.datatypes.ComplexObject;
+import de.nrw.hbz.regal.datatypes.ContentModel;
 import de.nrw.hbz.regal.datatypes.Link;
 import de.nrw.hbz.regal.datatypes.Node;
 import de.nrw.hbz.regal.exceptions.ArchiveException;
 import de.nrw.hbz.regal.exceptions.NodeNotFoundException;
+import de.nrw.hbz.regal.fedora.FedoraFactory;
+import de.nrw.hbz.regal.fedora.FedoraInterface;
 import de.nrw.hbz.regal.fedora.FedoraVocabulary;
 
 /**
@@ -107,7 +114,7 @@ import de.nrw.hbz.regal.fedora.FedoraVocabulary;
  */
 public class Actions {
     final static Logger logger = LoggerFactory.getLogger(Actions.class);
-    private ArchiveInterface archive = null;
+    private FedoraInterface fedora = null;
     private String fedoraExtern = null;
     private String serverName = null;
     private String uriPrefix = null;
@@ -128,7 +135,7 @@ public class Actions {
 	properties.load(getClass().getResourceAsStream("/api.properties"));
 	fedoraExtern = properties.getProperty("fedoraExtern");
 	serverName = properties.getProperty("serverName");
-	archive = ArchiveFactory.getArchiveImpl(
+	fedora = FedoraFactory.getFedoraImpl(
 		properties.getProperty("fedoraIntern"),
 		properties.getProperty("user"),
 		properties.getProperty("password"));
@@ -170,23 +177,23 @@ public class Actions {
 	return msg.toString();
     }
 
-    /**
-     * @param object
-     *            A representation of this object will be created in the
-     *            archive.
-     * @param wait
-     *            If wait is true the method will wait few secs in order to get
-     *            sync with the fedora triple store. TODO: Remove this ugly
-     *            workaround.
-     * @return a short message
-     */
-    public String create(ComplexObject object, boolean wait) {
-	archive.createComplexObject(object);
-	if (wait)
-	    waitWorkaround();
-
-	return object.getRoot().getPID() + " successfully created!";
-    }
+    // /**
+    // * @param object
+    // * A representation of this object will be created in the
+    // * archive.
+    // * @param wait
+    // * If wait is true the method will wait few secs in order to get
+    // * sync with the fedora triple store. TODO: Remove this ugly
+    // * workaround.
+    // * @return a short message
+    // */
+    // public String create(ComplexObject object, boolean wait) {
+    // archive.createComplexObject(object);
+    // if (wait)
+    // waitWorkaround();
+    //
+    // return object.getRoot().getPID() + " successfully created!";
+    // }
 
     /**
      * @param pid
@@ -200,7 +207,7 @@ public class Actions {
     public String delete(String pid, boolean wait) {
 
 	String msg = "";
-	archive.deleteComplexObject(pid);
+	fedora.deleteComplexObject(pid);
 
 	try {
 	    outdex(pid);
@@ -220,7 +227,7 @@ public class Actions {
      */
     public String deleteMetadata(String pid) {
 
-	archive.deleteDatastream(pid, "metadata");
+	fedora.deleteDatastream(pid, "metadata");
 
 	return pid + ": metadata - datastream successfully deleted! ";
     }
@@ -231,7 +238,7 @@ public class Actions {
      * @return a message
      */
     public String deleteData(String pid) {
-	archive.deleteDatastream(pid, "data");
+	fedora.deleteDatastream(pid, "data");
 	return pid + ": data - datastream successfully deleted! ";
     }
 
@@ -245,7 +252,7 @@ public class Actions {
     public Vector<String> findByType(String type) {
 	Vector<String> pids = new Vector<String>();
 	String query = "* <" + REL_CONTENT_TYPE + "> \"" + type + "\"";
-	InputStream stream = archive.findTriples(query, FedoraVocabulary.SPO,
+	InputStream stream = fedora.findTriples(query, FedoraVocabulary.SPO,
 		FedoraVocabulary.N3);
 	String findpid = null;
 	RepositoryConnection con = null;
@@ -294,7 +301,7 @@ public class Actions {
      */
     public String findSubject(String rdfQuery) {
 	String volumePid = null;
-	InputStream stream = archive.findTriples(rdfQuery,
+	InputStream stream = fedora.findTriples(rdfQuery,
 		FedoraVocabulary.SPARQL, FedoraVocabulary.N3);
 
 	RepositoryConnection con = null;
@@ -349,7 +356,7 @@ public class Actions {
     public List<String> findObject(String pid, String pred) {
 	String query = "<info:fedora/" + pid + "> <" + pred + "> *";
 	logger.info(query);
-	InputStream stream = archive.findTriples(query, FedoraVocabulary.SPO,
+	InputStream stream = fedora.findTriples(query, FedoraVocabulary.SPO,
 		FedoraVocabulary.N3);
 	Vector<String> findpids = new Vector<String>();
 	RepositoryConnection con = null;
@@ -578,7 +585,7 @@ public class Actions {
 	Node node = readNode(pid);
 	if (node != null) {
 	    node.setUploadData(tmp.getAbsolutePath(), mimeType);
-	    archive.updateNode(pid, node);
+	    fedora.updateNode(node);
 	}
 
 	return pid + " data successfully updated!";
@@ -613,7 +620,7 @@ public class Actions {
 	node.setSubject(content.getSubject());
 	node.setTitle(content.getTitle());
 	node.setType(content.getType());
-	archive.updateNode(pid, node);
+	fedora.updateNode(node);
 
 	return pid + " dc successfully updated!";
 
@@ -642,7 +649,7 @@ public class Actions {
 	Node node = readNode(pid);
 	if (node != null) {
 	    node.setMetadataFile(file.getAbsolutePath());
-	    archive.updateNode(pid, node);
+	    fedora.updateNode(node);
 	}
 
 	return pid + " metadata successfully updated!";
@@ -663,7 +670,7 @@ public class Actions {
 	    node.addRelation(link);
 	}
 	// long start = System.nanoTime();
-	archive.updateNode(node.getPID(), node);
+	fedora.updateNode(node);
 	// long elapsed = System.nanoTime() - start;
 	// System.out.println("update node duration: " + elapsed);
 
@@ -846,7 +853,7 @@ public class Actions {
     public List<String> getAll() {
 	Vector<String> pids = new Vector<String>();
 	String query = "* <" + REL_IS_NODE_TYPE + "> \"" + TYPE_OBJECT + "\"";
-	InputStream stream = archive.findTriples(query, FedoraVocabulary.SPO,
+	InputStream stream = fedora.findTriples(query, FedoraVocabulary.SPO,
 		FedoraVocabulary.N3);
 	String findpid = null;
 	RepositoryConnection con = null;
@@ -910,51 +917,93 @@ public class Actions {
 	if (alephid.isEmpty()) {
 	    throw new ArchiveException(pid + " no Catalog-Id found");
 	}
-	String lobidUrl = "http://lobid.org/resource/" + alephid;
-	InputStream in = null;
+
+	String lobidUri = "http://lobid.org/resource/" + alephid;
 	try {
-	    URL url = new URL(lobidUrl);
+	    URL lobidUrl = new URL(
+		    "http://lobid.org/sparql/?query=describe+%3Chttp%3A%2F%2Flobid.org%2Fresource%2F"
+			    + alephid + "%3E");
 
-	    URLConnection con = url.openConnection();
-	    con.setRequestProperty("Accept", "text/plain");
-	    con.connect();
-
-	    in = con.getInputStream();
-	    StringWriter writer = new StringWriter();
-	    IOUtils.copy(in, writer, "UTF-8");
-	    String str = writer.toString();
-
-	    str = Pattern.compile(lobidUrl).matcher(str)
-		    .replaceAll(Matcher.quoteReplacement(// serverName +
-							 // "/resource/"
-			    // +
-			    pid))
+	    String str = readRdfToString(lobidUrl, RDFFormat.TURTLE,
+		    RDFFormat.NTRIPLES, "text/plain");
+	    str = Pattern.compile(lobidUri).matcher(str)
+		    .replaceAll(Matcher.quoteReplacement(pid))
 		    + "<"
-		    // + serverName
-		    // + "/resource/"
 		    + pid
 		    + "> <http://www.umbel.org/specifications/vocabulary#isLike> <"
-		    + lobidUrl + "> .";
+		    + lobidUri
+		    + "> .\n"
+		    + "<"
+		    + pid
+		    + "> <http://purl.org/lobid/lv#hbzID> \""
+		    + alephid
+		    + "\" .";
 
 	    if (str.contains("http://www.w3.org/2002/07/owl#sameAs")) {
 		str = includeSameAs(str, pid);
 	    }
 	    updateMetadata(pid, str);
+	} catch (MalformedURLException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
 	} catch (IOException e) {
-	    throw new ArchiveException(pid
-		    + " IOException happens during copy operation.", e);
-	} finally {
-	    try {
-		if (in != null)
-		    in.close();
-	    } catch (IOException e) {
-		throw new ArchiveException(pid
-			+ " wasn't able to close stream.", e);
-	    }
+	    throw new HttpArchiveException(500, e.getMessage());
 	}
 
 	return pid + " lobid metadata successfully loaded!";
 
+    }
+
+    private String readRdfToString(URL url, RDFFormat inf, RDFFormat outf,
+	    String accept) {
+
+	Graph myGraph = null;
+	try {
+	    myGraph = readRdfUrlToGraph(url, inf, accept);
+	} catch (IOException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
+	}
+
+	StringWriter out = new StringWriter();
+	RDFWriter writer = Rio.createWriter(outf, out);
+	try {
+	    writer.startRDF();
+	    for (Statement st : myGraph) {
+		writer.handleStatement(st);
+	    }
+	    writer.endRDF();
+	} catch (RDFHandlerException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
+	}
+	return out.getBuffer().toString();
+
+    }
+
+    private Graph readRdfUrlToGraph(URL url, RDFFormat inf, String accept)
+	    throws IOException {
+	URLConnection con = url.openConnection();
+	con.setRequestProperty("Accept", accept);
+	con.connect();
+	InputStream inputStream = con.getInputStream();
+	return readRdfInputstreamToGraph(inputStream, inf, url.toString());
+    }
+
+    private Graph readRdfInputstreamToGraph(InputStream inputStream,
+	    RDFFormat inf, String baseUrl) throws IOException {
+	RDFParser rdfParser = Rio.createParser(inf);
+	org.openrdf.model.Graph myGraph = new TreeModel();
+	StatementCollector collector = new StatementCollector(myGraph);
+	rdfParser.setRDFHandler(collector);
+	try {
+	    rdfParser.parse(inputStream, baseUrl);
+	} catch (IOException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
+	} catch (RDFParseException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
+	} catch (RDFHandlerException e) {
+	    throw new HttpArchiveException(500, e.getMessage());
+	}
+
+	return myGraph;
     }
 
     /**
@@ -1138,21 +1187,21 @@ public class Actions {
     public String contentModelsInit(String namespace) {
 	try {
 
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createHeadModel(namespace));
 
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createEJournalModel(namespace));
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createMonographModel(namespace));
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createWebpageModel(namespace));
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createVersionModel(namespace));
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createVolumeModel(namespace));
 
-	    archive.updateContentModel(ContentModelFactory
+	    fedora.updateContentModel(ContentModelFactory
 		    .createPdfModel(namespace));
 
 	    return "Success!";
@@ -1168,7 +1217,7 @@ public class Actions {
      */
     public Node readNode(String pid) {
 	try {
-	    return archive.readNode(pid);
+	    return fedora.readNode(pid);
 	} catch (NodeNotFoundException e) {
 	    throw new HttpArchiveException(404, e.getMessage());
 	}
@@ -1180,7 +1229,7 @@ public class Actions {
      * @return a message
      */
     public String deleteNamespace(String namespace) {
-	List<String> objects = archive.findNodes(namespace + ":*");
+	List<String> objects = fedora.findNodes(namespace + ":*");
 	return deleteAll(objects, false);
     }
 
@@ -1257,7 +1306,7 @@ public class Actions {
      * @return true if the pid exists and fals if not
      */
     public boolean nodeExists(String pid) {
-	return archive.nodeExists(pid);
+	return fedora.nodeExists(pid);
     }
 
     /**
@@ -1620,7 +1669,7 @@ public class Actions {
 
 	node.setRelsExt(relations);
 
-	archive.updateNode(node.getPID(), node);
+	fedora.updateNode(node);
     }
 
     private String getCacheUri(String pid) throws UnsupportedEncodingException {
@@ -1786,12 +1835,8 @@ public class Actions {
 	    IOUtils.copy(in, writer, "UTF-8");
 	    String str1 = writer.toString();
 
-	    str1 = Pattern
-		    .compile(url.toString())
-		    .matcher(str1)
-		    .replaceAll(
-			    Matcher.quoteReplacement(serverName + "/resource/"
-				    + pid));
+	    str1 = Pattern.compile(url.toString()).matcher(str1)
+		    .replaceAll(Matcher.quoteReplacement(pid));
 	    return str + "\n" + str1;
 
 	} catch (IOException e) {
@@ -1832,7 +1877,7 @@ public class Actions {
 	    oaiset.addRelation(setNameLink);
 	    oaiset.addTitle(name);
 
-	    archive.createComplexObject(new ComplexObject(oaiset));
+	    fedora.createNode(oaiset);
 
 	}
     }
@@ -1841,14 +1886,14 @@ public class Actions {
 	/*
 	 * Workaround START
 	 */
-	try {
-	    logger.info("Wait 10 sec! Nasty workaround.");
-	    Thread.sleep(10000);
-	    logger.info("Stop Waiting! Nasty workaround.");
-	} catch (InterruptedException e1) {
-
-	    e1.printStackTrace();
-	}
+	// try {
+	// logger.info("Wait 10 sec! Nasty workaround.");
+	// //Thread.sleep(10000);
+	// logger.info("Stop Waiting! Nasty workaround.");
+	// } catch (InterruptedException e1) {
+	//
+	// e1.printStackTrace();
+	// }
 	/*
 	 * Workaround END
 	 */
@@ -1862,6 +1907,9 @@ public class Actions {
     public View getView(String pid) {
 
 	Node node = readNode(pid);
+	String oaidc = oaidc(pid);
+	fedora.readDcToNode(node, new ByteArrayInputStream(oaidc.getBytes()),
+		"oai_dc");
 	return getView(node);
 
     }
@@ -1874,9 +1922,10 @@ public class Actions {
      * @return the view of the object of type type.
      */
     View getView(Node node) {
+
 	String pid = node.getPID();
 	String uri = pid;
-	String apiUrl = serverName + "/resources/" + pid;
+	String apiUrl = serverName + "/resource/" + pid;
 
 	View view = new View();
 	view.setLastModified(node.getLastModified());
@@ -1888,6 +1937,7 @@ public class Actions {
 	view.setLocation(node.getSource());
 	view.setPublisher(node.getPublisher());
 	view.setDescription(node.getDescription());
+	view.setContributer(node.getContributer());
 	String label = node.getLabel();
 
 	if (label != null && !label.isEmpty())
@@ -2036,94 +2086,8 @@ public class Actions {
 
 	}
 
-	InputStream in = null;
-
-	try {
-	    URL metadata = new URL(fedoraExtern + "/objects/" + pid
-		    + "/datastreams/metadata/content");
-	    in = metadata.openStream();
-
-	    RepositoryConnection con = null;
-	    Repository myRepository = new SailRepository(new MemoryStore());
-	    try {
-		myRepository.initialize();
-		con = myRepository.getConnection();
-		String baseURI = "";
-
-		con.add(in, baseURI, RDFFormat.N3);
-
-		RepositoryResult<Statement> statements = con.getStatements(
-			null, null, null, true);
-
-		while (statements.hasNext()) {
-		    Statement st = statements.next();
-		    String rdfSubject = st.getSubject().stringValue();
-
-		    if (rdfSubject.compareTo(pid) == 0) {
-			view.addPredicate(st.getPredicate().stringValue(), st
-				.getObject().stringValue());
-		    }
-		}
-
-	    } catch (RepositoryException e) {
-
-		e.printStackTrace();
-	    } catch (RDFParseException e) {
-
-		e.printStackTrace();
-	    } catch (IOException e) {
-
-		e.printStackTrace();
-	    } finally {
-		if (con != null) {
-		    try {
-			con.close();
-		    } catch (RepositoryException e) {
-			e.printStackTrace();
-		    }
-		}
-	    }
-	} catch (IOException e1) {
-	    // TODO Auto-generated catch block
-	    e1.printStackTrace();
-	} finally {
-	    IOUtils.closeQuietly(in);
-	}
-
 	return view;
     }
-
-    // /**
-    // * If a link with same predicate exists it will be replaced.
-    // *
-    // * @param pid
-    // * pid of the object
-    // * @param link
-    // * link to be updated
-    // * @return a short message
-    // */
-    // private String updateLink(String pid, Link link)
-    // {
-    //
-    // Node node = readNode(pid);
-    // Vector<Link> links = node.getRelsExt();
-    // Iterator<Link> iterator = links.iterator();
-    //
-    // while (iterator.hasNext())
-    // {
-    // Link l = iterator.next();
-    // if (l.getPredicate().compareTo(link.getPredicate()) == 0)
-    // {
-    // links.remove(l);
-    // }
-    // }
-    //
-    // links.add(link);
-    // node.setRelsExt(links);
-    // archive.updateNode(node.getPID(), node);
-    // return pid + " " + link + " link successfully updated.";
-    //
-    // }
 
     private File download(URL url) throws IOException {
 	File file = null;
@@ -2181,17 +2145,24 @@ public class Actions {
 	    }
 	    if (object.startsWith(namespace)) {
 		objectLink = uriPrefix + object;
-	    } else {
+	    } else if (object.startsWith("http")) {
 		objectLink = object;
 	    }
 	    if (predicate.compareTo("http://hbz-nrw.de/regal#contentType") == 0) {
 		objectLink = "/" + object + "/";
 	    }
-	    return "<tr><td><a href=\"" + subjectLink + "\">" + subject
-		    + "</a></td><td><a href=\"" + predicate + "\">" + predicate
-		    + "</a></td><td about=\"" + subject + "\"><a property=\""
-		    + predicate + "\" href=\"" + objectLink + "\">" + object
-		    + "</a></td></tr>";
+	    if (objectLink != null) {
+		return "<tr><td><a href=\"" + subjectLink + "\">" + subject
+			+ "</a></td><td><a href=\"" + predicate + "\">"
+			+ predicate + "</a></td><td about=\"" + subject
+			+ "\"><a property=\"" + predicate + "\" href=\""
+			+ objectLink + "\">" + object + "</a></td></tr>";
+	    } else {
+		return "<tr><td><a href=\"" + subjectLink + "\">" + subject
+			+ "</a></td><td><a href=\"" + predicate + "\">"
+			+ predicate + "</a></td><td about=\"" + subject + "\">"
+			+ object + "</td></tr>";
+	    }
 	}
     }
 
@@ -2256,4 +2227,72 @@ public class Actions {
 
 	return result;
     }
+
+    /**
+     * @param pid
+     *            the pid to read from
+     * @return the parentPid and contentType as json
+     */
+    public CreateObjectBean getRegalJson(String pid) {
+	Node node = readNode(pid);
+	CreateObjectBean result = new CreateObjectBean();
+	String parentPid = null;
+	String type = node.getContentType();
+	parentPid = fedora.getNodeParent(node);
+	result.setParentPid(parentPid);
+	result.setType(type);
+	return result;
+    }
+
+    /**
+     * @param input
+     *            the input defines the contenttype and a optional parent
+     * @param rawPid
+     *            the pid without namespace
+     * @param namespace
+     *            the namespace
+     * @param models
+     *            content models for the resource
+     * @return the Node representing the resource
+     */
+    public Node createResource(CreateObjectBean input, String rawPid,
+	    String namespace, List<ContentModel> models) {
+	logger.info("create " + input.getType());
+	String pid = namespace + ":" + rawPid;
+	Node node = null;
+
+	try {
+	    if (fedora.nodeExists(pid)) {
+		node = fedora.readNode(pid);
+	    } else {
+		node = new Node();
+		node.setNamespace(namespace).setPID(pid);
+		node.setContentType(input.getType());
+		for (ContentModel model : models) {
+		    node.addContentModel(model);
+		}
+		fedora.createNode(node);
+	    }
+	    node.setNodeType(TYPE_OBJECT);
+	    node.setContentType(input.getType());
+
+	    String parentPid = input.getParentPid();
+	    // remove link from old parent
+	    fedora.unlinkParent(node);
+	    // link node to new parent
+	    fedora.linkToParent(node, parentPid);
+	    // link new parent to node
+	    fedora.linkParentToNode(parentPid, node.getPID());
+
+	    fedora.updateNode(node);
+	    return node;
+
+	} catch (ArchiveException e) {
+	    e.printStackTrace();
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
+		    e.getMessage());
+	}
+    }
+
 }

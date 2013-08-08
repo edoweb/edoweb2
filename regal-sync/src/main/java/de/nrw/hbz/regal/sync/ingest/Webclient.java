@@ -19,6 +19,7 @@ package de.nrw.hbz.regal.sync.ingest;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.StringWriter;
+import java.util.Vector;
 
 import javax.ws.rs.core.MediaType;
 import javax.xml.transform.Transformer;
@@ -45,6 +46,8 @@ import de.nrw.hbz.regal.api.CreateObjectBean;
 import de.nrw.hbz.regal.api.DCBeanAnnotated;
 import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
+import de.nrw.hbz.regal.sync.extern.DigitalEntityRelation;
+import de.nrw.hbz.regal.sync.extern.RelatedDigitalEntity;
 import de.nrw.hbz.regal.sync.extern.Stream;
 import de.nrw.hbz.regal.sync.extern.StreamType;
 
@@ -97,7 +100,7 @@ public class Webclient {
      * @param dtlBean
      *            A DigitalEntity to operate on
      */
-    public void metadata(DigitalEntity dtlBean) {
+    public void autoGenerateMetdata(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	try {
@@ -110,6 +113,15 @@ public class Webclient {
 	} catch (Exception e) {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
+
+    }
+
+    /**
+     * @param dtlBean
+     *            provides the entity to the searchengine and to the oai
+     *            provider
+     */
+    public void publish(DigitalEntity dtlBean) {
 	try {
 	    index(dtlBean);
 	} catch (Exception e) {
@@ -120,7 +132,6 @@ public class Webclient {
 	} catch (Exception e) {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
-
     }
 
     /**
@@ -133,29 +144,48 @@ public class Webclient {
      * @param metadata
      *            n-triple metadata to integrate
      */
-    public void metadata(DigitalEntity dtlBean, String metadata) {
-	metadata(dtlBean);
+    public void autoGenerateMetadataMerge(DigitalEntity dtlBean, String metadata) {
+	setMetadata(dtlBean, "");
+	autoGenerateMetdata(dtlBean);
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	String m = "";
 	try {
-	    logger.info("Metadata: " + metadata);
+	    logger.debug("Metadata: " + metadata);
 	    m = readMetadata(resource + "/metadata", dtlBean);
 
 	} catch (Exception e) {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
 	try {
-	    String merge = mergeMetadata(m, metadata);
-	    logger.info("MERGE: " + metadata);
+	    String merge = appendMetadata(m, metadata);
+	    logger.debug("MERGE: " + metadata);
 	    updateMetadata(resource + "/metadata", merge);
+	} catch (Exception e) {
+	    logger.error(dtlBean.getPid() + " " + e.getMessage());
+	}
+    }
+
+    /**
+     * Sets the metadata to a resource represented by the passed DigitalEntity.
+     * 
+     * @param dtlBean
+     *            The bean for the object
+     * @param metadata
+     *            The metadata
+     */
+    public void setMetadata(DigitalEntity dtlBean, String metadata) {
+	String pid = namespace + ":" + dtlBean.getPid();
+	String resource = endpoint + "/resource/" + pid;
+	try {
+	    updateMetadata(resource + "/metadata", metadata);
 	} catch (Exception e) {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
 
     }
 
-    private String mergeMetadata(String m, String metadata) {
+    private String appendMetadata(String m, String metadata) {
 	return m + "\n" + metadata;
     }
 
@@ -172,43 +202,65 @@ public class Webclient {
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	String data = resource + "/data";
+	DigitalEntity fulltextObject = findFulltext(dtlBean, expectedMime);
+	createDataResource(dtlBean, type, resource, data, fulltextObject);
+    }
 
-	createResource(type, dtlBean);
+    private DigitalEntity findFulltext(DigitalEntity dtlBean,
+	    String expectedMime) {
+	DigitalEntity fulltextObject = null;
 
 	Stream dataStream = dtlBean.getStream(StreamType.DATA);
-
 	if (dataStream.getMimeType() != null
-		&& dataStream.getMimeType().compareTo(expectedMime) != 0) {
-	    DigitalEntity fulltextObject = null;
-	    for (DigitalEntity view : dtlBean.getViewMainLinks()) {
+		&& dataStream.getMimeType().compareTo(expectedMime) == 0)
+	    return dtlBean;
+	for (DigitalEntity view : getViewMainLinks(dtlBean)) {
+
+	    Stream viewData = view.getStream(StreamType.DATA);
+	    if (viewData.getMimeType().compareTo(expectedMime) == 0) {
+		return view;
+
+	    }
+	}
+	if (fulltextObject == null) {
+	    for (DigitalEntity view : getViewLinks(dtlBean)) {
 
 		Stream viewData = view.getStream(StreamType.DATA);
 		if (viewData.getMimeType().compareTo(expectedMime) == 0) {
-		    fulltextObject = view;
-		    break;
+		    return view;
 		}
 	    }
-	    if (fulltextObject == null) {
-		for (DigitalEntity view : dtlBean.getViewLinks()) {
-
-		    Stream viewData = view.getStream(StreamType.DATA);
-		    if (viewData.getMimeType().compareTo(expectedMime) == 0) {
-			fulltextObject = view;
-			break;
-		    }
-		}
-	    }
-	    if (fulltextObject != null) {
-		updateData(data, fulltextObject);
-	    } else {
-		logger.warn(pid + " found no valid data.");
-		logger.info(pid + " expected " + expectedMime + " , found "
-			+ dataStream.getMimeType());
-	    }
-	} else {
-	    updateData(data, dtlBean);
 	}
+	throw new IllegalArgumentException(dtlBean.getPid()
+		+ " found no valid data. expected " + expectedMime
+		+ " , found " + dataStream.getMimeType());
+    }
+
+    private void createDataResource(DigitalEntity dtlBean, ObjectType type,
+	    String resource, String data, DigitalEntity fulltextObject) {
+	createResource(type, dtlBean);
+	updateData(data, fulltextObject);
 	updateLabel(resource, dtlBean);
+    }
+
+    private Vector<DigitalEntity> getViewLinks(DigitalEntity dtlBean) {
+
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation == DigitalEntityRelation.VIEW.toString())
+		links.add(rel.entity);
+	}
+	return links;
+
+    }
+
+    private Vector<DigitalEntity> getViewMainLinks(final DigitalEntity dtlBean) {
+	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
+	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
+	    if (rel.relation == DigitalEntityRelation.VIEW_MAIN.toString())
+		links.add(rel.entity);
+	}
+	return links;
     }
 
     /**
@@ -249,7 +301,7 @@ public class Webclient {
 
 	try {
 
-	    if (dtlBean.getMarcFile() != null)
+	    if (dtlBean.getStream(StreamType.MARC).getFile() != null)
 		dc.add(marc2dc(dtlBean));
 	    else if (dtlBean.getDc() != null) {
 		dc.add(new DCBeanAnnotated(dtlBean.getDc()));
@@ -308,13 +360,13 @@ public class Webclient {
 	    logger.info(pid + " Update data: " + dataStream.getMimeType());
 	    MultiPart multiPart = new MultiPart();
 	    multiPart.bodyPart(new StreamDataBodyPart("InputStream",
-		    new FileInputStream(dataStream.getStream()), dataStream
-			    .getStream().getName()));
+		    new FileInputStream(dataStream.getFile()), dataStream
+			    .getFile().getName()));
 	    multiPart.bodyPart(new BodyPart(dataStream.getMimeType(),
 		    MediaType.TEXT_PLAIN_TYPE));
 
-	    logger.info("Upload: " + dataStream.getStream().getName());
-	    multiPart.bodyPart(new BodyPart(dataStream.getStream().getName(),
+	    logger.info("Upload: " + dataStream.getFile().getName());
+	    multiPart.bodyPart(new BodyPart(dataStream.getFile().getName(),
 		    MediaType.TEXT_PLAIN_TYPE));
 	    data.type("multipart/mixed").post(multiPart);
 
@@ -322,7 +374,7 @@ public class Webclient {
 	    logger.error(pid + " " + e.getMessage());
 	} catch (FileNotFoundException e) {
 	    logger.error(pid + " " + "FileNotFound "
-		    + dataStream.getStream().getAbsolutePath());
+		    + dataStream.getFile().getAbsolutePath());
 	} catch (Exception e) {
 	    logger.error(pid + " " + e.getMessage());
 	}
@@ -377,8 +429,9 @@ public class Webclient {
 	    Transformer transformer = tFactory
 		    .newTransformer(new StreamSource(ClassLoader
 			    .getSystemResourceAsStream("MARC21slim2OAIDC.xsl")));
-	    transformer.transform(new StreamSource(dtlBean.getMarcFile()),
-		    new StreamResult(str));
+	    transformer.transform(
+		    new StreamSource(dtlBean.getStream(StreamType.MARC)
+			    .getFile()), new StreamResult(str));
 	    String xmlStr = str.getBuffer().toString();
 	    DCBeanAnnotated dc = new DCBeanAnnotated(xmlStr);
 	    return dc;
@@ -404,4 +457,5 @@ public class Webclient {
 	    logger.info(pid + " Can't delete!" + e.getMessage());
 	}
     }
+
 }
