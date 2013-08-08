@@ -16,8 +16,6 @@
  */
 package de.nrw.hbz.regal.api;
 
-import static de.nrw.hbz.regal.datatypes.Vocabulary.REL_IS_NODE_TYPE;
-import static de.nrw.hbz.regal.datatypes.Vocabulary.TYPE_OBJECT;
 import static de.nrw.hbz.regal.fedora.FedoraVocabulary.HAS_PART;
 import static de.nrw.hbz.regal.fedora.FedoraVocabulary.IS_PART_OF;
 
@@ -25,6 +23,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Vector;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -48,8 +48,7 @@ import de.nrw.hbz.regal.api.helper.ContentModelFactory;
 import de.nrw.hbz.regal.api.helper.HttpArchiveException;
 import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.api.helper.View;
-import de.nrw.hbz.regal.datatypes.ComplexObject;
-import de.nrw.hbz.regal.datatypes.Link;
+import de.nrw.hbz.regal.datatypes.ContentModel;
 import de.nrw.hbz.regal.datatypes.Node;
 import de.nrw.hbz.regal.exceptions.ArchiveException;
 
@@ -236,6 +235,27 @@ public class Resource {
 
     /**
      * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a html display of the aggregated resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.regal")
+    @Produces({ "application/json" })
+    public Response getObjectAsJson(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	CreateObjectBean result = actions.getRegalJson(namespace + ":" + pid);
+	// return rem;
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(result);
+
+	return res.build();
+    }
+
+    /**
+     * @param pid
      *            the pid of the resource the pid of the resource
      * @param namespace
      *            the namespace of the resource
@@ -253,6 +273,27 @@ public class Resource {
 		.entity(rem);
 
 	return res.build();
+    }
+
+    /**
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a json representation of the resource
+     * @throws URISyntaxException
+     *             if redirection goes wrong
+     */
+    @GET
+    @Path("/{namespace}:{pid}")
+    @Produces({ "application/json+regal" })
+    public Response getJsonRegal(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	// return about(namespace + ":" + pid);
+	return Response
+		.temporaryRedirect(
+			new java.net.URI("../resource/" + namespace + ":" + pid
+				+ ".regal")).status(303).build();
     }
 
     /**
@@ -508,19 +549,24 @@ public class Resource {
 	    throw new HttpArchiveException(Status.BAD_REQUEST.getStatusCode(),
 		    "The type you've provided is NULL or empty.");
 	}
-	if (input.type.compareTo(ObjectType.monograph.toString()) == 0)
-	    return createMonograph(pid, namespace);
-	else if (input.type.compareTo(ObjectType.journal.toString()) == 0)
-	    return createEJournal(pid, namespace);
-	else if (input.type.compareTo(ObjectType.webpage.toString()) == 0)
-	    return createWebpage(pid, namespace);
-	else if (input.type.compareTo(ObjectType.version.toString()) == 0)
-	    return createWebpageVersion(input.parentPid, pid, namespace);
-	else if (input.type.compareTo(ObjectType.volume.toString()) == 0)
-	    return createEJournalVolume(input.parentPid, pid, namespace);
-	else
-	    return createResource(input, pid, namespace);
-
+	List<ContentModel> models = new Vector<ContentModel>();
+	if (input.type.compareTo(ObjectType.monograph.toString()) == 0) {
+	    models.add(ContentModelFactory.createMonographModel(namespace));
+	    models.add(ContentModelFactory.createPdfModel(namespace));
+	} else if (input.type.compareTo(ObjectType.journal.toString()) == 0) {
+	    models.add(ContentModelFactory.createEJournalModel(namespace));
+	    models.add(ContentModelFactory.createPdfModel(namespace));
+	} else if (input.type.compareTo(ObjectType.webpage.toString()) == 0) {
+	    models.add(ContentModelFactory.createWebpageModel(namespace));
+	} else if (input.type.compareTo(ObjectType.version.toString()) == 0) {
+	    models.add(ContentModelFactory.createVersionModel(namespace));
+	} else if (input.type.compareTo(ObjectType.volume.toString()) == 0) {
+	    models.add(ContentModelFactory.createVolumeModel(namespace));
+	    models.add(ContentModelFactory.createPdfModel(namespace));
+	}
+	models.add(ContentModelFactory.createHeadModel(namespace));
+	Node node = actions.createResource(input, pid, namespace, models);
+	return node.getPID() + " created/updated!";
     }
 
     /**
@@ -810,241 +856,6 @@ public class Resource {
     public ObjectList getAllParents(@PathParam("pid") String pid) {
 
 	return new ObjectList(actions.findObject(pid, IS_PART_OF));
-    }
-
-    private String createResource(CreateObjectBean input, String p,
-	    String namespace) {
-	logger.info("create " + input.type);
-	String pid = namespace + ":" + p;
-	try {
-	    if (actions.nodeExists(pid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-	    rootObject.setNamespace(namespace).setPID(pid);
-	    rootObject.setContentType(input.getType());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createHeadModel(namespace));
-	    if (input.getParentPid() != null && !input.getParentPid().isEmpty()) {
-		String parentPid = input.getParentPid();
-		link = new Link();
-		link.setPredicate(IS_PART_OF);
-		link.setObject(parentPid, false);
-		rootObject.addRelation(link);
-
-		link = new Link();
-		link.setPredicate(HAS_PART);
-		link.setObject(pid, false);
-		actions.addLink(parentPid, link);
-	    }
-
-	    ComplexObject object = new ComplexObject(rootObject);
-	    return actions.create(object, true);
-
-	} catch (ArchiveException e) {
-	    e.printStackTrace();
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    // --SPECIAL---
-
-    private String createWebpage(String p, String namespace) {
-	try {
-	    logger.info("create Webpage");
-	    String pid = namespace + ":" + p;
-	    if (actions.nodeExists(pid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-	    rootObject.setNamespace(namespace).setPID(pid);
-	    rootObject.setContentType(ObjectType.webpage.toString());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createWebpageModel(namespace));
-	    rootObject.addContentModel(ContentModelFactory
-		    .createHeadModel(namespace));
-
-	    ComplexObject object = new ComplexObject(rootObject);
-	    return actions.create(object, false);
-
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    private String createMonograph(String p, String namespace) {
-	logger.info("create Monograph");
-	String pid = namespace + ":" + p;
-	ComplexObject object = null;
-	try {
-	    if (actions.nodeExists(pid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-	    rootObject.setNamespace(namespace).setPID(pid);
-	    rootObject.setContentType(ObjectType.monograph.toString());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createMonographModel(namespace));
-	    rootObject.addContentModel(ContentModelFactory
-		    .createHeadModel(namespace));
-	    rootObject.addContentModel(ContentModelFactory
-		    .createPdfModel(namespace));
-
-	    object = new ComplexObject(rootObject);
-
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-
-	return actions.create(object, false);
-    }
-
-    private String createEJournal(String p, String namespace) {
-	String pid = namespace + ":" + p;
-	logger.info("create EJournal");
-	try {
-	    if (actions.nodeExists(pid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-	    rootObject.setNamespace(namespace).setPID(pid);
-	    rootObject.setContentType(ObjectType.journal.toString());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createEJournalModel(namespace));
-	    rootObject.addContentModel(ContentModelFactory
-		    .createHeadModel(namespace));
-
-	    ComplexObject object = new ComplexObject(rootObject);
-	    return actions.create(object, false);
-
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    private String createWebpageVersion(String parentPid, String p,
-	    String namespace) {
-	String versionPid = namespace + ":" + p;
-	try {
-	    if (actions.nodeExists(versionPid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-	    logger.info("create Webpage Version");
-
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-
-	    link = new Link();
-	    link.setPredicate(IS_PART_OF);
-	    link.setObject(parentPid, false);
-	    rootObject.addRelation(link);
-
-	    rootObject.setNamespace(namespace).setPID(versionPid);
-	    rootObject.setContentType(ObjectType.version.toString());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createVersionModel(namespace));
-
-	    ComplexObject object = new ComplexObject(rootObject);
-
-	    link = new Link();
-	    link.setPredicate(HAS_PART);
-	    link.setObject(versionPid, false);
-
-	    actions.addLink(parentPid, link);
-
-	    return actions.create(object, true);
-
-	} catch (ArchiveException e) {
-	    e.printStackTrace();
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    private String createEJournalVolume(String parentPid, String p,
-	    String namespace) {
-
-	String volumePid = namespace + ":" + p;
-	logger.info("create EJournal Volume");
-	try {
-	    if (actions.nodeExists(volumePid)) {
-		throw new HttpArchiveException(304,
-			"Node already exists. I do nothing!");
-	    }
-	    Node rootObject = new Node();
-	    rootObject.setNodeType(TYPE_OBJECT);
-	    Link link = new Link();
-	    link.setPredicate(REL_IS_NODE_TYPE);
-	    link.setObject(TYPE_OBJECT, true);
-	    rootObject.addRelation(link);
-
-	    link = new Link();
-	    link.setPredicate(IS_PART_OF);
-	    link.setObject(parentPid, false);
-	    rootObject.addRelation(link);
-
-	    rootObject.setNamespace(namespace).setPID(volumePid);
-	    rootObject.setContentType(ObjectType.volume.toString());
-	    rootObject.addContentModel(ContentModelFactory
-		    .createVolumeModel(namespace));
-	    rootObject.addContentModel(ContentModelFactory
-		    .createPdfModel(namespace));
-
-	    ComplexObject object = new ComplexObject(rootObject);
-
-	    link = new Link();
-	    link.setPredicate(HAS_PART);
-	    link.setObject(volumePid, false);
-	    actions.addLink(parentPid, link);
-
-	    return actions.create(object, true);
-
-	} catch (ArchiveException e) {
-	    e.printStackTrace();
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-
     }
 
     /**
