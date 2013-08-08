@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.datatypes.ContentModel;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
+import de.nrw.hbz.regal.sync.extern.StreamType;
 
 /**
  * Class FedoraIngester
@@ -60,8 +61,9 @@ public class OpusIngester implements IngestInterface {
 
     @Override
     public void ingest(DigitalEntity dtlBean) {
-	String pid = dtlBean.getPid().substring(
-		dtlBean.getPid().lastIndexOf(':') + 1);
+	String pid = dtlBean.getPid().replace(':', '-');
+	dtlBean.setPid(pid);
+	// pid = pid.substring(pid.lastIndexOf(':') + 1);
 	logger.info("Start ingest: " + namespace + ":" + pid);
 
 	updateMonograph(dtlBean);
@@ -81,7 +83,12 @@ public class OpusIngester implements IngestInterface {
 	    webclient.createObject(dtlBean, "application/pdf",
 		    ObjectType.monograph);
 	    logger.info(pid + " " + "updated.\n");
-	    webclient.autoGenerateMetdata(dtlBean);
+	    OpusMapping mapper = new OpusMapping();
+	    String metadata = mapper.map(
+		    dtlBean.getStream(StreamType.xMetaDissPlus).getFile(),
+		    namespace + ":" + dtlBean.getPid());
+
+	    webclient.autoGenerateMetadataMerge(dtlBean, metadata);
 	    webclient.publish(dtlBean);
 	} catch (IllegalArgumentException e) {
 	    logger.debug(e.getMessage());
