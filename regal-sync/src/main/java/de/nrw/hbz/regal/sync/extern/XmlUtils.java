@@ -23,13 +23,21 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
+import java.util.Vector;
 
+import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
@@ -37,39 +45,45 @@ import org.xml.sax.SAXException;
  * 
  */
 public class XmlUtils {
+
     /**
      * @param digitalEntityFile
      *            the xml file
      * @return the root element as org.w3c.dom.Element
-     * @throws ParserConfigurationException
-     *             comes from factory.newDocumentBuilder()
-     * @throws IOException
-     *             comes from docBuilder.parse()
-     * @throws SAXException
-     *             comes from docBuilder.parse()
-     * @throws FileNotFoundException
-     *             comes from FileInputStream
+     * @throws XmlException
+     *             RuntimeException if something goes wrong
      */
-    public static Element getDocument(File digitalEntityFile)
-	    throws ParserConfigurationException, FileNotFoundException,
-	    SAXException, IOException {
-	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	factory.setNamespaceAware(true);
-	DocumentBuilder docBuilder;
+    public static Element getDocument(File digitalEntityFile) {
 
-	docBuilder = factory.newDocumentBuilder();
+	try {
+	    DocumentBuilderFactory factory = DocumentBuilderFactory
+		    .newInstance();
+	    factory.setNamespaceAware(true);
+	    DocumentBuilder docBuilder = factory.newDocumentBuilder();
 
-	Document doc = docBuilder.parse(new BufferedInputStream(
-		new FileInputStream(digitalEntityFile)));
-	Element root = doc.getDocumentElement();
-	root.normalize();
-	return root;
+	    Document doc = docBuilder.parse(new BufferedInputStream(
+		    new FileInputStream(digitalEntityFile)));
+	    Element root = doc.getDocumentElement();
+	    root.normalize();
+	    return root;
+	} catch (FileNotFoundException e) {
+	    throw new XmlException(e);
+	} catch (SAXException e) {
+	    throw new XmlException(e);
+	} catch (IOException e) {
+	    throw new XmlException(e);
+	} catch (ParserConfigurationException e) {
+	    throw new XmlException(e);
+	}
+
     }
 
     /**
      * @param xmlString
      *            a xml string
      * @return the root element as org.w3c.dom.Element
+     * @throws XmlException
+     *             RuntimeException if something goes wrong
      */
     public static Element getDocument(String xmlString) {
 	try {
@@ -86,21 +100,20 @@ public class XmlUtils {
 	    root.normalize();
 	    return root;
 	} catch (FileNotFoundException e) {
-
-	    e.printStackTrace();
+	    throw new XmlException(e);
 	} catch (SAXException e) {
 
-	    e.printStackTrace();
+	    throw new XmlException(e);
 	} catch (IOException e) {
 
-	    e.printStackTrace();
+	    throw new XmlException(e);
 	} catch (ParserConfigurationException e) {
 
-	    e.printStackTrace();
+	    throw new XmlException(e);
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    throw new XmlException(e);
 	}
-	return null;
+
     }
 
     /**
@@ -160,4 +173,36 @@ public class XmlUtils {
 	}
 	return new String(buffer);
     }
+
+    /**
+     * @param xPathStr
+     *            a xpath expression
+     * @param root
+     *            the xpath is applied to this element
+     * @param nscontext
+     *            a NamespaceContext
+     * @return a list of elements
+     * @throws XPathExpressionException
+     *             if the xPathStr is malformed
+     */
+    public static List<Element> getElements(String xPathStr, Element root,
+	    NamespaceContext nscontext) throws XPathExpressionException {
+	XPathFactory xpathFactory = XPathFactory.newInstance();
+	XPath xpath = xpathFactory.newXPath();
+	xpath.setNamespaceContext(nscontext);
+	NodeList elements = (NodeList) xpath.evaluate(xPathStr, root,
+		XPathConstants.NODESET);
+
+	List<Element> result = new Vector<Element>();
+	for (int i = 0; i < elements.getLength(); i++) {
+	    try {
+		Element element = (Element) elements.item(i);
+		result.add(element);
+	    } catch (ClassCastException e) {
+		e.printStackTrace();
+	    }
+	}
+	return result;
+    }
+
 }

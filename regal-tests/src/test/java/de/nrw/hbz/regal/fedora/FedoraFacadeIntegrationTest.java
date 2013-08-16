@@ -29,6 +29,7 @@ import org.junit.Test;
 
 import de.nrw.hbz.regal.api.helper.ContentModelFactory;
 import de.nrw.hbz.regal.datatypes.Node;
+import de.nrw.hbz.regal.datatypes.Vocabulary;
 
 /**
  * 
@@ -55,13 +56,14 @@ public class FedoraFacadeIntegrationTest {
 	// System.out.println(XmlSchemaCollection.class
 	// .getResource("XmlSchemaCollection.class"));
 
-	facade = new FedoraFacade(properties.getProperty("fedoraUrl"),
+	facade = FedoraFactory.getFedoraImpl(
+		properties.getProperty("fedoraUrl"),
 		properties.getProperty("user"),
 		properties.getProperty("password"));
 
 	object = new Node().setNamespace("test").setPID("test:234")
 		.addCreator("Jan Schnasse").setLabel("Ein Testobjekt")
-		.addTitle("Ein Testtitel");
+		.addTitle("Ein Testtitel").setType(Vocabulary.TYPE_OBJECT);
 
 	// object.addContentModel(ContentModelFactory.createMonographModel("test"));
 	// object.addContentModel(ContentModelFactory.createHeadModel("test"));
@@ -90,31 +92,28 @@ public class FedoraFacadeIntegrationTest {
 	}
     }
 
+    @Test(expected = FedoraFacade.NodeNotFoundException.class)
+    public void testNodeNotFoundException() {
+	facade.readNode(object.getPID());
+    }
+
     @Test
     public void readNode() {
-	try {
 
-	    facade.createNode(object);
-	    Node node = facade.readNode(object.getPID());
+	facade.createNode(object);
+	Node node = facade.readNode(object.getPID());
 
-	    Assert.assertEquals(0,
-		    node.getNodeType().compareTo(object.getNodeType()));
-	    Assert.assertEquals(0, "test:234".compareTo(node.getPID()));
-	    // System.out.println(node.getNamespace());
-	    Assert.assertEquals(0, "test".compareTo(node.getNamespace()));
-	    Assert.assertEquals(0,
-		    "Jan Schnasse".compareTo(node.getFirstCreator()));
-	    Assert.assertEquals(0, "Ein Testobjekt".compareTo(node.getLabel()));
-	    Assert.assertEquals(0,
-		    "Ein Testtitel".compareTo(node.getFirstTitle()));
-	    // Assert.assertEquals(0, "data".compareTo(node.getFileName()));
-	    Assert.assertEquals(0,
-		    "application/pdf".compareTo(node.getMimeType()));
+	Assert.assertEquals(0,
+		node.getNodeType().compareTo(object.getNodeType()));
+	Assert.assertEquals(0, "test:234".compareTo(node.getPID()));
+	// System.out.println(node.getNamespace());
+	Assert.assertEquals(0, "test".compareTo(node.getNamespace()));
+	Assert.assertEquals(0, "Jan Schnasse".compareTo(node.getFirstCreator()));
+	Assert.assertEquals(0, "Ein Testobjekt".compareTo(node.getLabel()));
+	Assert.assertEquals(0, "Ein Testtitel".compareTo(node.getFirstTitle()));
+	// Assert.assertEquals(0, "data".compareTo(node.getFileName()));
+	Assert.assertEquals(0, "application/pdf".compareTo(node.getMimeType()));
 
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    Assert.fail(e.getMessage());
-	}
     }
 
     @Test

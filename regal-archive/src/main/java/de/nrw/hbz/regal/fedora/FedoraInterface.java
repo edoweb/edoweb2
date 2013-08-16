@@ -19,46 +19,22 @@ package de.nrw.hbz.regal.fedora;
 import java.io.InputStream;
 import java.util.List;
 
-import de.nrw.hbz.regal.datatypes.ComplexObject;
 import de.nrw.hbz.regal.datatypes.ContentModel;
 import de.nrw.hbz.regal.datatypes.Node;
 
 /**
- * Class FedoraInterface
- * 
- * <p>
- * <em>Title: </em>
- * </p>
- * <p>
- * Description:
- * </p>
- * 
  * @author Jan Schnasse, schnasse@hbz-nrw.de
  * 
  */
 public interface FedoraInterface {
     /**
-     * 
-     * <p>
-     * <em>Title: </em>
-     * </p>
-     * <p>
-     * Description: Creates a object with properties of node
-     * </p>
-     * 
      * @param node
      *            the object as Fedora object
      */
     public void createNode(Node node);
 
     /**
-     * 
-     * <p>
-     * <em>Title: </em>
-     * </p>
-     * <p>
-     * Description: The corresponding fedora object will be read into a new node
-     * </p>
+     * The corresponding fedora object will be read into a new node
      * 
      * @param pid
      *            The pid of an existing node.
@@ -69,28 +45,13 @@ public interface FedoraInterface {
 
     /**
      * 
-     * <p>
-     * <em>Title: </em>
-     * </p>
-     * <p>
-     * Description: The corresponding fedora object will be updated
-     * (overwritten)
-     * </p>
-     * 
      * @param node
-     *            It is assumed that node has the correct PID of an existing
-     *            Node which will be replaced by this method
+     *            the local java representation of the remote fedora object
      */
     public void updateNode(Node node);
 
     /**
-     * 
-     * <p>
-     * <em>Title: </em>
-     * </p>
-     * <p>
-     * Description: The fedora object will be deleted
-     * </p>
+     * The fedora object will be deleted
      * 
      * @param rootPID
      *            identifier of a fedora object
@@ -129,14 +90,8 @@ public interface FedoraInterface {
     public boolean nodeExists(String pid);
 
     /**
-     * 
-     * <p>
-     * <em>Title: </em>
-     * </p>
-     * <p>
      * Description: If the object 'pid' has a datastream with 'datastreamId' the
      * method returns true.
-     * </p>
      * 
      * @param pid
      *            of the object
@@ -223,20 +178,6 @@ public interface FedoraInterface {
     public Node createRootObject(String namespace);
 
     /**
-     * @param object
-     *            A complex object
-     * @return the root of the newly created complex object
-     */
-    public Node createComplexObject(ComplexObject object);
-
-    /**
-     * @param pid
-     *            the pid of the object to read
-     * @return A tree-like complex object
-     */
-    public ComplexObject readComplexObject(String pid);
-
-    /**
      * Adds a new node as child of the parent.
      * 
      * @param parent
@@ -246,12 +187,6 @@ public interface FedoraInterface {
      * @return The new created object.
      */
     public Node createNode(Node parent, Node node);
-
-    /**
-     * @param object
-     *            The new verions of the object
-     */
-    public void updateComplexObject(ComplexObject object);
 
     /**
      * @param node
