@@ -17,7 +17,6 @@
 package de.nrw.hbz.regal.api;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -34,10 +33,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.Response.Status;
 
 import de.nrw.hbz.regal.api.helper.Actions;
-import de.nrw.hbz.regal.api.helper.CacheSurvey;
-import de.nrw.hbz.regal.api.helper.FedoraSurvey;
 import de.nrw.hbz.regal.api.helper.HttpArchiveException;
-import de.nrw.hbz.regal.api.helper.View;
 import de.nrw.hbz.regal.datatypes.Node;
 import de.nrw.hbz.regal.exceptions.ArchiveException;
 
@@ -47,7 +43,7 @@ import de.nrw.hbz.regal.exceptions.ArchiveException;
  */
 @Path("/utils")
 public class Utils {
-    Actions actions = null;
+    Actions actions = new Actions();
 
     /**
      * @throws IOException
@@ -70,10 +66,9 @@ public class Utils {
     public String deleteNamespace(@PathParam("namespace") String namespace) {
 	try {
 	    return actions.deleteNamespace(namespace);
-	} catch (ArchiveException e) {
+	} catch (Exception e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
 
     }
@@ -91,8 +86,7 @@ public class Utils {
 	    return actions.makeOAISet(pid);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
 
     }
@@ -114,49 +108,7 @@ public class Utils {
 	} catch (ArchiveException e) {
 
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    /**
-     * @return a profile
-     */
-    @GET
-    @Path("/profile/cache")
-    @Produces({ "application/json", "application/xml" })
-    public CollectionProfile profileCache() {
-	CacheSurvey survey = new CacheSurvey();
-	List<View> rows = survey.survey();
-	try {
-	    return new CollectionProfile(rows);
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	}
-    }
-
-    /**
-     * @return a profile
-     */
-    @GET
-    @Path("/profile/fedora")
-    @Produces({ "application/json", "application/xml" })
-    public CollectionProfile profileFedora() {
-	try {
-	    FedoraSurvey survey = new FedoraSurvey();
-	    List<View> rows = survey.survey();
-
-	    return new CollectionProfile(rows);
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
-	} catch (IOException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
@@ -173,8 +125,7 @@ public class Utils {
 	    return actions.lobidify(pid);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
@@ -192,8 +143,7 @@ public class Utils {
 	    return actions.oaidc(pid);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
@@ -213,8 +163,7 @@ public class Utils {
 	    return actions.epicur(pid, namespace);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
@@ -254,8 +203,7 @@ public class Utils {
 
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
@@ -272,8 +220,7 @@ public class Utils {
 	    return actions.contentModelsInit(namespace);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(),
-		    e.getMessage());
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
