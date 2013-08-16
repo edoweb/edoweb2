@@ -333,7 +333,9 @@ public class EdowebDigitalEntityBuilder implements
 			.getTextContent();
 		String type = ((Element) item).getElementsByTagName("type")
 			.item(0).getTextContent();
-		if (type.compareTo(DigitalEntityRelation.include.toString()) == 0) {
+		if (type.compareTo(DigitalEntityRelation.include.toString()) == 0
+			&& (usageType.compareTo(DigitalEntityRelation.ARCHIVE
+				.toString()) != 0)) {
 		    try {
 			DigitalEntity b = build(entity.getLocation(), relPid);
 			b.setUsageType(usageType);
@@ -403,6 +405,7 @@ public class EdowebDigitalEntityBuilder implements
 	    logger.warn(related.getPid() + " (" + related.getLabel()
 		    + "), child of " + dtlDe.getPid() + " : " + e.getMessage()
 		    + " mets relation is broken!");
+	    related.setUsageType(ObjectType.file.toString());
 	    return dtlDe;
 	}
 	for (RelatedDigitalEntity entity : dtlDe.getRelated()) {

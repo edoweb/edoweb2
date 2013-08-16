@@ -17,19 +17,18 @@
 package de.nrw.hbz.regal.sync.ingest;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import de.nrw.hbz.regal.sync.extern.XmlUtils;
 
 /**
  * http://193.30.112.23:9280/fedora/get/dipp:1001?xml=true
@@ -82,7 +81,7 @@ public class DippDownloader extends Downloader {
 	    IOUtils.copy(url.openStream(), writer);
 	    data = writer.toString();
 
-	    Element root = stringToElement(data);
+	    Element root = XmlUtils.getDocument(data);
 	    NodeList constituents = root.getElementsByTagName(relation);
 	    if (constituents == null || constituents.getLength() == 0)
 		return;
@@ -135,7 +134,7 @@ public class DippDownloader extends Downloader {
 	    IOUtils.copy(url.openStream(), writer);
 	    data = writer.toString();
 
-	    Element root = stringToElement(data);
+	    Element root = XmlUtils.getDocument(data);
 	    NodeList constituents = root.getElementsByTagName(relation);
 	    for (int i = 0; i < constituents.getLength(); i++) {
 		try {
@@ -179,7 +178,7 @@ public class DippDownloader extends Downloader {
 	    IOUtils.copy(url.openStream(), writer);
 	    data = writer.toString();
 
-	    Element root = stringToElement(data);
+	    Element root = XmlUtils.getDocument(data);
 	    NodeList dss = root.getElementsByTagName("datastream");
 
 	    for (int i = 0; i < dss.getLength(); i++) {
@@ -195,41 +194,10 @@ public class DippDownloader extends Downloader {
 		    fileName = fileName + ".html";
 		}
 
-		URL dataStreamUrl = new URL(getServer() + "get/" + pid + "/"
-			+ datastreamName);
 		File dataStreamFile = new File(dir.getAbsolutePath()
 			+ File.separator + "" + fileName);
-
-		InputStream in = null;
-		FileOutputStream out = null;
-		try {
-		    URLConnection uc = dataStreamUrl.openConnection();
-		    uc.connect();
-		    in = uc.getInputStream();
-		    out = new FileOutputStream(dataStreamFile);
-
-		    byte[] buffer = new byte[1024];
-		    int bytesRead = -1;
-		    while ((bytesRead = in.read(buffer)) > -1) {
-			out.write(buffer, 0, bytesRead);
-		    }
-		    in.close();
-
-		} catch (IOException e) {
-		    logger.error(pid + " problem downloading stream "
-			    + datastreamName);
-		} finally {
-		    try {
-			if (in != null)
-			    in.close();
-			if (out != null)
-			    out.close();
-		    } catch (IOException e) {
-			logger.error(pid + " problem downloading stream "
-				+ datastreamName);
-		    }
-		}
-
+		download(dataStreamFile, getServer() + "get/" + pid + "/"
+			+ datastreamName);
 	    }
 
 	} catch (MalformedURLException e) {

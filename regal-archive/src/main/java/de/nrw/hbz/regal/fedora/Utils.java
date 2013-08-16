@@ -137,8 +137,9 @@ public class Utils {
 	if (links != null)
 	    for (Link link : links) {
 
-		System.out.println("Add: <" + pid + "> <" + link.getPredicate()
-			+ "> <" + link.getObject() + ">");
+		// System.out.println("Add: <" + pid + "> <" +
+		// link.getPredicate()
+		// + "> <" + link.getObject() + ">");
 		try {
 		    new AddRelationship(pid).predicate(link.getPredicate())
 			    .object(link.getObject(), link.isLiteral())
@@ -549,7 +550,7 @@ public class Utils {
 			link.setPredicate(predUri.stringValue());
 
 			if (link.getPredicate().compareTo(REL_IS_NODE_TYPE) == 0) {
-			    node.setNodeType(link.getObject());
+			    node.setType(link.getObject());
 			} else if (link.getPredicate().compareTo(
 				REL_CONTENT_TYPE) == 0) {
 			    node.setContentType(link.getObject());
@@ -840,7 +841,7 @@ public class Utils {
 
 	    return result;
 	} catch (FedoraClientException e) {
-	    throw new ArchiveException("An unknown exception occured.", e);
+	    throw new ArchiveException(e);
 	}
 
     }
