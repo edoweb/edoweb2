@@ -39,6 +39,15 @@ public class HttpArchiveException extends WebApplicationException {
 
     /**
      * @param status
+     *            http status
+     */
+    public HttpArchiveException(int status) {
+	super(Response.status(status).build());
+
+    }
+
+    /**
+     * @param status
      *            a http status code
      * @param message
      *            a human readable message

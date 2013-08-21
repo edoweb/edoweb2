@@ -14,13 +14,14 @@
  * limitations under the License.
  *
  */
-package de.nrw.hbz.regal.api.helper;
+package de.nrw.hbz.regal.fedora;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.StringWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -120,16 +121,39 @@ public class CopyUtils {
     }
 
     /**
-     * @param is
-     *            the stream will be copied to the string
-     * @param result
-     *            the string will contain the stream content
+     * @param in
+     *            read from this
+     * @param out
+     *            copy to this
      * @throws IOException
      *             if something goes wrong
      */
-    public static void copy(InputStream is, String result) throws IOException {
+    protected void copy(InputStream in, OutputStream out) throws IOException {
+	byte[] buffer = new byte[1024];
+	while (true) {
+	    int readCount = in.read(buffer);
+	    if (readCount < 0) {
+		break;
+	    }
+	    out.write(buffer, 0, readCount);
+	}
+    }
+
+    /**
+     * @param is
+     *            the stream will be copied to the string
+     * @param encoding
+     *            a java encoding, e.g. utf-8
+     * @return the input stream as string
+     * @throws IOException
+     *             if something goes wrong
+     */
+    public static String copyToString(InputStream is, String encoding)
+	    throws IOException {
 	try {
-	    result = IOUtils.toString(is);
+	    StringWriter writer = new StringWriter();
+	    IOUtils.copy(is, writer, encoding);
+	    return writer.toString();
 	} finally {
 	    IOUtils.closeQuietly(is);
 	}
