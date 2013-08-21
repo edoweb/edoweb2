@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package de.nrw.hbz.regal.api.helper;
+package de.nrw.hbz.regal.fedora;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,8 +31,11 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.IOUtils;
 import org.openrdf.OpenRDFException;
 import org.openrdf.model.Graph;
+import org.openrdf.model.Literal;
 import org.openrdf.model.Statement;
+import org.openrdf.model.URI;
 import org.openrdf.model.Value;
+import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.TreeModel;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.QueryLanguage;
@@ -52,6 +55,7 @@ import org.openrdf.rio.Rio;
 import org.openrdf.rio.helpers.StatementCollector;
 import org.openrdf.sail.memory.MemoryStore;
 
+import de.nrw.hbz.regal.datatypes.Link;
 import de.nrw.hbz.regal.exceptions.ArchiveException;
 
 /**
@@ -78,7 +82,7 @@ public class RdfUtils {
 	try {
 	    myGraph = readRdfUrlToGraph(url, inf, accept);
 	} catch (IOException e) {
-	    throw new HttpArchiveException(500, e);
+	    throw new RdfException(e);
 	}
 
 	StringWriter out = new StringWriter();
@@ -90,7 +94,7 @@ public class RdfUtils {
 	    }
 	    writer.endRDF();
 	} catch (RDFHandlerException e) {
-	    throw new HttpArchiveException(500, e);
+	    throw new RdfException(e);
 	}
 	return out.getBuffer().toString();
 
@@ -136,11 +140,11 @@ public class RdfUtils {
 	try {
 	    rdfParser.parse(inputStream, baseUrl);
 	} catch (IOException e) {
-	    throw new HttpArchiveException(500, e);
+	    throw new RdfException(e);
 	} catch (RDFParseException e) {
-	    throw new HttpArchiveException(500, e);
+	    throw new RdfException(e);
 	} catch (RDFHandlerException e) {
-	    throw new HttpArchiveException(500, e);
+	    throw new RdfException(e);
 	}
 
 	return myGraph;
@@ -362,4 +366,71 @@ public class RdfUtils {
 	}
     }
 
+    /**
+     * @param pid
+     *            a pid
+     * @param links
+     *            all links
+     * @return a valid relsExt datastream as string
+     */
+    public static String getFedoraRelsExt(String pid, List<Link> links) {
+	RepositoryConnection con = null;
+	SailRepository myRepository = new SailRepository(new MemoryStore());
+	try {
+	    myRepository.initialize();
+	    con = myRepository.getConnection();
+	    addStatements(pid, links, con, myRepository);
+	    return writeStatements(con);
+	} catch (RepositoryException e) {
+	    throw new RdfException(e);
+	}
+
+    }
+
+    private static String writeStatements(RepositoryConnection con)
+	    throws RepositoryException {
+	StringWriter out = new StringWriter();
+	RDFWriter writer = Rio.createWriter(RDFFormat.RDFXML, out);
+	String result = null;
+	try {
+	    writer.startRDF();
+	    RepositoryResult<Statement> statements = con.getStatements(null,
+		    null, null, false);
+
+	    while (statements.hasNext()) {
+		Statement statement = statements.next();
+		writer.handleStatement(statement);
+	    }
+	    writer.endRDF();
+	    result = out.toString();
+
+	} catch (RDFHandlerException e) {
+	    throw new RdfException(e);
+	}
+	return result;
+    }
+
+    private static void addStatements(String pid, List<Link> links,
+	    RepositoryConnection con, SailRepository myRepository)
+	    throws RepositoryException {
+
+	ValueFactory f = myRepository.getValueFactory();
+	URI subject = f.createURI("info:fedora/" + pid);
+	for (Link link : links) {
+	    URI predicate = f.createURI(link.getPredicate());
+	    if (link.getObject() == null || link.getObject().isEmpty())
+		continue;
+	    if (link.isLiteral()) {
+		Literal object = f.createLiteral(link.getObject());
+		con.add(subject, predicate, object);
+	    } else {
+		try {
+		    URI object = f.createURI(link.getObject());
+		    con.add(subject, predicate, object);
+		} catch (IllegalArgumentException e) {
+		    System.out.println(link.getObject());
+		}
+	    }
+	}
+    }
 }

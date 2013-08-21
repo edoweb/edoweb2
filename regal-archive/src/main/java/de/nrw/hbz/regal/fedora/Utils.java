@@ -89,6 +89,7 @@ import de.nrw.hbz.regal.exceptions.ArchiveException;
  * 
  */
 public class Utils {
+
     private String user = null;
 
     /**
@@ -137,9 +138,6 @@ public class Utils {
 	if (links != null)
 	    for (Link link : links) {
 
-		// System.out.println("Add: <" + pid + "> <" +
-		// link.getPredicate()
-		// + "> <" + link.getObject() + ">");
 		try {
 		    new AddRelationship(pid).predicate(link.getPredicate())
 			    .object(link.getObject(), link.isLiteral())
@@ -202,7 +200,7 @@ public class Utils {
 
 	}
 
-	Vector<Link> links = node.getRelsExt();
+	List<Link> links = node.getRelsExt();
 	createRelsExt(pid, links);
 
     }
@@ -289,7 +287,7 @@ public class Utils {
 			.execute();
 	    } else {
 		new AddDatastream(node.getPID(), "data").versionable(true)
-			.dsState("A").dsLabel(file.getName())
+			.dsState("A").dsLabel(node.getFileLabel())
 			.mimeType(node.getMimeType()).dsLocation(location)
 			.controlGroup("M").execute();
 	    }
@@ -546,7 +544,7 @@ public class Utils {
 			Value objUri = st.getObject();
 
 			Link link = new Link();
-			link.setObject(objUri.stringValue());
+			link.setObject(objUri.stringValue(), false);
 			link.setPredicate(predUri.stringValue());
 
 			if (link.getPredicate().compareTo(REL_IS_NODE_TYPE) == 0) {
@@ -803,14 +801,12 @@ public class Utils {
 	}
     }
 
-    void updateFedoraXmlForRelsExt(String pid) {
+    void updateFedoraXmlForRelsExt(String pid, List<Link> statements) {
 	// System.out.println("Create new REL-EXT "+pid);
+	String initialContent = null;
 	try {
 
-	    String initialContent = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rel=\"info:fedora/fedora-system:def/relations-external#\">"
-		    + "    <rdf:Description rdf:about=\"info:fedora/"
-		    + pid
-		    + "\">" + "    </rdf:Description>" + "</rdf:RDF>";
+	    initialContent = RdfUtils.getFedoraRelsExt(pid, statements);
 
 	    new ModifyDatastream(pid, "RELS-EXT")
 		    .mimeType("application/rdf+xml")
@@ -818,7 +814,7 @@ public class Utils {
 		    .versionable(true).content(initialContent).execute();
 
 	} catch (Exception e) {
-	    throw new ArchiveException(e.getMessage(), e);
+	    throw new ArchiveException(initialContent, e);
 	}
     }
 
@@ -841,7 +837,7 @@ public class Utils {
 
 	    return result;
 	} catch (FedoraClientException e) {
-	    throw new ArchiveException(e);
+	    throw new NoPidFoundException(rdfQuery, e);
 	}
 
     }
@@ -965,7 +961,7 @@ public class Utils {
 
     }
 
-    private void createRelsExt(String pid, Vector<Link> links) {
+    private void createRelsExt(String pid, List<Link> links) {
 	if (links != null)
 	    for (Link curHBZLink : links) {
 		if (curHBZLink == null)
@@ -998,4 +994,29 @@ public class Utils {
 		}
 	    }
     }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class NoPidFoundException extends RuntimeException {
+
+	public NoPidFoundException() {
+	    // TODO Auto-generated constructor stub
+	}
+
+	public NoPidFoundException(String arg0) {
+	    super(arg0);
+	    // TODO Auto-generated constructor stub
+	}
+
+	public NoPidFoundException(Throwable arg0) {
+	    super(arg0);
+	    // TODO Auto-generated constructor stub
+	}
+
+	public NoPidFoundException(String arg0, Throwable arg1) {
+	    super(arg0, arg1);
+	    // TODO Auto-generated constructor stub
+	}
+
+    }
+
 }
