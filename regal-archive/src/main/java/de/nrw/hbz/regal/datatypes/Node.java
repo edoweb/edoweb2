@@ -29,10 +29,11 @@ import java.util.Vector;
  */
 public class Node {
 
-    String metadataFile;
-    String uploadFile;
-    Vector<Link> relsExt = new Vector<Link>();
-    Vector<ContentModel> cms = new Vector<ContentModel>();
+    private String metadataFile;
+    private String uploadFile;
+    private String fileLabel;
+    private Vector<Link> relsExt = new Vector<Link>();
+    private Vector<ContentModel> cms = new Vector<ContentModel>();
     private String label = null;
     private String type = null;
     private String pid = null;
@@ -41,7 +42,7 @@ public class Node {
     private String namespace = null;
     private String contentType = null;
     private Date lastModified = null;
-    DCBean bean = new DCBean();
+    private DCBean bean = new DCBean();
 
     /**
      * Creates a new Node.
@@ -266,7 +267,7 @@ public class Node {
     /**
      * @return all relations
      */
-    public Vector<Link> getRelsExt() {
+    public List<Link> getRelsExt() {
 	return relsExt;
     }
 
@@ -842,4 +843,26 @@ public class Node {
 	return removed;
     }
 
+    /**
+     * @return a label for the upload data
+     */
+    public String getFileLabel() {
+	return fileLabel;
+    }
+
+    /**
+     * @param label
+     *            a label for the upload data
+     */
+    public void setFileLabel(String label) {
+	fileLabel = label;
+    }
+
+    /**
+     * @param dc
+     *            dublin core data in one bag
+     */
+    public void setDcBean(DCBean dc) {
+	this.bean = dc;
+    }
 }
