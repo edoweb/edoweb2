@@ -32,10 +32,13 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
+import de.nrw.hbz.regal.datatypes.DCBean;
 import de.nrw.hbz.regal.datatypes.Link;
 import de.nrw.hbz.regal.datatypes.Node;
 import de.nrw.hbz.regal.exceptions.ArchiveException;
+import de.nrw.hbz.regal.fedora.CopyUtils;
 import de.nrw.hbz.regal.fedora.FedoraInterface;
+import de.nrw.hbz.regal.fedora.RdfUtils;
 
 class Services {
     final static Logger logger = LoggerFactory.getLogger(Services.class);
@@ -56,7 +59,7 @@ class Services {
 
 	String pid = node.getPID();
 
-	List<String> identifier = node.getIdentifier();
+	List<String> identifier = node.getBean().getIdentifier();
 	String alephid = "";
 	for (String id : identifier) {
 	    if (id.startsWith("TT") || id.startsWith("HT")) {
@@ -301,11 +304,12 @@ class Services {
 	cc.getProperties().put(ClientConfig.PROPERTY_FOLLOW_REDIRECTS, true);
 	cc.getFeatures().put(ClientConfig.FEATURE_DISABLE_XML_SECURITY, true);
 	Client c = Client.create(cc);
+	WebResource index = null;
 	try {
 
 	    // TODO configure port and host
-	    WebResource index = c.resource("http://localhost:9200/" + namespace
-		    + "/titel/" + pid);
+	    index = c.resource("http://localhost:9200/" + namespace + "/titel/"
+		    + pid);
 	    index.accept("application/json");
 	    URL url = new URL("http://localhost/resource/" + pid + "/about");
 	    URLConnection con = url.openConnection();
@@ -316,10 +320,11 @@ class Services {
 	    IOUtils.copy(in, writer, "UTF-8");
 	    viewAsString = writer.toString();
 	    in.close();
-	    message = index.put(String.class, viewAsString);
 	} catch (Exception e) {
 	    throw new ArchiveException("Error! " + message + e.getMessage(), e);
 	}
+	message = index.put(String.class, viewAsString);
+
 	return "Success! " + message + "\n" + viewAsString;
     }
 
@@ -433,7 +438,11 @@ class Services {
 
 	    setNameLink.setObject(name, true);
 	    oaiset.addRelation(setNameLink);
-	    oaiset.addTitle(name);
+
+	    DCBean dc = oaiset.getBean();
+	    dc.addTitle(name);
+
+	    oaiset.setDcBean(dc);
 
 	    fedora.createNode(oaiset);
 

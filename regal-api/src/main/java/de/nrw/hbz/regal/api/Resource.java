@@ -21,7 +21,6 @@ import static de.nrw.hbz.regal.fedora.FedoraVocabulary.IS_PART_OF;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Vector;
@@ -34,6 +33,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.Response.Status;
@@ -107,23 +107,28 @@ public class Resource {
     }
 
     /**
+     * @param type
+     *            a contentType
      * @return a list of all archived objects
      */
     @GET
     @Produces({ "application/json", "application/xml" })
-    public Response getAll() {
-	ObjectList rem = new ObjectList(actions.getAll());
+    public Response getAll(@QueryParam("type") String type) {
+
+	ObjectList rem = new ObjectList(actions.getAll(type));
 	ResponseBuilder res = Response.ok().entity(rem);
 	return res.build();
     }
 
     /**
+     * @param type
+     *            a contentType
      * @return a list of resources as html
      */
     @GET
     @Produces({ "text/html" })
-    public Response getAllAsHtml() {
-	String rem = actions.getAllAsHtml();
+    public Response getAllAsHtml(@QueryParam("type") String type) {
+	String rem = actions.getAllAsHtml(type);
 	ResponseBuilder res = Response.ok().entity(rem);
 	return res.build();
     }
@@ -405,19 +410,8 @@ public class Resource {
     @Produces({ "text/plain" })
     public String readMetadata(@PathParam("pid") String pid) {
 
-	try {
-	    String result = actions.readMetadata(pid);
-	    return result;
-	} catch (URISyntaxException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	} catch (MalformedURLException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	} catch (IOException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
+	String result = actions.readMetadata(pid);
+	return result;
     }
 
     /**
@@ -617,13 +611,6 @@ public class Resource {
 		name = multiPart.getBodyParts().get(2)
 			.getEntityAs(String.class);
 	    }
-	    // if (mimeType.compareTo("application/pdf") == 0)
-	    // {
-	    // Node node = actions.readNode(namespace + ":" + pid);
-	    // node.addContentModel(ContentModelFactory
-	    // .createPdfModel(namespace));
-	    // actions.updateNode(node);
-	    // }
 	    return actions.updateData(namespace + ":" + pid, multiPart
 		    .getBodyParts().get(0).getEntityAs(InputStream.class),
 		    mimeType, name);

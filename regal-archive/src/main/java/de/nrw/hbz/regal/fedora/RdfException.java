@@ -1,4 +1,4 @@
-package de.nrw.hbz.regal.api.helper;
+package de.nrw.hbz.regal.fedora;
 
 @SuppressWarnings({ "javadoc", "serial" })
 public class RdfException extends RuntimeException {
@@ -7,4 +7,7 @@ public class RdfException extends RuntimeException {
 	super(e);
     }
 
+    public RdfException(String message, Throwable e) {
+	super(message, e);
+    }
 }

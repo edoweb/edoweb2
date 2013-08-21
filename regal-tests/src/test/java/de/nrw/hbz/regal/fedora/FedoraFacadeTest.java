@@ -28,6 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.nrw.hbz.regal.api.helper.ContentModelFactory;
+import de.nrw.hbz.regal.datatypes.Link;
 import de.nrw.hbz.regal.datatypes.Node;
 import de.nrw.hbz.regal.datatypes.Vocabulary;
 
@@ -37,21 +38,17 @@ import de.nrw.hbz.regal.datatypes.Vocabulary;
  * 
  */
 @SuppressWarnings("javadoc")
-public class FedoraFacadeIntegrationTest {
+public class FedoraFacadeTest {
 
     Properties properties = null;
     FedoraInterface facade = null;
     Node object = null;
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException {
 
-	try {
-	    properties = new Properties();
-	    properties.load(getClass().getResourceAsStream("/test.properties"));
-	} catch (IOException e) {
-	    e.printStackTrace();
-	}
+	properties = new Properties();
+	properties.load(getClass().getResourceAsStream("/test.properties"));
 
 	// System.out.println(XmlSchemaCollection.class
 	// .getResource("XmlSchemaCollection.class"));
@@ -83,13 +80,8 @@ public class FedoraFacadeIntegrationTest {
 
     @Test
     public void createNode() {
-	try {
-	    facade.createNode(object);
-	    Assert.assertTrue(facade.nodeExists(object.getPID()));
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    Assert.fail(e.getMessage());
-	}
+	facade.createNode(object);
+	Assert.assertTrue(facade.nodeExists(object.getPID()));
     }
 
     @Test(expected = FedoraFacade.NodeNotFoundException.class)
@@ -118,10 +110,6 @@ public class FedoraFacadeIntegrationTest {
 
     @Test
     public void updateNode() {
-
-	if (facade.nodeExists(object.getPID()))
-	    facade.deleteNode(object.getPID());
-
 	facade.createNode(object);
 	Vector<String> newTitle = new Vector<String>();
 	newTitle.add("Neuer Titel");
@@ -189,6 +177,28 @@ public class FedoraFacadeIntegrationTest {
 	Assert.assertTrue(!facade.nodeExists(object.getPID()));
 	facade.createNode(object);
 	Assert.assertTrue(facade.nodeExists(object.getPID()));
+    }
+
+    @Test
+    public void createHierarchy() {
+	Node node = new Node();
+	node.setPID(facade.getPid("namespace"));
+	Node parent = facade.createRootObject("test");
+	node = facade.createNode(parent, node);
+	for (Link link : node.getRelsExt()) {
+	    if (link.getPredicate().equals(FedoraVocabulary.IS_PART_OF)) {
+		System.out.println(link.getObject());
+		Assert.assertTrue(link.getObject().equals(
+			"info:fedora/" + parent.getPID()));
+	    }
+	}
+	for (Link link : parent.getRelsExt()) {
+	    if (link.getPredicate().equals(FedoraVocabulary.HAS_PART)) {
+		System.out.println(link.getObject());
+		Assert.assertTrue(link.getObject().equals(
+			"info:fedora/" + node.getPID()));
+	    }
+	}
     }
 
     @After
