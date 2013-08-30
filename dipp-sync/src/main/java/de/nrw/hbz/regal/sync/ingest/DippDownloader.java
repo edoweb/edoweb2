@@ -28,7 +28,7 @@ import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import de.nrw.hbz.regal.sync.extern.XmlUtils;
+import de.nrw.hbz.regal.api.helper.XmlUtils;
 
 /**
  * http://193.30.112.23:9280/fedora/get/dipp:1001?xml=true
@@ -223,13 +223,9 @@ public class DippDownloader extends Downloader {
 	    System.exit(1);
 	}
 
-	try {
-	    Downloader downloader = new DippDownloader();
-	    downloader.run(argv[0]);
-	} catch (IOException e) {
-	    logger.warn(e.getMessage());
-	    System.exit(2);
-	}
+	Downloader downloader = new DippDownloader();
+	downloader.run(argv[0]);
+
     }
 
 }
