@@ -37,7 +37,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import de.nrw.hbz.regal.sync.extern.XmlUtils;
+import de.nrw.hbz.regal.api.helper.XmlUtils;
 
 /**
  * 
@@ -349,12 +349,9 @@ public class DigitoolDownloader extends Downloader {
 	}
 
 	DigitoolDownloader main = new DigitoolDownloader();
-	try {
-	    main.run(argv[0]);
-	} catch (IOException e) {
-	    logger.warn(e.getMessage());
-	    System.exit(2);
-	}
+
+	main.run(argv[0]);
+
     }
 
     @SuppressWarnings({ "javadoc", "serial" })
