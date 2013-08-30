@@ -76,437 +76,6 @@ public class Resource {
     }
 
     /**
-     * Returns the actual data of a resource. The format of the binary data is
-     * not defined.
-     * 
-     * @param p
-     *            The pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return the actual binary data
-     */
-    @GET
-    @Path("/{namespace}:{pid}/data")
-    @Produces({ "application/*" })
-    public Response readData(@PathParam("pid") String p,
-	    @PathParam("namespace") String namespace) {
-	try {
-	    String pid = namespace + ":" + p;
-	    Response res = actions.readData(pid);
-	    if (res == null)
-		throw new HttpArchiveException(404,
-			"Datastream does not exist!");
-	    return res;
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	} catch (URISyntaxException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-    }
-
-    /**
-     * @param type
-     *            a contentType
-     * @return a list of all archived objects
-     */
-    @GET
-    @Produces({ "application/json", "application/xml" })
-    public Response getAll(@QueryParam("type") String type) {
-
-	ObjectList rem = new ObjectList(actions.getAll(type));
-	ResponseBuilder res = Response.ok().entity(rem);
-	return res.build();
-    }
-
-    /**
-     * @param type
-     *            a contentType
-     * @return a list of resources as html
-     */
-    @GET
-    @Produces({ "text/html" })
-    public Response getAllAsHtml(@QueryParam("type") String type) {
-	String rem = actions.getAllAsHtml(type);
-	ResponseBuilder res = Response.ok().entity(rem);
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     * @throws URISyntaxException
-     *             if redirection has been wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}/about")
-    @Produces({ "application/json" })
-    public Response about(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	View view = actions.getView(namespace + ":" + pid);
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(view);
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.rdf")
-    @Produces({ "application/rdf+xml" })
-    public Response getReMAsRdfXml(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	String rem = actions.getReM(namespace + ":" + pid,
-		"application/rdf+xml");
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(rem);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.rdf")
-    @Produces({ "text/plain" })
-    public Response getReMAsNTriple(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	String rem = actions.getReM(namespace + ":" + pid, "text/plain");
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(rem);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.json")
-    @Produces({ "application/json" })
-    public Response getReMAsJson(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	String rem = actions.getReM(namespace + ":" + pid, "application/json");
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(rem);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a html display of the aggregated resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.html")
-    @Produces({ "text/html" })
-    public Response getReMAsHtml(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	String rem = actions.getReM(namespace + ":" + pid, "text/html");
-	// return rem;
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(rem);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a html display of the aggregated resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.regal")
-    @Produces({ "application/json" })
-    public Response getObjectAsJson(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	CreateObjectBean result = actions.getRegalJson(namespace + ":" + pid);
-	// return rem;
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(result);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.search")
-    @Produces({ "application/json" })
-    public Response getSearch(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	String rem = actions.getReM(namespace + ":" + pid,
-		"application/json+elasticsearch");
-	ResponseBuilder res = Response.ok()
-		.lastModified(actions.getLastModified(namespace + ":" + pid))
-		.entity(rem);
-
-	return res.build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a json representation of the resource
-     * @throws URISyntaxException
-     *             if redirection goes wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}")
-    @Produces({ "application/json+regal" })
-    public Response getJsonRegal(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	// return about(namespace + ":" + pid);
-	return Response
-		.temporaryRedirect(
-			new java.net.URI("../resource/" + namespace + ":" + pid
-				+ ".regal")).status(303).build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a json representation of the resource
-     * @throws URISyntaxException
-     *             if redirection goes wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}")
-    @Produces({ "application/json" })
-    public Response getJson(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	// return about(namespace + ":" + pid);
-	return Response
-		.temporaryRedirect(
-			new java.net.URI("../resource/" + namespace + ":" + pid
-				+ ".json")).status(303).build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a rdf/xml representation of the resource
-     * @throws URISyntaxException
-     *             if redirection goes wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}")
-    @Produces({ "application/rdf+xml" })
-    public Response getRdfXml(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	// return about(namespace + ":" + pid);
-	return Response
-		.temporaryRedirect(
-			new java.net.URI("../resource/" + namespace + ":" + pid
-				+ ".rdf"))
-		.header("accept", "application/rdf+xml").status(303).build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource in html
-     * @throws URISyntaxException
-     *             if redirection goes wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}")
-    @Produces({ "text/html" })
-    public Response getHtml(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	// return about(namespace + ":" + pid);
-	return Response
-		.temporaryRedirect(
-			new java.net.URI("../resource/" + namespace + ":" + pid
-				+ ".html")).status(303).build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return n-triple representation of the resource
-     * @throws URISyntaxException
-     *             if redirection goes wrong
-     */
-    @GET
-    @Path("/{namespace}:{pid}")
-    @Produces({ "text/plain" })
-    public Response getNtriple(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) throws URISyntaxException {
-	// return about(namespace + ":" + pid);
-	return Response
-		.temporaryRedirect(
-			new java.net.URI("../resource/" + namespace + ":" + pid
-				+ ".rdf")).header("accept", "text/plain")
-		.status(303).build();
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an aggregated representation of the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}.dc")
-    @Produces({ "application/xml" })
-    public Response getDC(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	return getOAI_DC(pid, namespace);
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the metadata of a pid
-     * @return the rdf metadata as n-triple
-     */
-    @GET
-    @Path("/{pid}/metadata")
-    @Produces({ "text/plain" })
-    public String readMetadata(@PathParam("pid") String pid) {
-
-	String result = actions.readMetadata(pid);
-	return result;
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource
-     * @return the dublin core as json or xml
-     */
-    @GET
-    @Path("/{pid}/dc")
-    @Produces({ "application/xml", "application/json" })
-    public DCBeanAnnotated readDC(@PathParam("pid") String pid) {
-	return actions.readDC(pid);
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a text/plain representation of the pdf contente, if any.
-     */
-    @GET
-    @Path("/{namespace}:{pid}/fulltext")
-    @Produces({ "application/xml", "application/json" })
-    public Response getFulltext(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	try {
-	    return actions.getFulltext(pid, namespace);
-	} catch (URISyntaxException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return an epicur entry for the resource
-     */
-    @GET
-    @Path("/{namespace}:{pid}/epicur")
-    @Produces({ "application/xml", "application/json" })
-    public Response getEpicur(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	try {
-	    return actions.getEpicur(pid, namespace);
-	} catch (URISyntaxException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource
-     * @param namespace
-     *            the namespace of the resource
-     * @return a oai_dc display of the resources metadata
-     */
-    @GET
-    @Path("/{namespace}:{pid}/oai_dc")
-    @Produces({ "application/xml", "application/json" })
-    public Response getOAI_DC(@PathParam("pid") String pid,
-	    @PathParam("namespace") String namespace) {
-	try {
-	    return actions.getOAI_DC(pid, namespace);
-	} catch (URISyntaxException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-
-    }
-
-    /**
-     * @param type
-     *            the type of the resources that must be returned
-     * @return a list of pids
-     */
-    @GET
-    @Path("/type/{type}")
-    @Produces({ "application/json", "application/xml" })
-    public ObjectList getAllOfType(@PathParam("type") String type) {
-	try {
-	    return new ObjectList(actions.findByType(type));
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-    }
-
-    /**
      * Creates a new Resource. The Resource has a certain type an can be
      * connected to a parent resource.
      * 
@@ -549,6 +118,12 @@ public class Resource {
 	    } else if (input.type.compareTo(ObjectType.volume.toString()) == 0) {
 		models.add(ContentModelFactory.createVolumeModel(namespace));
 		models.add(ContentModelFactory.createPdfModel(namespace));
+	    } else if (input.type.compareTo(ObjectType.file.toString()) == 0) {
+		models.add(ContentModelFactory.createFileModel(namespace));
+		models.add(ContentModelFactory.createPdfModel(namespace));
+	    } else if (input.type.compareTo(ObjectType.issue.toString()) == 0) {
+		models.add(ContentModelFactory.createIssueModel(namespace));
+		models.add(ContentModelFactory.createPdfModel(namespace));
 	    }
 	    models.add(ContentModelFactory.createHeadModel(namespace));
 	    Node node = actions.createResource(input, pid, namespace, models);
@@ -585,6 +160,246 @@ public class Resource {
     }
 
     /**
+     * Returns all resources of a certain type (optional).
+     * 
+     * @param type
+     *            a contentType
+     * @return a list of all archived objects
+     */
+    @GET
+    @Produces({ "application/json", "application/xml" })
+    public Response getAll(@QueryParam("type") String type) {
+	ObjectList rem = new ObjectList(actions.getAll(type));
+	ResponseBuilder res = Response.ok().entity(rem);
+	return res.build();
+    }
+
+    /**
+     * Returns all resources of a certain type (optional) in HTML.
+     * 
+     * @param type
+     *            a contentType
+     * @return a list of resources as html
+     */
+    @GET
+    @Produces({ "text/html" })
+    public Response getAllAsHtml(@QueryParam("type") String type) {
+	String rem = actions.getAllAsHtml(type);
+	ResponseBuilder res = Response.ok().entity(rem);
+	return res.build();
+    }
+
+    /**
+     * Deletes all Resources of a certain type.
+     * 
+     * @param type
+     *            the type of resources that will be deleted
+     * @return A message and status code 200 if ok and 500 if not
+     */
+    @DELETE
+    @Produces({ "application/json", "application/xml" })
+    public String deleteAllOfType(@QueryParam("type") String type) {
+	try {
+	    return actions.deleteAll(actions.findByType(type));
+	} catch (ArchiveException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+    }
+
+    /**
+     * Deletes a pid
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource that must be
+     *            deleted
+     * @param namespace
+     *            the namespace of the resource
+     * @return a human readable message and a status code of 200 if successful
+     *         or a 500 if not.
+     */
+    @DELETE
+    @Path("/{namespace}:{pid}")
+    @Produces({ "application/json", "application/xml" })
+    public String delete(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	try {
+	    return actions.delete(namespace + ":" + pid);
+
+	} catch (ArchiveException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+    }
+
+    /**
+     * Returns OAI-ORE as json-ld
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a json representation of the resource
+     * @throws URISyntaxException
+     *             if redirection goes wrong
+     */
+    @GET
+    @Path("/{namespace}:{pid}")
+    @Produces({ "application/json" })
+    public Response getJson(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	// return about(namespace + ":" + pid);
+	return Response
+		.temporaryRedirect(
+			new java.net.URI("../resource/" + namespace + ":" + pid
+				+ ".json")).status(303).build();
+    }
+
+    /**
+     * Returns OAI-ORE as rdf-xml
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a rdf/xml representation of the resource
+     * @throws URISyntaxException
+     *             if redirection goes wrong
+     */
+    @GET
+    @Path("/{namespace}:{pid}")
+    @Produces({ "application/rdf+xml" })
+    public Response getRdfXml(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	// return about(namespace + ":" + pid);
+	return Response
+		.temporaryRedirect(
+			new java.net.URI("../resource/" + namespace + ":" + pid
+				+ ".rdf"))
+		.header("accept", "application/rdf+xml").status(303).build();
+    }
+
+    /**
+     * Returns a html view of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource in html
+     * @throws URISyntaxException
+     *             if redirection goes wrong
+     */
+    @GET
+    @Path("/{namespace}:{pid}")
+    @Produces({ "text/html" })
+    public Response getHtml(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	// return about(namespace + ":" + pid);
+	return Response
+		.temporaryRedirect(
+			new java.net.URI("../resource/" + namespace + ":" + pid
+				+ ".html")).status(303).build();
+    }
+
+    /**
+     * Returns OAI-ORE as n-triple
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return n-triple representation of the resource
+     * @throws URISyntaxException
+     *             if redirection goes wrong
+     */
+    @GET
+    @Path("/{namespace}:{pid}")
+    @Produces({ "text/plain" })
+    public Response getNtriple(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	// return about(namespace + ":" + pid);
+	return Response
+		.temporaryRedirect(
+			new java.net.URI("../resource/" + namespace + ":" + pid
+				+ ".rdf")).header("accept", "text/plain")
+		.status(303).build();
+    }
+
+    /**
+     * Lists all children of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the pid of a resource containing
+     *            multiple volumes
+     * @param namespace
+     *            namespace of the resource
+     * @return all volumes of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}/parts/")
+    @Produces({ "application/json", "application/xml" })
+    public ObjectList getAllParts(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+
+	return new ObjectList(actions.findObject(namespace + ":" + pid,
+		HAS_PART));
+    }
+
+    /**
+     * Lists all parents of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the pid of a resource containing
+     *            multiple volumes
+     * @param namespace
+     *            namespace of the resource
+     * @return all volumes of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}/parents/")
+    @Produces({ "application/json", "application/xml" })
+    public ObjectList getAllParents(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+
+	return new ObjectList(actions.findObject(namespace + ":" + pid,
+		IS_PART_OF));
+    }
+
+    /**
+     * Returns the actual data of a resource. The format of the binary data is
+     * not defined.
+     * 
+     * @param p
+     *            The pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return the actual binary data
+     */
+    @GET
+    @Path("/{namespace}:{pid}/data")
+    @Produces({ "application/*" })
+    public Response readData(@PathParam("pid") String p,
+	    @PathParam("namespace") String namespace) {
+	try {
+	    String pid = namespace + ":" + p;
+	    Response res = actions.readData(pid);
+	    if (res == null)
+		throw new HttpArchiveException(404,
+			"Datastream does not exist!");
+	    return res;
+	} catch (ArchiveException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	} catch (URISyntaxException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+    }
+
+    /**
+     * Updates the actual data of the aggregated resource
+     * 
      * @param pid
      *            the pid of the resource the pid of the resource
      * @param namespace
@@ -625,6 +440,8 @@ public class Resource {
     }
 
     /**
+     * Updates the actual data of the aggregated resource
+     * 
      * @param pid
      *            the pid of the resource the pid of the resource
      * @param namespace
@@ -647,20 +464,69 @@ public class Resource {
     }
 
     /**
+     * Deletes the data stream
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource that data must
+     *            be deleted
+     * @param namespace
+     *            namespace of the resource
+     * @return a human readable message and a status code of 200 if successful
+     *         or a 500 if not.
+     */
+    @DELETE
+    @Path("/{namespace}:{pid}/data")
+    @Produces({ "application/json", "application/xml" })
+    public String deleteData(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	try {
+	    return actions.deleteData(namespace + ":" + pid);
+
+	} catch (ArchiveException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+    }
+
+    /**
+     * Returns the metadata of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the metadata of a pid
+     * @param namespace
+     *            namespace of the resource
+     * @return the rdf metadata as n-triple
+     */
+    @GET
+    @Path("/{namespace}:{pid}/metadata")
+    @Produces({ "text/plain" })
+    public String readMetadata(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+
+	String result = actions.readMetadata(namespace + ":" + pid);
+	return result;
+    }
+
+    /**
+     * Updates the metadata of the resource
+     * 
      * @param pid
      *            the pid of the resource The pid of the resource
+     * @param namespace
+     *            namespace of the resource
      * @param content
      *            the metadata as n-triple rdf
      * @return a human readable message and a status code of 200 if successful
      *         and 500 if not.
      */
     @PUT
-    @Path("/{pid}/metadata")
+    @Path("/{namespace}:{pid}/metadata")
     @Consumes({ "text/plain" })
     @Produces({ "text/plain" })
-    public String updateMetadata(@PathParam("pid") String pid, String content) {
+    public String updateMetadata(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace, String content) {
 	try {
-	    return actions.updateMetadata(pid, content);
+	    return actions.updateMetadata(namespace + ":" + pid, content);
 	} catch (IOException e) {
 	    throw new HttpArchiveException(
 		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
@@ -668,36 +534,87 @@ public class Resource {
     }
 
     /**
+     * Updates the metadata of the resource
+     * 
      * @param pid
      *            the pid of the resource The pid of the resource
+     * @param namespace
+     *            namespace of the resource
      * @param content
      *            the metadata as n-triple rdf
      * @return a human readable message and a status code of 200 if successful
      *         and 500 if not.
      */
     @POST
-    @Path("/{pid}/metadata")
+    @Path("/{namespace}:{pid}/metadata")
     @Consumes({ "text/plain" })
     @Produces({ "text/plain" })
     public String updateMetadataPost(@PathParam("pid") String pid,
-	    String content) {
-	return updateMetadata(pid, content);
+	    @PathParam("namespace") String namespace, String content) {
+	return updateMetadata(pid, namespace, content);
     }
 
     /**
+     * Deletes the metadata of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource that data must
+     *            be deleted
+     * @param namespace
+     *            namespace of the resource
+     * @return a human readable message and a status code of 200 if successful
+     *         or a 500 if not.
+     */
+    @DELETE
+    @Path("/{namespace}:{pid}/metadata")
+    @Produces({ "application/json", "application/xml" })
+    public String deleteMetadata(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	try {
+	    return actions.deleteMetadata(namespace + ":" + pid);
+
+	} catch (ArchiveException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+    }
+
+    /**
+     * Returns Dublin Core metadata of the resource
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            namespace of the resource
+     * @return the dublin core as json or xml
+     */
+    @GET
+    @Path("/{namespace}:{pid}/dc")
+    @Produces({ "application/xml", "application/json" })
+    public DCBeanAnnotated readDC(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	return actions.readDC(namespace + ":" + pid);
+    }
+
+    /**
+     * Updates Dublin Core metadata
+     * 
      * @param pid
      *            the pid of the resource
+     * @param namespace
+     *            namespace of the resource
      * @param content
      *            dublin core
      * @return a message
      */
     @PUT
-    @Path("/{pid}/dc")
+    @Path("/{namespace}:{pid}/dc")
     @Produces({ "application/json", "application/xml" })
     @Consumes({ "application/json", "application/xml" })
-    public String updateDC(@PathParam("pid") String pid, DCBeanAnnotated content) {
+    public String updateDC(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace, DCBeanAnnotated content) {
 	try {
-	    return actions.updateDC(pid, content);
+	    return actions.updateDC(namespace + ":" + pid, content);
 	} catch (ArchiveException e) {
 	    throw new HttpArchiveException(
 		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
@@ -705,137 +622,249 @@ public class Resource {
     }
 
     /**
+     * Updates dublin core metadata
+     * 
      * @param pid
      *            the pid of the resource
+     * @param namespace
+     *            namespace of the resource
      * @param content
      *            dublin core
      * @return a message
      */
     @POST
-    @Path("/{pid}/dc")
+    @Path("/{namespace}:{pid}/dc")
     @Produces({ "application/json", "application/xml" })
     @Consumes({ "application/json", "application/xml" })
-    public String updateDCPost(String pid, DCBeanAnnotated content) {
-	return updateDC(pid, content);
+    public String updateDCPost(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace, DCBeanAnnotated content) {
+	return updateDC(pid, namespace, content);
     }
 
     /**
+     * Returns a OAI-ORE representation as rdf+xml.
+     * 
      * @param pid
-     *            the pid of the resource the pid of the resource that must be
-     *            deleted
+     *            the pid of the resource the pid of the resource
      * @param namespace
      *            the namespace of the resource
-     * @return a human readable message and a status code of 200 if successful
-     *         or a 500 if not.
+     * @return an aggregated representation of the resource
      */
-    @DELETE
-    @Path("/{namespace}:{pid}")
-    @Produces({ "application/json", "application/xml" })
-    public String delete(@PathParam("pid") String pid,
+    @GET
+    @Path("/{namespace}:{pid}.rdf")
+    @Produces({ "application/rdf+xml" })
+    public Response getReMAsRdfXml(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	String rem = actions.getReM(namespace + ":" + pid,
+		"application/rdf+xml");
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(rem);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a OAI-ORE representation as n-triples.
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.rdf")
+    @Produces({ "text/plain" })
+    public Response getReMAsNTriple(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	String rem = actions.getReM(namespace + ":" + pid, "text/plain");
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(rem);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a OAI-ORE representation as json-ld.
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.json")
+    @Produces({ "application/json" })
+    public Response getReMAsJson(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	String rem = actions.getReM(namespace + ":" + pid, "application/json");
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(rem);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a OAI-ORE representation as html.
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a html display of the aggregated resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.html")
+    @Produces({ "text/html" })
+    public Response getReMAsHtml(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	String rem = actions.getReM(namespace + ":" + pid, "text/html");
+	// return rem;
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(rem);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a OAI-ORE representation as json.
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a html display of the aggregated resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.regal")
+    @Produces({ "application/json" })
+    public Response getObjectAsJson(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	CreateObjectBean result = actions.getRegalJson(namespace + ":" + pid);
+	// return rem;
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(result);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a json representation for elasticsearch.
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.search")
+    @Produces({ "application/json" })
+    public Response getSearch(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	String rem = actions.getReM(namespace + ":" + pid,
+		"application/json+elasticsearch");
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(rem);
+
+	return res.build();
+    }
+
+    /**
+     * Returns a text extraction, if the data is of mimetype application/pdf
+     * 
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return a text/plain representation of the pdf contente, if any.
+     */
+    @GET
+    @Path("/{namespace}:{pid}/fulltext")
+    @Produces({ "application/xml", "application/json" })
+    public Response getFulltext(@PathParam("pid") String pid,
 	    @PathParam("namespace") String namespace) {
 	try {
-	    return actions.delete(namespace + ":" + pid);
-
-	} catch (ArchiveException e) {
+	    return actions.getFulltext(pid, namespace);
+	} catch (URISyntaxException e) {
 	    throw new HttpArchiveException(
 		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
+
     }
 
     /**
-     * @param pid
-     *            the pid of the resource the pid of the resource that data must
-     *            be deleted
-     * @return a human readable message and a status code of 200 if successful
-     *         or a 500 if not.
-     */
-    @DELETE
-    @Path("/{pid}/data")
-    @Produces({ "application/json", "application/xml" })
-    public String deleteData(@PathParam("pid") String pid) {
-	try {
-	    return actions.deleteData(pid);
-
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-    }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of the resource that data must
-     *            be deleted
-     * @return a human readable message and a status code of 200 if successful
-     *         or a 500 if not.
-     */
-    @DELETE
-    @Path("/{pid}/metadata")
-    @Produces({ "application/json", "application/xml" })
-    public String deleteMetadata(@PathParam("pid") String pid) {
-	try {
-	    return actions.deleteMetadata(pid);
-
-	} catch (ArchiveException e) {
-	    throw new HttpArchiveException(
-		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
-	}
-    }
-
-    /**
-     * Deletes all Resources of a certain type.
+     * Returns a xepicur stream for the resource
      * 
-     * @param type
-     *            the type of resources that will be deleted
-     * @return A message and status code 200 if ok and 500 if not
+     * @param pid
+     *            the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an epicur entry for the resource
      */
-    @DELETE
-    @Path("/type/{type}")
-    @Produces({ "application/json", "application/xml" })
-    public String deleteAllOfType(@PathParam("type") String type) {
+    @GET
+    @Path("/{namespace}:{pid}/epicur")
+    @Produces({ "application/xml", "application/json" })
+    public Response getEpicur(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
 	try {
-	    return actions.deleteAll(actions.findByType(type));
-	} catch (ArchiveException e) {
+	    return actions.getEpicur(pid, namespace);
+	} catch (URISyntaxException e) {
+	    throw new HttpArchiveException(
+		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
+	}
+
+    }
+
+    /**
+     * Returns a oai-dc representation converted from the metadata
+     * 
+     * @param pid
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource
+     */
+    @GET
+    @Path("/{namespace}:{pid}.oaidc")
+    @Produces({ "application/xml" })
+    public Response getDC(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) {
+	try {
+	    return actions.getOAI_DC(pid, namespace);
+	} catch (URISyntaxException e) {
 	    throw new HttpArchiveException(
 		    Status.INTERNAL_SERVER_ERROR.getStatusCode(), e);
 	}
     }
 
     /**
+     * Returns a json representation of the aggregation (Deprecated!!).
+     * 
      * @param pid
-     *            the pid of the resource the pid of a resource containing
-     *            multiple volumes
-     * @return all volumes of the resource
+     *            the pid of the resource the pid of the resource
+     * @param namespace
+     *            the namespace of the resource
+     * @return an aggregated representation of the resource
+     * @throws URISyntaxException
+     *             if redirection has been wrong
      */
     @GET
-    @Path("/{pid}/parts/")
-    @Produces({ "application/json", "application/xml" })
-    public ObjectList getAllParts(@PathParam("pid") String pid) {
-
-	return new ObjectList(actions.findObject(pid, HAS_PART));
+    @Path("/{namespace}:{pid}/about")
+    @Produces({ "application/json" })
+    public Response about(@PathParam("pid") String pid,
+	    @PathParam("namespace") String namespace) throws URISyntaxException {
+	View view = actions.getView(namespace + ":" + pid);
+	ResponseBuilder res = Response.ok()
+		.lastModified(actions.getLastModified(namespace + ":" + pid))
+		.entity(view);
+	return res.build();
     }
-
-    /**
-     * @param pid
-     *            the pid of the resource the pid of a resource containing
-     *            multiple volumes
-     * @return all volumes of the resource
-     */
-    @GET
-    @Path("/{pid}/parents/")
-    @Produces({ "application/json", "application/xml" })
-    public ObjectList getAllParents(@PathParam("pid") String pid) {
-
-	return new ObjectList(actions.findObject(pid, IS_PART_OF));
-    }
-
-    /**
-     * @param type
-     *            the type that must be listed
-     * @return a list of all resources with the given type
-     */
-    public String getAllOfTypeAsHtml(String type) {
-	return actions.getAllOfTypeAsHtml(type);
-    }
-
 }

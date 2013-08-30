@@ -28,7 +28,7 @@ import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import de.nrw.hbz.regal.sync.extern.XmlUtils;
+import de.nrw.hbz.regal.api.helper.XmlUtils;
 
 /**
  * 
@@ -153,12 +153,9 @@ public class OpusDownloader extends Downloader {
 	}
 
 	OpusDownloader main = new OpusDownloader();
-	try {
-	    main.run(argv[0]);
-	} catch (IOException e) {
-	    logger.warn(e.getMessage());
-	    System.exit(2);
-	}
+
+	main.run(argv[0]);
+
     }
 
 }

@@ -28,10 +28,10 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import de.nrw.hbz.regal.api.helper.XmlUtils;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
 import de.nrw.hbz.regal.sync.extern.DigitalEntityBuilderInterface;
 import de.nrw.hbz.regal.sync.extern.StreamType;
-import de.nrw.hbz.regal.sync.extern.XmlUtils;
 
 /**
  * @author Jan Schnasse schnasse@hbz-nrw.de
@@ -44,7 +44,7 @@ public class DippDigitalEntityBuilder implements DigitalEntityBuilderInterface {
     HashMap<String, DigitalEntity> map = new HashMap<String, DigitalEntity>();
 
     @Override
-    public DigitalEntity build(String baseDir, String pid) throws Exception {
+    public DigitalEntity build(String baseDir, String pid) {
 
 	if (!map.containsKey(pid)) {
 	    DigitalEntity e = new DigitalEntity(baseDir);
