@@ -35,6 +35,8 @@ substituteVars tomcat-users.xml $ARCHIVE_HOME/conf/tomcat-users.xml
 substituteVars setenv.sh $ARCHIVE_HOME/conf/setenv.sh
 substituteVars elasticsearch.yml $ARCHIVE_HOME/conf/elasticsearch.yml
 substituteVars site.conf $ARCHIVE_HOME/conf/site.conf
+substituteVars logging.properties $ARCHIVE_HOME/conf/logging.properties
+substituteVars catalina.out $ARCHIVE_HOME/conf/catalina.out
 }
 
 function substituteVars()
@@ -100,9 +102,11 @@ cp -r templates $ARCHIVE_HOME/bin/
 function copyConfig()
 {
 echo "copy tomcat config"
-cp  $ARCHIVE_HOME/conf/tomcat-users.xml $ARCHIVE_HOME/fedora/tomcat/conf
-cp  $ARCHIVE_HOME/conf/fedora-users.xml $ARCHIVE_HOME/fedora/server/config/
-cp  $ARCHIVE_HOME/conf/setenv.sh $ARCHIVE_HOME/fedora/tomcat/bin
+cp $ARCHIVE_HOME/conf/tomcat-users.xml $ARCHIVE_HOME/fedora/tomcat/conf
+cp $ARCHIVE_HOME/conf/fedora-users.xml $ARCHIVE_HOME/fedora/server/config/
+cp $ARCHIVE_HOME/conf/setenv.sh $ARCHIVE_HOME/fedora/tomcat/bin
+cp $ARCHIVE_HOME/conf/logging.properties $ARCHIVE_HOME/fedora/tomcat/conf
+cp $ARCHIVE_HOME/conf/catalina.out $ARCHIVE_HOME/fedora/tomcat/logs/catalina.out
 echo "copy elasticsearch config"
 mv $ARCHIVE_HOME/elasticsearch/config/elasticsearch.yml $ARCHIVE_HOME/elasticsearch/config/elasticsearch.yml.bck
 cp $ARCHIVE_HOME/conf/elasticsearch.yml $ARCHIVE_HOME/elasticsearch/config/
@@ -160,6 +164,9 @@ if [ $? -ne 0 ]
 then
 return;
 fi
+cd $ARCHIVE_HOME/src/regal-ui/htdocs/api/
+sed "s/localhost/$SERVER/g" service.json > tmp && mv tmp service.json
+cd -
 correctSwagger utils;
 correctSwagger resource;
 }
@@ -168,28 +175,62 @@ correctSwagger resource;
 
 function rollout()
 {
-SRC=$ARCHIVE_HOME/src
-WEBAPPS=$ARCHIVE_HOME/fedora/tomcat/webapps
-SYNCER_SRC=$SRC/${MODULE}-sync/target/${MODULE}-sync-0.0.1-SNAPSHOT-jar-with-dependencies.jar
-SYNCER_DEST=$ARCHIVE_HOME/sync/${MODULE}sync.jar
+setSystemVars
 
+linkCacheToHtmlRoot
+
+shutdownTomcat
+
+installApi
+
+installOaiPmh
+
+startUpTomcat
+
+buildModule
+
+copyHtml
+
+updateInstaller
+}
+
+function setSystemVars
+{
 export FEDORA_HOME=$ARCHIVE_HOME/fedora
 export CATALINA_HOME=$FEDORA_HOME/tomcat
 
-if [ ! -d $ARCHIVE_HOME/${MODULE}base ]
-then
-	mkdir -v $ARCHIVE_HOME/${MODULE}base
-fi
-ln -s $ARCHIVE_HOME/${MODULE}base $ARCHIVE_HOME/html/${MODULE}base > /dev/null 2>&1
-$ARCHIVE_HOME/fedora/tomcat/bin/shutdown.sh > /dev/null 2>&1
-if [ $? -eq 0 ]
-then
-	echo "Tomcat successfully shutdown!"
-else
-	echo "Tomcat shutdown failed!"
-fi
+}
+function updateInstaller
+{
+SRC=$ARCHIVE_HOME/src
+echo "Update installer"
+cp $SRC/regal-installer/install.sh $ARCHIVE_HOME/bin/
+}
+function copyHtml
+{
 
-
+echo "copy html"
+cp -r $ARCHIVE_HOME/src/regal-ui/htdocs/* $ARCHIVE_HOME/html/
+echo "Edit $ARCHIVE_HOME/html/js/Search.js"
+sed "s/localhost/$SERVER/g" $ARCHIVE_HOME/html/js/Search.js > tmp && mv tmp "$ARCHIVE_HOME/html/js/Search.js"
+echo "Copy api Doku"
+copySwagger
+}
+function startUpTomcat
+{
+$ARCHIVE_HOME/fedora/tomcat/bin/startup.sh
+}
+function installOaiPmh
+{
+SRC=$ARCHIVE_HOME/src
+WEBAPPS=$ARCHIVE_HOME/fedora/tomcat/webapps
+rm -rf  $WEBAPPS/oai-pmh*
+cp $SRC/regal-ui/bin/oai-pmh.war $WEBAPPS
+}
+function installApi
+{
+SRC=$ARCHIVE_HOME/src
+WEBAPPS=$ARCHIVE_HOME/fedora/tomcat/webapps
 cd $SRC/regal-api
 echo "Install Webapi"
 mvn -q -e war:war -DskipTests --settings ../settings.xml
@@ -198,16 +239,39 @@ cd -
 rm -rf  $WEBAPPS/api*
 cp $SRC/regal-api/target/api.war $WEBAPPS/api.war
 
+}
+function shutdownTomcat
+{
+$ARCHIVE_HOME/fedora/tomcat/bin/shutdown.sh > /dev/null 2>&1
+if [ $? -eq 0 ]
+then
+	echo "Tomcat successfully shutdown!"
+else
+	echo "Tomcat shutdown failed!"
+fi
+}
 
-rm -rf  $WEBAPPS/oai-pmh*
+function linkCacheToHtmlRoot
+{
+if [ ! -d $ARCHIVE_HOME/${MODULE}base ]
+then
+	mkdir -v $ARCHIVE_HOME/${MODULE}base
+	ln -s $ARCHIVE_HOME/${MODULE}base $ARCHIVE_HOME/html/${MODULE}base > /dev/null 2>&1
+fi
+}
 
-cp $SRC/regal-ui/bin/oai-pmh.war $WEBAPPS
-$ARCHIVE_HOME/fedora/tomcat/bin/startup.sh
-
+function buildModule
+{
+SRC=$ARCHIVE_HOME/src
+SYNCER_SRC=$ARCHIVE_HOME/src/${MODULE}-sync/target/${MODULE}-sync-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+SYNCER_DEST=$ARCHIVE_HOME/sync/${MODULE}sync.jar
 if [ -n "$MODULE" ]
 then
+	cd $SRC
+	mvn install -DskipTests
+	cd -
 	echo "Generate Module $MODULE, templates can be found in $ARCHIVE_HOME/sync"
-	cd $SRC/${MODULE}-sync
+	cd $ARCHIVE_HOME/src/${MODULE}-sync
 	mvn -q -e assembly:assembly -DskipTests --settings ../settings.xml
 	cd -
 	cp $SYNCER_SRC $SYNCER_DEST 
@@ -229,17 +293,7 @@ then
 	mv ${NAMESPACE}Sync.sh.tmpl $ARCHIVE_HOME/sync
 	cat $MODULE_CONF variables.conf > $ARCHIVE_HOME/sync/${NAMESPACE}Variables.conf.tmpl
 fi
-
-echo "copy html"
-cp -r $ARCHIVE_HOME/src/regal-ui/htdocs/* $ARCHIVE_HOME/html/
-echo "Edit $ARCHIVE_HOME/html/js/Search.js"
-sed "s/localhost/$SERVER/g" $ARCHIVE_HOME/html/js/Search.js > tmp && mv tmp "$ARCHIVE_HOME/html/js/Search.js"
-echo "Copy api Doku"
-copySwagger
-echo "Update installer"
-cp $SRC/regal-installer/install.sh $ARCHIVE_HOME/bin/
 }
-
 usage="Wrong usage! Please try with: \n -u to update to last release \n -u test to update to last test build. \n -ext <sync.conf>. to create a sync module.";
 if [ $# -eq 0 ]
 then
@@ -282,7 +336,7 @@ else
     then
 	MODULE_CONF=$2
 	source $MODULE_CONF
-	rollout
+	buildModule
     else
 	echo -e $usage
     fi
