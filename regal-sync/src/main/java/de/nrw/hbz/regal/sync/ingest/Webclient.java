@@ -18,7 +18,6 @@ package de.nrw.hbz.regal.sync.ingest;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Vector;
 
 import javax.ws.rs.core.MediaType;
 
@@ -41,8 +40,6 @@ import de.nrw.hbz.regal.api.CreateObjectBean;
 import de.nrw.hbz.regal.api.DCBeanAnnotated;
 import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
-import de.nrw.hbz.regal.sync.extern.DigitalEntityRelation;
-import de.nrw.hbz.regal.sync.extern.RelatedDigitalEntity;
 import de.nrw.hbz.regal.sync.extern.Stream;
 import de.nrw.hbz.regal.sync.extern.StreamType;
 
@@ -97,11 +94,21 @@ public class Webclient {
      */
     public void autoGenerateMetdata(DigitalEntity dtlBean) {
 	try {
+	    setIdentifier(dtlBean);
+
 	    lobidify(dtlBean);
 	} catch (Exception e) {
 	    logger.error(dtlBean.getPid() + " " + e.getMessage());
 	}
 
+    }
+
+    private void setIdentifier(DigitalEntity dtlBean) {
+	DCBeanAnnotated dc = new DCBeanAnnotated();
+	dc.setIdentifier(dtlBean.getIdentifier());
+	String pid = namespace + ":" + dtlBean.getPid();
+	String resource = endpoint + "/resource/" + pid + "/dc";
+	updateDc(resource, dc);
     }
 
     /**
@@ -180,50 +187,14 @@ public class Webclient {
     /**
      * @param dtlBean
      *            A DigitalEntity to operate on.
-     * @param expectedMime
-     *            The expected mimetype of the main datastream
      * @param type
      *            The Object type
      */
-    public void createObject(DigitalEntity dtlBean, String expectedMime,
-	    ObjectType type) {
+    public void createObject(DigitalEntity dtlBean, ObjectType type) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	String resource = endpoint + "/resource/" + pid;
 	String data = resource + "/data";
-	DigitalEntity fulltextObject = findFulltext(dtlBean, expectedMime);
-	createDataResource(dtlBean, type, resource, data, fulltextObject);
-    }
-
-    private DigitalEntity findFulltext(DigitalEntity dtlBean,
-	    String expectedMime) {
-	DigitalEntity fulltextObject = null;
-
-	Stream dataStream = dtlBean.getStream(StreamType.DATA);
-	if (dataStream != null && dataStream.getMimeType() != null
-		&& dataStream.getMimeType().compareTo(expectedMime) == 0)
-	    return dtlBean;
-
-	// TODO wofür ist das gut? - Ist das nicht längst refactored?
-	for (DigitalEntity view : getViewMainLinks(dtlBean)) {
-
-	    Stream viewData = view.getStream(StreamType.DATA);
-	    if (viewData.getMimeType().compareTo(expectedMime) == 0) {
-		return view;
-
-	    }
-	}
-	if (fulltextObject == null) {
-	    for (DigitalEntity view : getViewLinks(dtlBean)) {
-
-		Stream viewData = view.getStream(StreamType.DATA);
-		if (viewData.getMimeType().compareTo(expectedMime) == 0) {
-		    return view;
-		}
-	    }
-	}
-	throw new IllegalArgumentException(dtlBean.getPid()
-		+ " found no valid data. expected " + expectedMime
-		+ " , found " + dataStream.getMimeType());
+	createDataResource(dtlBean, type, resource, data, dtlBean);
     }
 
     private void createDataResource(DigitalEntity dtlBean, ObjectType type,
@@ -231,26 +202,6 @@ public class Webclient {
 	createResource(type, dtlBean);
 	updateData(data, fulltextObject);
 	updateLabel(resource, dtlBean);
-    }
-
-    private Vector<DigitalEntity> getViewLinks(DigitalEntity dtlBean) {
-
-	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
-	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
-	    if (rel.relation == DigitalEntityRelation.VIEW.toString())
-		links.add(rel.entity);
-	}
-	return links;
-
-    }
-
-    private Vector<DigitalEntity> getViewMainLinks(final DigitalEntity dtlBean) {
-	Vector<DigitalEntity> links = new Vector<DigitalEntity>();
-	for (RelatedDigitalEntity rel : dtlBean.getRelated()) {
-	    if (rel.relation == DigitalEntityRelation.VIEW_MAIN.toString())
-		links.add(rel.entity);
-	}
-	return links;
     }
 
     /**
@@ -263,7 +214,7 @@ public class Webclient {
 
 	String pid = namespace + ":" + dtlBean.getPid();
 	String ppid = dtlBean.getParentPid();
-	logger.info(pid + " -parent is: " + dtlBean.getParentPid());
+	logger.info(pid + " is child of " + dtlBean.getParentPid());
 	String parentPid = namespace + ":" + ppid;
 	String resourceUrl = endpoint + "/resource/" + pid;
 	WebResource resource = webclient.resource(resourceUrl);
@@ -318,6 +269,11 @@ public class Webclient {
     private void updateMetadata(String url, String metadata) {
 	WebResource metadataRes = webclient.resource(url);
 	metadataRes.put(metadata);
+    }
+
+    private void updateDc(String url, DCBeanAnnotated dc) {
+	WebResource metadataRes = webclient.resource(url);
+	metadataRes.put(dc);
     }
 
     private void updateLabel(String url, DigitalEntity dtlBean) {
