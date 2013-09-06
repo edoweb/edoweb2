@@ -23,14 +23,6 @@ import de.nrw.hbz.regal.api.helper.ObjectType;
 import de.nrw.hbz.regal.sync.extern.DigitalEntity;
 
 /**
- * Class FedoraIngester
- * 
- * <p>
- * <em>Title: </em>
- * </p>
- * <p>
- * Description:
- * </p>
  * 
  * @author Jan Schnasse, schnasse@hbz-nrw.de
  * 
@@ -82,8 +74,7 @@ public class EllinetIngester implements IngestInterface {
     private void updateMonographs(DigitalEntity dtlBean) {
 	String pid = namespace + ":" + dtlBean.getPid();
 	try {
-	    webclient.createObject(dtlBean, "application/pdf",
-		    ObjectType.monograph);
+	    webclient.createObject(dtlBean, ObjectType.monograph);
 	    logger.info(pid + " Found monograph.");
 	    webclient.autoGenerateMetdata(dtlBean);
 	    webclient.publish(dtlBean);
