@@ -16,9 +16,6 @@
  */
 package de.nrw.hbz.regal.datatypes;
 
-import static de.nrw.hbz.regal.datatypes.Vocabulary.TYPE_NODE;
-import static de.nrw.hbz.regal.fedora.FedoraVocabulary.IS_PART_OF;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -32,29 +29,26 @@ import java.util.Vector;
  */
 public class Node {
 
-    String metadataFile;
-    String uploadFile;
-    Vector<Link> relsExt = new Vector<Link>();
-    Vector<String> parentObjects = new Vector<String>();
-    Vector<ContentModel> cms = new Vector<ContentModel>();
+    private String metadataFile;
+    private String uploadFile;
+    private String fileLabel;
+    private Vector<Link> relsExt = new Vector<Link>();
+    private Vector<ContentModel> cms = new Vector<ContentModel>();
     private String label = null;
     private String type = null;
     private String pid = null;
     private String state = null;
-
     private String mimeType = null;
     private String namespace = null;
     private String contentType = null;
     private Date lastModified = null;
-    DCBean bean = new DCBean();
+    private DCBean bean = new DCBean();
 
     /**
-     * Creates a new Node. The node has the default type HBZ_NODE, and connects
-     * to other nodes with a HAS_PART relationship.
+     * Creates a new Node.
      * 
      */
     public Node() {
-	setNodeType(TYPE_NODE);
     }
 
     /**
@@ -64,7 +58,6 @@ public class Node {
      *            the ID of the node.
      */
     public Node(String pid) {
-	setNodeType(TYPE_NODE);
 	setPID(pid);
     }
 
@@ -78,10 +71,6 @@ public class Node {
      * @return this
      */
     public Node addRelation(Link link) {
-	if (link.getPredicate().compareTo(IS_PART_OF) == 0) {
-	    addParent(link.getObject());
-	    link.setLiteral(false);
-	}
 	relsExt.add(link);
 	return this;
     }
@@ -119,9 +108,6 @@ public class Node {
 		newRels.add(link);
 	    }
 	}
-
-	deleteObjects();
-
 	setRelsExt(newRels);
     }
 
@@ -140,14 +126,14 @@ public class Node {
     /**
      * The relsExt defines all relations of the node.
      * 
-     * @param rels
+     * @param links
      *            all relations of the node
      * @return this
      */
-    public Node setRelsExt(Vector<Link> rels) {
+    private Node setRelsExt(List<Link> links) {
 	// myNode.setRELSEXT(new RELSEXT_type0());
 	relsExt = new Vector<Link>();
-	for (Link link : rels) {
+	for (Link link : links) {
 	    addRelation(link);
 	}
 
@@ -174,7 +160,7 @@ public class Node {
      *            the type
      * @return this
      */
-    public Node setNodeType(String str) {
+    public Node setType(String str) {
 	this.type = str;
 
 	return this;
@@ -264,12 +250,12 @@ public class Node {
 	return state;
     }
 
-    /**
-     * @return all parents of the node
-     */
-    public Vector<String> getParents() {
-	return parentObjects;
-    }
+    // /**
+    // * @return all parents of the node
+    // */
+    // public Vector<String> getParents() {
+    // return parentObjects;
+    // }
 
     /**
      * @return the node's pid
@@ -281,7 +267,7 @@ public class Node {
     /**
      * @return all relations
      */
-    public Vector<Link> getRelsExt() {
+    public List<Link> getRelsExt() {
 	return relsExt;
     }
 
@@ -314,15 +300,6 @@ public class Node {
     public Node setLabel(String str) {
 	label = str;
 	return this;
-    }
-
-    private Node addParent(String obj) {
-	parentObjects.add(obj);
-	return this;
-    }
-
-    private void deleteObjects() {
-	parentObjects = new Vector<String>();
     }
 
     /**
@@ -378,7 +355,7 @@ public class Node {
     /**
      * @return dc:format
      */
-    public Vector<String> getFormat() {
+    public List<String> getFormat() {
 	return bean.getFormat();
     }
 
@@ -485,42 +462,42 @@ public class Node {
     /**
      * @return dc:title
      */
-    public Vector<String> getTitle() {
+    public List<String> getTitle() {
 	return bean.getTitle();
     }
 
     /**
      * @return dc:contributer
      */
-    public Vector<String> getContributer() {
+    public List<String> getContributer() {
 	return bean.getContributer();
     }
 
     /**
      * @return dc:coverage
      */
-    public Vector<String> getCoverage() {
+    public List<String> getCoverage() {
 	return bean.getCoverage();
     }
 
     /**
      * @return dc:description
      */
-    public Vector<String> getDescription() {
+    public List<String> getDescription() {
 	return bean.getDescription();
     }
 
     /**
      * @return dc:date
      */
-    public Vector<String> getDate() {
+    public List<String> getDate() {
 	return bean.getDate();
     }
 
     /**
      * @return dc:creator
      */
-    public Vector<String> getCreator() {
+    public List<String> getCreator() {
 	return bean.getCreator();
     }
 
@@ -790,57 +767,102 @@ public class Node {
     /**
      * @return dc:identifier
      */
-    public Vector<String> getIdentifier() {
+    public List<String> getIdentifier() {
 	return bean.getIdentifier();
     }
 
     /**
      * @return dc:language
      */
-    public Vector<String> getLanguage() {
+    public List<String> getLanguage() {
 	return bean.getLanguage();
     }
 
     /**
      * @return dc:publisher
      */
-    public Vector<String> getPublisher() {
+    public List<String> getPublisher() {
 	return bean.getPublisher();
     }
 
     /**
      * @return dc:rights
      */
-    public Vector<String> getRights() {
+    public List<String> getRights() {
 	return bean.getRights();
     }
 
     /**
      * @return dc:source
      */
-    public Vector<String> getSource() {
+    public List<String> getSource() {
 	return bean.getSource();
     }
 
     /**
      * @return dc:subject
      */
-    public Vector<String> getSubject() {
+    public List<String> getSubject() {
 	return bean.getSubject();
     }
 
     /**
      * @return dc:type
      */
-    public Vector<String> getType() {
+    public List<String> getType() {
 	return bean.getType();
     }
 
     /**
      * @return dc:Relation
      */
-    public Vector<String> getDCRelation() {
+    public List<String> getDCRelation() {
 	return bean.getRelation();
     }
 
+    /**
+     * @param predicate
+     *            all links with this predicate will be removed
+     * @return the removed statements
+     */
+    public List<Link> removeRelations(String predicate) {
+	Vector<Link> newRels = new Vector<Link>();
+	Vector<Link> removed = new Vector<Link>();
+	for (Link rel : relsExt) {
+	    if (rel.getPredicate().compareTo(predicate) == 0) {
+		// System.out.println("REMOVE: " + this.pid + " <"
+		// + rel.getPredicate() + "> " + rel.getObject());
+		removed.add(rel);
+	    } else {
+		// System.out.println("ADD: " + this.pid + " <"
+		// + rel.getPredicate() + "> " + rel.getObject());
+		newRels.add(rel);
+	    }
+	}
+	this.setRelsExt(newRels);
+	return removed;
+    }
+
+    /**
+     * @return a label for the upload data
+     */
+    public String getFileLabel() {
+	return fileLabel;
+    }
+
+    /**
+     * @param label
+     *            a label for the upload data
+     */
+    public void setFileLabel(String label) {
+	fileLabel = label;
+    }
+
+    /**
+     * @param dc
+     *            dublin core data in one bag
+     */
+    public void setDcBean(DCBean dc) {
+	this.bean = dc;
+    }
 }

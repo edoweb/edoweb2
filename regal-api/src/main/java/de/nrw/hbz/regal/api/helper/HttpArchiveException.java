@@ -23,20 +23,50 @@ import javax.ws.rs.core.Response;
  * @author Jan Schnasse
  * 
  */
-public class HttpArchiveException extends WebApplicationException
-{
-	private static final long serialVersionUID = 1L;
+public class HttpArchiveException extends WebApplicationException {
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @param status
-	 *            a http status code
-	 * @param message
-	 *            a human readable message
-	 */
-	public HttpArchiveException(int status, String message)
-	{
-		super(Response.status(status).entity(message).build());
+    /**
+     * @param status
+     *            a http status code
+     * @param message
+     *            a human readable message
+     */
+    public HttpArchiveException(int status, String message) {
+	super(Response.status(status).entity(message).build());
 
-	}
+    }
 
+    /**
+     * @param status
+     *            http status
+     */
+    public HttpArchiveException(int status) {
+	super(Response.status(status).build());
+
+    }
+
+    /**
+     * @param status
+     *            a http status code
+     * @param message
+     *            a human readable message
+     * @param cause
+     *            the exception that might has caused this exception
+     */
+    public HttpArchiveException(int status, String message, Throwable cause) {
+	super(cause, Response.status(status).entity(message).build());
+
+    }
+
+    /**
+     * @param status
+     *            a http status code
+     * @param cause
+     *            the exception that might has caused this exception
+     */
+    public HttpArchiveException(int status, Throwable cause) {
+	super(cause, Response.status(status).entity(cause.getMessage()).build());
+
+    }
 }

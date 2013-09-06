@@ -28,7 +28,7 @@
 							<classpathPrefix>lib</classpathPrefix>
 							<classpathLayoutType>repository</classpathLayoutType>
 							<classpathMavenRepositoryLayout>true</classpathMavenRepositoryLayout>
-							<mainClass>de.nrw.hbz.regal.sync.Main</mainClass>
+							<mainClass>de.nrw.hbz.regal.sync.DippMain</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -41,7 +41,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>de.nrw.hbz.regal.sync.Main</mainClass>
+							<mainClass>de.nrw.hbz.regal.sync.DippMain</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -53,36 +53,11 @@
 		</plugins>
 	</build>
 	<dependencies>
-
 		<dependency>
 			<groupId>de.nrw.hbz.regal</groupId>
 			<artifactId>regal-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<exclusions>
-				<exclusion>
-					<artifactId>sli4j-slf4j-log4j</artifactId>
-					<groupId>com.googlecode.sli4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j</artifactId>
-					<groupId>log4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>sli4j-slf4j</artifactId>
-					<groupId>com.googlecode.sli4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j-over-slf4j</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jcl-over-slf4j</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
 				<exclusion>
 					<artifactId>jena</artifactId>
 					<groupId>com.hp.hpl.jena</groupId>
@@ -95,7 +70,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>
-					<artifactId>slf4j-api</artifactId>
+					<artifactId>slf4j-log4j12</artifactId>
 					<groupId>org.slf4j</groupId>
 				</exclusion>
 			</exclusions>
@@ -105,15 +80,31 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		<dependency>
-			<groupId>com.googlecode.sli4j</groupId>
-			<artifactId>sli4j-slf4j-logback</artifactId>
-			<version>2.0</version>
+			<dependency>
+			<groupId>org.lobid</groupId>
+			<artifactId>lodmill-rd</artifactId>
+			<version>regal-0.1.0-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>jena-arq</artifactId>
-			<version>2.10.1</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 	</dependencies>
 </project>

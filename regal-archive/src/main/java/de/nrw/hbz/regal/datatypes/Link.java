@@ -17,109 +17,116 @@
 package de.nrw.hbz.regal.datatypes;
 
 /**
- * Class HBZLink
  * 
- * <p>
- * <em>Title: </em>
- * </p>
- * <p>
- * Description:
- * </p>
- * 
- * @author Jan Schnasse, schnasse@hbz-nrw.de TODO Replace by a standard
- *         implementation
+ * @author Jan Schnasse, schnasse@hbz-nrw.de
  */
-@SuppressWarnings("javadoc")
-public class Link
-{
-	boolean isLiteral = false;
-	private String predicate = null;
-	private String object = null;
+public class Link {
+    boolean isLiteral = false;
+    private String predicate = null;
+    private String object = null;
 
-	public Link()
-	{
+    /**
+     * Creates a new link
+     */
+    public Link() {
 
-	}
+    }
 
-	public Link(String predicate, String object, boolean isLiteral)
-	{
-		this.predicate = predicate;
-		this.object = object;
-		this.isLiteral = isLiteral;
-	}
+    /**
+     * @param predicate
+     *            a rdf predicate
+     * @param object
+     *            a rdf object
+     * @param isLiteral
+     *            is the object a literal?
+     */
+    public Link(String predicate, String object, boolean isLiteral) {
+	this.predicate = predicate;
+	this.object = object;
+	this.isLiteral = isLiteral;
+    }
 
-	public boolean isLiteral()
-	{
-		return isLiteral;
-	}
+    /**
+     * @return true if the object is literal. Default is false.
+     */
+    public boolean isLiteral() {
+	return isLiteral;
+    }
 
-	public void setLiteral(boolean isLiteral)
-	{
-		this.isLiteral = isLiteral;
-	}
+    /**
+     * @param isLiteral
+     *            true if the object is literal. Default is false.
+     */
+    public void setLiteral(boolean isLiteral) {
+	this.isLiteral = isLiteral;
+    }
 
-	public String getPredicate()
-	{
-		return predicate;
-	}
+    /**
+     * @return the rdf predicate as string
+     */
+    public String getPredicate() {
+	return predicate;
+    }
 
-	public void setPredicate(String predicate)
-	{
-		this.predicate = predicate;
-	}
+    /**
+     * @param predicate
+     *            the rdf predicate as string
+     */
+    public void setPredicate(String predicate) {
+	this.predicate = predicate;
+    }
 
-	public String getObject()
-	{
-		return object;
-	}
+    /**
+     * @return the rdf object as string
+     */
+    public String getObject() {
+	return object;
+    }
 
-	public void setObject(String object, boolean isLiteral)
-	{
-		this.object = object;
-		this.isLiteral = isLiteral;
+    /**
+     * @param object
+     *            the rdf object as string
+     * @param isLiteral
+     *            true if the object is a literal
+     */
+    public void setObject(String object, boolean isLiteral) {
+	this.object = object;
+	this.isLiteral = isLiteral;
 
-	}
+    }
 
-	public void setObject(String object)
-	{
-		this.object = object;
+    @Override
+    public boolean equals(Object obj) {
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	final Link other = (Link) obj;
+	boolean sameA = (this.predicate == other.predicate)
+		|| (this.predicate != null && this.predicate
+			.equalsIgnoreCase(other.predicate));
+	if (!sameA)
+	    return false;
+	boolean sameB = (this.object == other.object)
+		|| (this.object != null && this.object
+			.equalsIgnoreCase(other.object));
+	if (!sameB)
+	    return false;
+	return true;
+    }
 
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		final Link other = (Link) obj;
-		boolean sameA = (this.predicate == other.predicate)
-				|| (this.predicate != null && this.predicate
-						.equalsIgnoreCase(other.predicate));
-		if (!sameA)
-			return false;
-		boolean sameB = (this.object == other.object)
-				|| (this.object != null && this.object
-						.equalsIgnoreCase(other.object));
-		if (!sameB)
-			return false;
-		return true;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int hash = 3;
-		hash = 89
-				* hash
-				+ (this.predicate == null ? 0 : this.predicate.toUpperCase()
-						.hashCode());
-		hash = 89
-				* hash
-				+ (this.object == null ? 0 : this.object.toUpperCase()
-						.hashCode());
-		return hash;
-	}
+    @Override
+    public int hashCode() {
+	int hash = 3;
+	hash = 89
+		* hash
+		+ (this.predicate == null ? 0 : this.predicate.toUpperCase()
+			.hashCode());
+	hash = 89
+		* hash
+		+ (this.object == null ? 0 : this.object.toUpperCase()
+			.hashCode());
+	return hash;
+    }
 
 }

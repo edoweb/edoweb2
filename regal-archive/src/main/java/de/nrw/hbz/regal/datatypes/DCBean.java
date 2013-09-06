@@ -16,458 +16,374 @@
  */
 package de.nrw.hbz.regal.datatypes;
 
+import java.util.List;
 import java.util.Vector;
 
 /**
- * Class DCBean
- * 
- * <p>
- * <em>Title: </em>
- * </p>
- * <p>
- * Description:
- * </p>
- * 
  * @author Jan Schnasse, schnasse@hbz-nrw.de
  * 
  */
 @SuppressWarnings("javadoc")
-public class DCBean
-{
-	Vector<String> contributer = new Vector<String>();
-	Vector<String> coverage = new Vector<String>();
-	Vector<String> creator = new Vector<String>();
-	Vector<String> date = new Vector<String>();
-	Vector<String> description = new Vector<String>();
-	Vector<String> format = new Vector<String>();
-	Vector<String> identifier = new Vector<String>();
-	Vector<String> language = new Vector<String>();
-	Vector<String> publisher = new Vector<String>();
-	Vector<String> relation = new Vector<String>();
-	Vector<String> rights = new Vector<String>();
-	Vector<String> source = new Vector<String>();
-	Vector<String> subject = new Vector<String>();
-	Vector<String> title = new Vector<String>();
-	Vector<String> type = new Vector<String>();
+public class DCBean {
+    List<String> contributer = new Vector<String>();
+    List<String> coverage = new Vector<String>();
+    List<String> creator = new Vector<String>();
+    List<String> date = new Vector<String>();
+    List<String> description = new Vector<String>();
+    List<String> format = new Vector<String>();
+    List<String> identifier = new Vector<String>();
+    List<String> language = new Vector<String>();
+    List<String> publisher = new Vector<String>();
+    List<String> relation = new Vector<String>();
+    List<String> rights = new Vector<String>();
+    List<String> source = new Vector<String>();
+    List<String> subject = new Vector<String>();
+    List<String> title = new Vector<String>();
+    List<String> type = new Vector<String>();
 
-	public Vector<String> getContributer()
-	{
-		return contributer;
+    public List<String> getContributer() {
+	return contributer;
+    }
+
+    public DCBean setContributer(List<String> contributer) {
+	this.contributer = contributer;
+	return this;
+    }
+
+    public DCBean addContributer(String e) {
+	contributer.add(e);
+	return this;
+    }
+
+    public String getFirstContributer() {
+	List<String> elements = getContributer();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean setContributer(Vector<String> contributer)
-	{
-		this.contributer = contributer;
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getCoverage() {
+	return coverage;
+    }
+
+    public DCBean setCoverage(List<String> coverage) {
+	this.coverage = coverage;
+	return this;
+    }
+
+    public DCBean addCoverage(String e) {
+	coverage.add(e);
+	return this;
+    }
+
+    public String getFirstCoverage() {
+	List<String> elements = getCoverage();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean addContributer(String e)
-	{
-		contributer.add(e);
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getCreator() {
+	return creator;
+    }
+
+    public DCBean setCreator(List<String> creator) {
+	this.creator = creator;
+	return this;
+    }
+
+    public DCBean addCreator(String e) {
+	creator.add(e);
+	return this;
+    }
+
+    public String getFirstCreator() {
+	List<String> elements = getCreator();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public String getFirstContributer()
-	{
-		Vector<String> elements = getContributer();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
+	return elements.get(0);
+    }
 
-		return elements.elementAt(0);
+    public List<String> getDate() {
+	return date;
+    }
+
+    public DCBean setDate(List<String> date) {
+	this.date = date;
+	return this;
+    }
+
+    public DCBean addDate(String e) {
+	date.add(e);
+	return this;
+    }
+
+    public String getFirstDate() {
+	List<String> elements = getDate();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public Vector<String> getCoverage()
-	{
-		return coverage;
+	return elements.get(0);
+    }
+
+    public List<String> getDescription() {
+	return description;
+    }
+
+    public DCBean setDescription(List<String> description) {
+	this.description = description;
+	return this;
+    }
+
+    public DCBean addDescription(String e) {
+	description.add(e);
+	return this;
+    }
+
+    public String getFirstDescription() {
+	List<String> elements = getDescription();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean setCoverage(Vector<String> coverage)
-	{
-		this.coverage = coverage;
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getFormat() {
+	return format;
+    }
+
+    public DCBean setFormat(List<String> format) {
+	this.format = format;
+	return this;
+    }
+
+    public DCBean addFormat(String e) {
+	format.add(e);
+	return this;
+    }
+
+    public String getFirstFormat() {
+	List<String> elements = getFormat();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean addCoverage(String e)
-	{
-		coverage.add(e);
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getIdentifier() {
+	return identifier;
+    }
+
+    public DCBean setIdentifier(List<String> identifier) {
+	this.identifier = identifier;
+	return this;
+    }
+
+    public DCBean addIdentifier(String e) {
+	identifier.add(e);
+	return this;
+    }
+
+    public String getFirstIdentifier() {
+	List<String> elements = getIdentifier();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public String getFirstCoverage()
-	{
-		Vector<String> elements = getCoverage();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
+	return elements.get(0);
+    }
 
-		return elements.elementAt(0);
+    public List<String> getLanguage() {
+	return language;
+    }
+
+    public DCBean setLanguage(List<String> language) {
+	this.language = language;
+	return this;
+    }
+
+    public DCBean addLanguage(String e) {
+	language.add(e);
+	return this;
+    }
+
+    public String getFirstLanguage() {
+	List<String> elements = getLanguage();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public Vector<String> getCreator()
-	{
-		return creator;
+	return elements.get(0);
+    }
+
+    public List<String> getPublisher() {
+	return publisher;
+    }
+
+    public DCBean setPublisher(List<String> publisher) {
+	this.publisher = publisher;
+	return this;
+    }
+
+    public DCBean addPublisher(String e) {
+	publisher.add(e);
+	return this;
+    }
+
+    public String getFirstPublisher() {
+	List<String> elements = getPublisher();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean setCreator(Vector<String> creator)
-	{
-		this.creator = creator;
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getRelation() {
+	return relation;
+    }
+
+    public DCBean setRelation(List<String> relation) {
+	this.relation = relation;
+	return this;
+    }
+
+    public DCBean addRelation(String e) {
+	relation.add(e);
+	return this;
+    }
+
+    public String getFirstRelation() {
+	List<String> elements = getRelation();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean addCreator(String e)
-	{
-		creator.add(e);
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getRights() {
+	return rights;
+    }
+
+    public DCBean setRights(List<String> rights) {
+	this.rights = rights;
+	return this;
+    }
+
+    public DCBean addRights(String e) {
+	rights.add(e);
+	return this;
+    }
+
+    public String getFirstRights() {
+	List<String> elements = getRights();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public String getFirstCreator()
-	{
-		Vector<String> elements = getCreator();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
+	return elements.get(0);
+    }
 
-		return elements.elementAt(0);
+    public List<String> getSource() {
+	return source;
+    }
+
+    public DCBean setSource(List<String> source) {
+	this.source = source;
+	return this;
+    }
+
+    public DCBean addSource(String e) {
+	source.add(e);
+	return this;
+    }
+
+    public String getFirstSource() {
+	List<String> elements = getSource();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public Vector<String> getDate()
-	{
-		return date;
+	return elements.get(0);
+    }
+
+    public List<String> getSubject() {
+	return subject;
+    }
+
+    public DCBean setSubject(List<String> subject) {
+	this.subject = subject;
+	return this;
+    }
+
+    public DCBean addSubject(String e) {
+	subject.add(e);
+	return this;
+    }
+
+    public String getFirstSubject() {
+	List<String> elements = getSubject();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean setDate(Vector<String> date)
-	{
-		this.date = date;
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getTitle() {
+	return title;
+    }
+
+    public DCBean setTitle(List<String> title) {
+	this.title = title;
+	return this;
+    }
+
+    public DCBean addTitle(String e) {
+	title.add(e);
+	return this;
+    }
+
+    public String getFirstTitle() {
+	List<String> elements = getTitle();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public DCBean addDate(String e)
-	{
-		date.add(e);
-		return this;
+	return elements.get(0);
+    }
+
+    public List<String> getType() {
+	return type;
+    }
+
+    public DCBean setType(List<String> type) {
+	this.type = type;
+	return this;
+    }
+
+    public DCBean addType(String e) {
+	type.add(e);
+	return this;
+    }
+
+    public String getFirstType() {
+	List<String> elements = getType();
+	if (elements == null || elements.size() == 0) {
+	    return "";
 	}
 
-	public String getFirstDate()
-	{
-		Vector<String> elements = getDate();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getDescription()
-	{
-		return description;
-	}
-
-	public DCBean setDescription(Vector<String> description)
-	{
-		this.description = description;
-		return this;
-	}
-
-	public DCBean addDescription(String e)
-	{
-		description.add(e);
-		return this;
-	}
-
-	public String getFirstDescription()
-	{
-		Vector<String> elements = getDescription();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getFormat()
-	{
-		return format;
-	}
-
-	public DCBean setFormat(Vector<String> format)
-	{
-		this.format = format;
-		return this;
-	}
-
-	public DCBean addFormat(String e)
-	{
-		format.add(e);
-		return this;
-	}
-
-	public String getFirstFormat()
-	{
-		Vector<String> elements = getFormat();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getIdentifier()
-	{
-		return identifier;
-	}
-
-	public DCBean setIdentifier(Vector<String> identifier)
-	{
-		this.identifier = identifier;
-		return this;
-	}
-
-	public DCBean addIdentifier(String e)
-	{
-		identifier.add(e);
-		return this;
-	}
-
-	public String getFirstIdentifier()
-	{
-		Vector<String> elements = getIdentifier();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getLanguage()
-	{
-		return language;
-	}
-
-	public DCBean setLanguage(Vector<String> language)
-	{
-		this.language = language;
-		return this;
-	}
-
-	public DCBean addLanguage(String e)
-	{
-		language.add(e);
-		return this;
-	}
-
-	public String getFirstLanguage()
-	{
-		Vector<String> elements = getLanguage();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getPublisher()
-	{
-		return publisher;
-	}
-
-	public DCBean setPublisher(Vector<String> publisher)
-	{
-		this.publisher = publisher;
-		return this;
-	}
-
-	public DCBean addPublisher(String e)
-	{
-		publisher.add(e);
-		return this;
-	}
-
-	public String getFirstPublisher()
-	{
-		Vector<String> elements = getPublisher();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getRelation()
-	{
-		return relation;
-	}
-
-	public DCBean setRelation(Vector<String> relation)
-	{
-		this.relation = relation;
-		return this;
-	}
-
-	public DCBean addRelation(String e)
-	{
-		relation.add(e);
-		return this;
-	}
-
-	public String getFirstRelation()
-	{
-		Vector<String> elements = getRelation();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getRights()
-	{
-		return rights;
-	}
-
-	public DCBean setRights(Vector<String> rights)
-	{
-		this.rights = rights;
-		return this;
-	}
-
-	public DCBean addRights(String e)
-	{
-		rights.add(e);
-		return this;
-	}
-
-	public String getFirstRights()
-	{
-		Vector<String> elements = getRights();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getSource()
-	{
-		return source;
-	}
-
-	public DCBean setSource(Vector<String> source)
-	{
-		this.source = source;
-		return this;
-	}
-
-	public DCBean addSource(String e)
-	{
-		source.add(e);
-		return this;
-	}
-
-	public String getFirstSource()
-	{
-		Vector<String> elements = getSource();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getSubject()
-	{
-		return subject;
-	}
-
-	public DCBean setSubject(Vector<String> subject)
-	{
-		this.subject = subject;
-		return this;
-	}
-
-	public DCBean addSubject(String e)
-	{
-		subject.add(e);
-		return this;
-	}
-
-	public String getFirstSubject()
-	{
-		Vector<String> elements = getSubject();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getTitle()
-	{
-		return title;
-	}
-
-	public DCBean setTitle(Vector<String> title)
-	{
-		this.title = title;
-		return this;
-	}
-
-	public DCBean addTitle(String e)
-	{
-		title.add(e);
-		return this;
-	}
-
-	public String getFirstTitle()
-	{
-		Vector<String> elements = getTitle();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
-
-	public Vector<String> getType()
-	{
-		return type;
-	}
-
-	public DCBean setType(Vector<String> type)
-	{
-		this.type = type;
-		return this;
-	}
-
-	public DCBean addType(String e)
-	{
-		type.add(e);
-		return this;
-	}
-
-	public String getFirstType()
-	{
-		Vector<String> elements = getType();
-		if (elements == null || elements.size() == 0)
-		{
-			return "";
-		}
-
-		return elements.elementAt(0);
-	}
+	return elements.get(0);
+    }
 
 }

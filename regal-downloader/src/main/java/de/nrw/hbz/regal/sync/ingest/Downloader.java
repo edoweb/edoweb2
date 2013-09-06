@@ -17,24 +17,19 @@
 package de.nrw.hbz.regal.sync.ingest;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.StringReader;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.Deque;
 import java.util.HashMap;
@@ -44,16 +39,10 @@ import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 import de.nrw.hbz.regal.PIDReporter;
 
@@ -63,51 +52,140 @@ import de.nrw.hbz.regal.PIDReporter;
  * 
  */
 public abstract class Downloader implements DownloaderInterface {
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class CopyException extends RuntimeException {
+
+	public CopyException() {
+	}
+
+	public CopyException(String message) {
+	    super(message);
+	}
+
+	public CopyException(Throwable cause) {
+	    super(cause);
+	}
+
+	public CopyException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class ZipDownloaderException extends RuntimeException {
+
+	public ZipDownloaderException() {
+	}
+
+	public ZipDownloaderException(String message) {
+	    super(message);
+	}
+
+	public ZipDownloaderException(Throwable cause) {
+	    super(cause);
+	}
+
+	public ZipDownloaderException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class LoadPropertiesException extends RuntimeException {
+
+	public LoadPropertiesException() {
+	}
+
+	public LoadPropertiesException(String message) {
+	    super(message);
+	}
+
+	public LoadPropertiesException(Throwable cause) {
+	    super(cause);
+	}
+
+	public LoadPropertiesException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class DeleteDirectoryException extends RuntimeException {
+
+	public DeleteDirectoryException() {
+	}
+
+	public DeleteDirectoryException(String message) {
+	    super(message);
+	}
+
+	public DeleteDirectoryException(Throwable cause) {
+	    super(cause);
+	}
+
+	public DeleteDirectoryException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class EncodingException extends RuntimeException {
+
+	public EncodingException() {
+	}
+
+	public EncodingException(String message) {
+	    super(message);
+	}
+
+	public EncodingException(Throwable cause) {
+	    super(cause);
+	}
+
+	public EncodingException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class AlreadyVisitedException extends RuntimeException {
+
+	public AlreadyVisitedException() {
+	}
+
+	public AlreadyVisitedException(String message) {
+	    super(message);
+	}
+
+	public AlreadyVisitedException(Throwable cause) {
+	    super(cause);
+	}
+
+	public AlreadyVisitedException(String message, Throwable cause) {
+	    super(message, cause);
+	}
+
+    }
+
+    @SuppressWarnings({ "javadoc", "serial" })
+    public class DownloadException extends RuntimeException {
+
+	public DownloadException(Throwable e) {
+	    super(e);
+	}
+    }
+
+    /**
+     * A logger for the Downloader
+     */
     final static protected Logger logger = LoggerFactory
 	    .getLogger(Downloader.class);
-
-    protected String getDownloadLocation() {
-	return downloadLocation;
-    }
-
-    protected void setDownloadLocation(String downloadLocation) {
-	this.downloadLocation = downloadLocation;
-    }
-
-    protected String getObjectDirectory() {
-	return objectDirectory;
-    }
-
-    protected void setObjectDirectory(String objectDirectory) {
-	this.objectDirectory = objectDirectory;
-    }
-
-    protected String getServer() {
-	return server;
-    }
-
-    protected void setServer(String server) {
-	this.server = server;
-    }
-
-    protected HashMap<String, String> getMap() {
-	return map;
-    }
-
-    protected void setMap(HashMap<String, String> map) {
-	this.map = map;
-    }
-
-    protected boolean isUpdated() {
-	return updated;
-    }
-
-    protected boolean isDownloaded() {
-	return downloaded;
-    }
-
     String downloadLocation = null;
-    String objectDirectory = null;
     String server = null;
     boolean updated = false;
     boolean downloaded = false;
@@ -127,17 +205,21 @@ public abstract class Downloader implements DownloaderInterface {
     protected abstract void downloadObject(File downloadDirectory, String pid);
 
     @Override
-    public String download(String pid) throws IOException {
+    public String download(String pid) {
 	return download(pid, true);
     }
 
     @Override
-    public String download(String pid, boolean forceDownload)
-	    throws IOException {
+    public String download(String pid, boolean forceDownload) {
 	if (map.containsKey(pid))
-	    throw new IOException(pid + " already visited!");
-	objectDirectory = downloadLocation + File.separator
-		+ URLEncoder.encode(pid);
+	    throw new AlreadyVisitedException(pid + " already visited!");
+	String objectDirectory = null;
+	try {
+	    objectDirectory = downloadLocation + File.separator
+		    + URLEncoder.encode(pid, "utf-8");
+	} catch (UnsupportedEncodingException e1) {
+	    throw new EncodingException(e1);
+	}
 	File dir = new File(objectDirectory);
 	if (!dir.exists()) {
 	    logger.info("Create Directory " + dir.getAbsoluteFile()
@@ -149,7 +231,7 @@ public abstract class Downloader implements DownloaderInterface {
 		    map.put(pid, pid);
 
 		} else {
-		    throw new Exception(pid + " already visited!");
+		    throw new AlreadyVisitedException(pid + " already visited!");
 		}
 		downloadObject(dir, pid);
 	    } catch (Exception e) {
@@ -160,7 +242,11 @@ public abstract class Downloader implements DownloaderInterface {
 	} else if (forceDownload) {
 	    logger.info("Directory " + dir.getAbsoluteFile()
 		    + " exists. Force override.");
-	    FileUtils.deleteDirectory(dir);
+	    try {
+		FileUtils.deleteDirectory(dir);
+	    } catch (IOException e1) {
+		throw new DeleteDirectoryException(e1);
+	    }
 	    dir.mkdirs();
 
 	    try {
@@ -168,7 +254,7 @@ public abstract class Downloader implements DownloaderInterface {
 		    map.put(pid, pid);
 
 		} else {
-		    throw new Exception(pid + " already visited!");
+		    throw new AlreadyVisitedException(pid + " already visited!");
 		}
 		downloadObject(dir, pid);
 	    } catch (Exception e) {
@@ -203,21 +289,81 @@ public abstract class Downloader implements DownloaderInterface {
 	this.server = server;
     }
 
-    private void setDownloaded(boolean downloaded) {
-	this.downloaded = downloaded;
+    /**
+     * Will be initalised during init()
+     * 
+     * @return a local download directory
+     */
+    protected String getDownloadLocation() {
+	return downloadLocation;
     }
 
-    private void setUpdated(boolean updated) {
-	this.updated = updated;
+    /**
+     * @param downloadLocation
+     *            a local download directory
+     */
+    protected void setDownloadLocation(String downloadLocation) {
+	this.downloadLocation = downloadLocation;
     }
 
-    protected void run(String propFile) throws IOException {
+    /**
+     * @return a base url to download from
+     */
+    protected String getServer() {
+	return server;
+    }
+
+    /**
+     * @param server
+     *            a base url to download from
+     */
+    protected void setServer(String server) {
+	this.server = server;
+    }
+
+    /**
+     * @return a map to remember which objects are already download
+     */
+    protected HashMap<String, String> getMap() {
+	return map;
+    }
+
+    /**
+     * @param map
+     *            a map to remember which objects are already download
+     */
+    protected void setMap(HashMap<String, String> map) {
+	this.map = map;
+    }
+
+    /**
+     * @return if an existing object was updated
+     */
+    protected boolean isUpdated() {
+	return updated;
+    }
+
+    /**
+     * @return if an existing object was downloaded
+     */
+    protected boolean isDownloaded() {
+	return downloaded;
+    }
+
+    /**
+     * @param propFile
+     *            a property file with two properties piddownloader.server - for
+     *            the server to download from piddownloader.downloadLocation -
+     *            for the local directory to download to
+     */
+    protected void run(String propFile) {
 	Properties properties = new Properties();
 	try {
 	    properties.load(new BufferedInputStream(new FileInputStream(
 		    propFile)));
 	} catch (IOException e) {
-	    throw new IOException("Could not open " + propFile + "!");
+	    throw new LoadPropertiesException("Could not open " + propFile
+		    + "!");
 	}
 	this.server = properties.getProperty("piddownloader.server");
 	this.downloadLocation = properties
@@ -234,113 +380,90 @@ public abstract class Downloader implements DownloaderInterface {
 
     }
 
-    protected Element stringToElement(String data) {
+    /**
+     * Creates a directory structure from the url and downloads into it.
+     * Non-existing directories will be created.
+     * 
+     * @param dir
+     *            a directory to write into
+     * @param url
+     *            a url to download from
+     */
+    protected void downloadToDir(File dir, String url) {
 	try {
-	    DocumentBuilderFactory factory = DocumentBuilderFactory
-		    .newInstance();
-	    DocumentBuilder docBuilder;
-
-	    docBuilder = factory.newDocumentBuilder();
-
-	    Document doc;
-
-	    doc = docBuilder.parse(new ByteArrayInputStream(data
-		    .getBytes("utf-8")));
-	    Element root = doc.getDocumentElement();
-	    root.normalize();
-	    return root;
-	} catch (FileNotFoundException e) {
-
-	    e.printStackTrace();
-	} catch (SAXException e) {
-
-	    e.printStackTrace();
-	} catch (IOException e) {
-
-	    e.printStackTrace();
-	} catch (ParserConfigurationException e) {
-
-	    e.printStackTrace();
+	    URL dataStreamUrl = new URL(url);
+	    File file = new File(dir.getAbsolutePath() + ""
+		    + dataStreamUrl.getFile());
+	    if (!file.exists()) {
+		file.getParentFile().mkdirs();
+		file.createNewFile();
+	    }
+	    OutputStream output = new FileOutputStream(file);
+	    IOUtils.copy(dataStreamUrl.openStream(), output);
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    throw new DownloadException(e);
 	}
-	return null;
     }
 
-    protected File getXml(File file, URL url) throws IOException {
-
-	URLConnection con = url.openConnection();
-	BufferedReader in = new BufferedReader(new InputStreamReader(
-		con.getInputStream(), "UTF-8"));
-
-	StringWriter strOut = new StringWriter();
-
-	// Copy stream to String
-	char[] buf = new char[1024];
-	int n;
-	while ((n = in.read(buf)) != -1) {
-	    strOut.write(buf, 0, n);
-	}
-
-	String str = strOut.toString();
-	strOut.close();
-	in.close();
-
-	// copy String to File
-	in = new BufferedReader(new StringReader(str));
-	BufferedWriter out = new BufferedWriter(new FileWriter(file));
-	buf = new char[1024];
-	while ((n = in.read(buf)) != -1) {
-	    out.write(buf, 0, n);
-	}
-
-	out.close();
-	in.close();
-
-	return file;
-    }
-
-    protected Element getDocument(File digitalEntityFile) {
+    /**
+     * @param file
+     *            the downloaded data will be written to this file
+     * @param url
+     *            a url to download from
+     */
+    protected void download(File file, String url) {
 	try {
-	    DocumentBuilderFactory factory = DocumentBuilderFactory
-		    .newInstance();
-	    DocumentBuilder docBuilder;
+	    URL dataStreamUrl = new URL(url);
 
-	    docBuilder = factory.newDocumentBuilder();
-
-	    Document doc;
-
-	    doc = docBuilder.parse(new BufferedInputStream(new FileInputStream(
-		    digitalEntityFile)));
-	    Element root = doc.getDocumentElement();
-	    root.normalize();
-	    return root;
-	} catch (FileNotFoundException e) {
-
-	    e.printStackTrace();
-	} catch (SAXException e) {
-
-	    e.printStackTrace();
-	} catch (IOException e) {
-
-	    e.printStackTrace();
-	} catch (ParserConfigurationException e) {
-
-	    e.printStackTrace();
+	    if (!file.exists()) {
+		file.getParentFile().mkdirs();
+		file.createNewFile();
+	    }
+	    OutputStream output = new FileOutputStream(file);
+	    IOUtils.copy(dataStreamUrl.openStream(), output);
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    throw new DownloadException(e);
 	}
-	return null;
     }
 
-    protected void zip(File directory, File zipfile) throws IOException {
-	URI base = directory.toURI();
-	Deque<File> queue = new LinkedList<File>();
-	queue.push(directory);
-	OutputStream out = new FileOutputStream(zipfile);
-	Closeable res = out;
+    /**
+     * @param file
+     *            the utf-8 text will be written to this file
+     * @param url
+     *            a url with utf-8 text data
+     */
+    protected void downloadText(File file, URL url) {
 	try {
+	    String data = null;
+	    StringWriter writer = new StringWriter();
+	    IOUtils.copy(url.openStream(), writer);
+	    data = writer.toString();
+	    FileUtils.writeStringToFile(file, data, "utf-8");
+	} catch (MalformedURLException e) {
+	    throw new DownloadException(e);
+	} catch (IOException e) {
+	    throw new DownloadException(e);
+	}
+    }
+
+    /**
+     * @param directory
+     *            the directory will be zipped
+     * @param zipfile
+     *            the Outputfile
+     */
+    @SuppressWarnings("resource")
+    protected void zip(File directory, File zipfile) {
+	Closeable res = null;
+	try {
+	    URI base = directory.toURI();
+	    Deque<File> queue = new LinkedList<File>();
+	    queue.push(directory);
+	    OutputStream out = new FileOutputStream(zipfile);
+	    res = out;
+
 	    ZipOutputStream zout = new ZipOutputStream(out);
+
 	    res = zout;
 	    while (!queue.isEmpty()) {
 		directory = queue.pop();
@@ -357,38 +480,100 @@ public abstract class Downloader implements DownloaderInterface {
 		    }
 		}
 	    }
+	} catch (IOException e) {
+	    throw new ZipDownloaderException(e);
 	} finally {
-	    res.close();
-	}
-    }
-
-    protected void copy(InputStream in, OutputStream out) throws IOException {
-	byte[] buffer = new byte[1024];
-	while (true) {
-	    int readCount = in.read(buffer);
-	    if (readCount < 0) {
-		break;
+	    try {
+		if (res != null)
+		    res.close();
+	    } catch (IOException e) {
+		throw new ZipDownloaderException(e);
 	    }
-	    out.write(buffer, 0, readCount);
+
 	}
     }
 
-    protected void copy(File file, OutputStream out) throws IOException {
-	InputStream in = new FileInputStream(file);
+    /**
+     * @param in
+     *            read from this
+     * @param out
+     *            copy to this
+     */
+    protected void copy(InputStream in, OutputStream out) {
 	try {
-	    copy(in, out);
-	} finally {
-	    in.close();
+	    byte[] buffer = new byte[1024];
+	    while (true) {
+		int readCount = in.read(buffer);
+		if (readCount < 0) {
+		    break;
+		}
+		out.write(buffer, 0, readCount);
+	    }
+	} catch (Exception e) {
+	    throw new CopyException(e);
 	}
     }
 
-    protected void copy(InputStream in, File file) throws IOException {
-	OutputStream out = new FileOutputStream(file);
+    /**
+     * @param file
+     *            read from here
+     * @param out
+     *            copy to here
+     */
+    protected void copy(File file, OutputStream out) {
+	InputStream in = null;
 	try {
+	    in = new FileInputStream(file);
 	    copy(in, out);
+	} catch (FileNotFoundException e) {
+	    throw new CopyException(e);
 	} finally {
-	    out.close();
+	    try {
+		if (in != null)
+		    in.close();
+	    } catch (IOException e) {
+		throw new CopyException(e);
+	    }
 	}
+    }
+
+    /**
+     * @param in
+     *            read from here
+     * @param file
+     *            copy to here
+     */
+    protected void copy(InputStream in, File file) {
+	OutputStream out = null;
+	try {
+	    out = new FileOutputStream(file);
+	    copy(in, out);
+	} catch (FileNotFoundException e) {
+	    throw new CopyException(e);
+	} finally {
+	    try {
+		if (out != null)
+		    out.close();
+	    } catch (IOException e) {
+		throw new CopyException(e);
+	    }
+	}
+    }
+
+    /**
+     * @param downloaded
+     *            if something has been downloaded
+     */
+    protected void setDownloaded(boolean downloaded) {
+	this.downloaded = downloaded;
+    }
+
+    /**
+     * @param updated
+     *            if an object was updated
+     */
+    protected void setUpdated(boolean updated) {
+	this.updated = updated;
     }
 
 }
