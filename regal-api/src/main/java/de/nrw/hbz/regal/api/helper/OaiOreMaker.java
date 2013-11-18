@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.math.BigInteger;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.openrdf.model.BNode;
 import org.openrdf.model.Literal;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
@@ -50,6 +52,8 @@ public class OaiOreMaker {
     String rdfNamespace = " http://www.w3.org/1999/02/22-rdf-syntax-ns#";
     String rdfsNamespace = "http://www.w3.org/2000/01/rdf-schema#";
     String regalNamespace = "http://hbz-nrw.de/regal#";
+    String fpNamespace = "http://downlode.org/Code/RDF/File_Properties/schema#";
+    String wnNamespace = "http://xmlns.com/wordnet/1.6/";
 
     RepositoryConnection con = null;
 
@@ -91,7 +95,7 @@ public class OaiOreMaker {
 	    InputStream in = metadata.openStream();
 	    con.add(in, node.getPID(), RDFFormat.N3);
 	} catch (Exception e) {
-	    throw new AddDescriptiveDataException(e);
+	    logger.debug("", e);
 	}
     }
 
@@ -202,6 +206,11 @@ public class OaiOreMaker {
 	    Literal lastTimeModified = f.createLiteral(lastModified);
 	    String mime = node.getMimeType();
 	    String label = node.getFileLabel();
+	    String fileSize = null;
+	    BigInteger fs = node.getFileSize();
+	    if (fs != null)
+		fileSize = fs.toString();
+	    String fileChecksum = node.getChecksum();
 
 	    // Predicates
 	    // ore
@@ -219,9 +228,19 @@ public class OaiOreMaker {
 	    URI dcHasFormat = f.createURI(dctermsNamespace, "hasFormat");
 	    // rdfs
 	    URI rdfsLabel = f.createURI(rdfsNamespace, "label");
+	    URI rdfsType = f.createURI(rdfsNamespace, "type");
 	    // regal
 	    URI contentType = f.createURI(regalNamespace, "contentType");
 	    URI hasData = f.createURI(regalNamespace, "hasData");
+	    // FileProperties
+	    URI fpSize = f.createURI(fpNamespace, "size");
+	    BNode theChecksumBlankNode = f.createBNode();
+	    URI fpChecksum = f.createURI(fpNamespace, "checksum");
+	    URI fpChecksumType = f.createURI(fpNamespace, "Checksum");
+	    URI fpChecksumGenerator = f.createURI(fpNamespace, "generator");
+	    URI fpChecksumAlgo = f.createURI(wnNamespace, "Algorithm");
+	    URI md5Uri = f.createURI("http://en.wikipedia.org/wiki/MD5");
+	    URI fpChecksumValue = f.createURI(fpNamespace, "checksumValue");
 
 	    // Statements
 
@@ -234,7 +253,20 @@ public class OaiOreMaker {
 		    con.add(aggregation, aggregates, fulltext);
 		    con.add(data, dcHasFormat, fulltext);
 		}
+	    }
 
+	    if (fileSize != null && !fileSize.isEmpty()) {
+		Literal dataSize = f.createLiteral(fileSize);
+		con.add(data, fpSize, dataSize);
+	    }
+
+	    if (fileChecksum != null && !fileChecksum.isEmpty()) {
+		Literal dataChecksum = f.createLiteral(fileChecksum);
+		con.add(theChecksumBlankNode, rdfsType, fpChecksumType);
+		con.add(theChecksumBlankNode, fpChecksumGenerator, md5Uri);
+		con.add(md5Uri, rdfsType, fpChecksumAlgo);
+		con.add(theChecksumBlankNode, fpChecksumValue, dataChecksum);
+		con.add(data, fpChecksum, theChecksumBlankNode);
 	    }
 
 	    if (label != null && !label.isEmpty()) {
@@ -273,7 +305,7 @@ public class OaiOreMaker {
 
 	    }
 	} catch (Exception e) {
-	    throw new AddStructuralDataException(e);
+	    logger.debug("", e);
 	}
     }
 
@@ -329,14 +361,14 @@ public class OaiOreMaker {
 		String dataLink = uriPrefix + pid + "/data";
 		String logoLink = "";
 		if (mime.compareTo("application/pdf") == 0) {
-		    logoLink = "/pdflogo.svg";
+		    logoLink = "pdflogo.svg";
 		} else if (mime.compareTo("application/zip") == 0) {
-		    logoLink = "/zip.png";
+		    logoLink = "zip.png";
 		} else {
-		    logoLink = "/data.png";
+		    logoLink = "data.png";
 		}
 		st.add("data", "<tr><td class=\"textlink\"><a	href=\""
-			+ dataLink + "\"><img src=\"" + logoLink
+			+ dataLink + "\"><img src=\"/img/" + logoLink
 			+ "\" width=\"100\" /></a></td></tr>");
 	    } else {
 		st.add("data", "");
@@ -436,7 +468,7 @@ public class OaiOreMaker {
 		objectLink = object;
 	    }
 	    if (predicate.compareTo("http://hbz-nrw.de/regal#contentType") == 0) {
-		objectLink = "/" + object + "/";
+		objectLink = "/resource?type=" + object;
 	    }
 	    if (objectLink != null) {
 		return "<tr><td><a href=\"" + subjectLink + "\">" + subject
@@ -455,18 +487,6 @@ public class OaiOreMaker {
 
     private class CreateRepositoryException extends RuntimeException {
 	public CreateRepositoryException(Throwable e) {
-	    super(e);
-	}
-    }
-
-    private class AddDescriptiveDataException extends RuntimeException {
-	public AddDescriptiveDataException(Throwable e) {
-	    super(e);
-	}
-    }
-
-    private class AddStructuralDataException extends RuntimeException {
-	public AddStructuralDataException(Throwable e) {
 	    super(e);
 	}
     }
